@@ -89,10 +89,10 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             {/* Top Identity Block */}
             <div className="space-y-3 border-b border-border-subtle pb-6">
               <h2 className="text-3xl sm:text-4xl font-black font-sans tracking-tight">
-                MOHAMMED FAREED
+                MOHAMMED FAREED MANDEEYA HARUNA
               </h2>
               <div className="text-sm text-accent-dynamic font-semibold">
-                Full-Stack Software Engineer & Digital System Architect
+                Full-Stack MERN Developer & Computer Science Student (UTAS)
               </div>
 
               <div className="flex flex-wrap gap-y-2 gap-x-6 text-xs text-foreground-muted pt-1 font-medium">
@@ -101,12 +101,22 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   <span>Tamale, Ghana</span>
                 </div>
                 <div className="flex items-center gap-1.5">
+                  <span>📞 0209878744</span>
+                </div>
+                <div className="flex items-center gap-1.5">
                   <Mail className="w-3.5 h-3.5 text-accent-dynamic" />
                   <span>mohammedfareed.dev@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Globe className="w-3.5 h-3.5 text-accent-dynamic" />
-                  <span>https://mohammedfareed.dev</span>
+                  <a href="https://github.com/hmfareed" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    github.com/hmfareed
+                  </a>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <a href="https://linkedin.com/in/mohammed-fareed-haruna" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    linkedin.com/in/mohammed-fareed-haruna
+                  </a>
                 </div>
               </div>
             </div>
@@ -117,8 +127,24 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 Professional Summary
               </h3>
               <p className="text-xs sm:text-sm text-foreground-muted leading-relaxed font-sans">
-                Results-driven Full-Stack Engineer with comprehensive expertise in building high-performance web applications, resilient digital infrastructure, and localized e-commerce platforms. Specializes in Next.js 14 App Router, TypeScript, scalable databases (MongoDB, PostgreSQL), and seamless African payment integrations (Paystack MTN & Telecel Mobile Money). Proven track record of turning complex architectural requirements into reliable, user-centric production software.
+                Third-year Computer Science student and full-stack developer specializing in the MERN stack, with hands-on experience building and shipping production web apps solo and in teams. Focused on real-world payment (Paystack) and e-commerce systems for the Ghanaian market, comfortable across the stack from UI design to backend architecture and third-party integrations.
               </p>
+            </div>
+
+            {/* Education */}
+            <div className="space-y-2">
+              <h3 className="text-xs uppercase tracking-widest text-foreground-subtle font-bold">
+                Education
+              </h3>
+              <div className="p-3.5 rounded-xl bg-surface-100 border border-border-subtle flex flex-col sm:flex-row sm:items-center justify-between text-xs font-sans">
+                <div>
+                  <div className="font-bold text-foreground text-sm">BSc Computer Science, Level 300</div>
+                  <div className="text-foreground-subtle">University of Technology and Applied Sciences (UTAS), Navrongo</div>
+                </div>
+                <div className="text-xs text-accent-dynamic font-semibold mt-1 sm:mt-0">
+                  2024 — 2027 (Expected)
+                </div>
+              </div>
             </div>
 
             {/* Experience */}
@@ -178,20 +204,28 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             {/* Technical Skills Summary */}
             <div className="space-y-2">
               <h3 className="text-xs uppercase tracking-widest text-foreground-subtle font-bold">
-                Technical Stack & Tools
+                Technical Skills & Toolchains
               </h3>
-              <div className="text-xs space-y-1 text-foreground-muted">
+              <div className="text-xs space-y-1.5 text-foreground-muted">
                 <div>
-                  <span className="text-foreground font-semibold">Languages & Frameworks: </span>
-                  TypeScript, JavaScript (ES6+), Next.js (App Router), React, Node.js, Express, HTML5, CSS3, Tailwind CSS.
+                  <span className="text-foreground font-semibold">Languages: </span>
+                  JavaScript, TypeScript, HTML, CSS.
                 </div>
                 <div>
-                  <span className="text-foreground font-semibold">Databases & Architecture: </span>
-                  MongoDB (Geospatial & Aggregations), PostgreSQL, Prisma ORM, Redis, RESTful API Design, Microservices, Atomic Transactions.
+                  <span className="text-foreground font-semibold">Frontend: </span>
+                  React, Next.js, Vite, Tailwind CSS, shadcn/ui, Bootstrap, UI Design.
                 </div>
                 <div>
-                  <span className="text-foreground font-semibold">DevOps & Tooling: </span>
-                  Git, GitHub, Vercel, Docker, Paystack API (MoMo webhooks), Postman, Linux.
+                  <span className="text-foreground font-semibold">Backend: </span>
+                  Node.js, Express, JWT Authentication, Zod/Joi Validation.
+                </div>
+                <div>
+                  <span className="text-foreground font-semibold">Databases: </span>
+                  MongoDB, Mongoose, PostgreSQL.
+                </div>
+                <div>
+                  <span className="text-foreground font-semibold">Tools & Integrations: </span>
+                  Paystack, Clerk, Socket.io, Vercel, Cloudinary, Nodemailer, Google Stitch, Banani, Git/GitHub, Terminal (Bash).
                 </div>
               </div>
             </div>

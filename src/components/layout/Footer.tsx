@@ -104,7 +104,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://github.com/mohammedfareed"
+                  href="https://github.com/hmfareed"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-foreground-muted hover:text-foreground transition-colors"
@@ -115,7 +115,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com/in/mohammedfareed"
+                  href="https://linkedin.com/in/mohammed-fareed-haruna"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-foreground-muted hover:text-foreground transition-colors"

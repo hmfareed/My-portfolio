@@ -56,26 +56,26 @@ export default function CurrentlyBuilding({ onOpenCaseStudy }: CurrentlyBuilding
                       Primary Venture Focus
                     </span>
                     <h3 className="text-3xl sm:text-4xl font-black font-sans text-foreground tracking-tight">
-                      <span className="text-primary-dynamic">North</span>
-                      <span className="text-secondary-dynamic">Market</span>{' '}
-                      <span>Commerce Engine</span>
+                      <span className="text-primary-dynamic">Kay</span>
+                      <span className="text-secondary-dynamic">packs</span>{' '}
+                      <span>Water Delivery Platform</span>
                     </h3>
                   </div>
 
                   <p className="text-sm text-foreground-muted leading-relaxed font-sans max-w-xl">
-                    Transforming regional commerce across Northern Ghana. Solving slow multi-day delivery times with localized vendor clustering, real-time rider tracking, and instant Mobile Money transactions.
+                    Full-stack production e-commerce platform for clean water logistics with one-click GPS coordinate capture at checkout, Paystack payments, Yango door delivery, and dual AI assistants for customer ordering and admin analytics.
                   </p>
 
                   {/* Progress bar */}
                   <div className="space-y-2 max-w-md pt-2">
                     <div className="flex items-center justify-between text-xs font-medium">
-                      <span className="text-foreground-muted">Milestone: Core Beta Engine</span>
-                      <span className="text-primary-dynamic font-bold">80% Complete</span>
+                      <span className="text-foreground-muted">Milestone: Dual AI & GPS Checkout</span>
+                      <span className="text-primary-dynamic font-bold">100% Live in Production</span>
                     </div>
                     <div className="w-full h-2.5 rounded-full bg-surface-100 overflow-hidden border border-border-subtle p-0.5">
                       <motion.div
                         initial={{ width: '0%' }}
-                        whileInView={{ width: '80%' }}
+                        whileInView={{ width: '100%' }}
                         viewport={{ once: true }}
                         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                         className="h-full rounded-full bg-primary-dynamic shadow-[0_0_10px_var(--color-primary)]"
@@ -87,7 +87,7 @@ export default function CurrentlyBuilding({ onOpenCaseStudy }: CurrentlyBuilding
                 {/* Action column */}
                 <div className="md:col-span-4 flex flex-col gap-3 justify-center">
                   <button
-                    onClick={() => onOpenCaseStudy('northmarket')}
+                    onClick={() => onOpenCaseStudy('kaypacks')}
                     className="kpi-explore-btn w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-primary-dynamic text-black font-sans text-xs font-bold transition-all active:scale-95 shadow-md hover:scale-[1.02]"
                   >
                     <span>Inspect System Architecture</span>
@@ -97,9 +97,9 @@ export default function CurrentlyBuilding({ onOpenCaseStudy }: CurrentlyBuilding
                   <div className="p-4 rounded-2xl bg-surface-100/80 border border-border-subtle text-xs text-foreground-subtle space-y-1 font-sans">
                     <div className="text-foreground font-semibold flex items-center gap-1.5">
                       <Layers className="w-3.5 h-3.5 text-primary-dynamic" />
-                      <span>Stack in flight:</span>
+                      <span>Stack in production:</span>
                     </div>
-                    <div>Next.js 14 • MongoDB Geospatial • Paystack MoMo Webhooks • Redis</div>
+                    <div>Next.js • TypeScript • MongoDB • Paystack • Cloudinary</div>
                   </div>
                 </div>
               </div>

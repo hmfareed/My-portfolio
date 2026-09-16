@@ -8,13 +8,13 @@ import GlowKpiCard from '@/components/ui/GlowKpiCard';
 
 const kpis = [
   {
-    label: 'Build status',
-    value: '80%',
-    subtitle: 'LOCAL COMMERCE PWA',
-    badge: 'Now in Beta',
-    bullets: ['Next.js 14 App Router', 'Local-Commerce PWA'],
-    code: 'northmarket.progress = 0.80',
-    detail: 'NorthMarket is actively being shaped into a focused local-commerce platform.',
+    label: 'Kaypacks',
+    value: 'Live',
+    subtitle: 'WATER DELIVERY PWA',
+    badge: 'Dual AI Live',
+    bullets: ['Next.js + MongoDB', 'Paystack & Yango Delivery'],
+    code: 'kaypacks.status = "production"',
+    detail: 'Full-stack water delivery platform featuring 1-click GPS checkout and dual AI assistants.',
     icon: Layers3,
     accent: 'primary' as const,
   },
@@ -167,7 +167,7 @@ export default function Hero() {
                 I build <span className="text-primary-dynamic font-black">high-</span><span className="text-secondary-dynamic font-black">performance</span>, visually thoughtful web experiences.
               </p>
               <p className="text-base leading-relaxed text-foreground-muted sm:text-lg font-sans">
-                A Computer Science student and full-stack developer focused on clean interfaces, practical architecture, and commerce systems engineered for real-world impact.
+                Third-year Computer Science student at UTAS and full-stack developer specializing in the MERN stack. Focused on real-world payment (Paystack) and e-commerce systems engineered for the Ghanaian market.
               </p>
             </motion.div>
 

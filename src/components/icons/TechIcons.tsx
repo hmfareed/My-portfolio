@@ -163,22 +163,80 @@ export function LighthouseIcon({ className = 'w-5 h-5' }: { className?: string }
   );
 }
 
+export function ViteIcon({ className = 'w-5 h-5' }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21.5 3.5L12.5 21 3.5 5.5l9-2 9 0z" fill="url(#vite-grad)" stroke="#BD34FE" strokeWidth="1.5"/>
+      <path d="M12 4l-4 8h5l-3 7 7-9h-5l3-6z" fill="#FFD62E"/>
+      <defs>
+        <linearGradient id="vite-grad" x1="3.5" y1="3.5" x2="21.5" y2="21" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#41D1FF"/>
+          <stop offset="1" stopColor="#BD34FE"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
+
+export function SocketIoIcon({ className = 'w-5 h-5' }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" stroke="#010101" strokeWidth="2" fill="#010101"/>
+      <path d="M14.5 4.5l-6 8.5h5l-2.5 6.5 6-8.5h-5l2.5-6.5z" fill="#FFFFFF"/>
+    </svg>
+  );
+}
+
+export function CloudinaryIcon({ className = 'w-5 h-5' }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" fill="#3448C5"/>
+      <path d="M10 14l2-2 2 2m-2-2v5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+export function HtmlCssIcon({ className = 'w-5 h-5' }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 3l1.8 17.5L12 23l7.2-2.5L21 3H3z" fill="#E44D26"/>
+      <path d="M12 5v15.5l5.5-1.9L19 5H12z" fill="#F16529"/>
+      <path d="M12 8.5H7.5l.3 3.5h4.2v3.3l-3.3-.9-.2-2.2H6.3l.4 4.5 5.3 1.5v-9.7z" fill="#EBEBEB"/>
+      <path d="M12 8.5h4.5l-.4 4.5-4.1 1.2v-2.3l2.2-.6.2-2.8H12V8.5z" fill="#FFFFFF"/>
+    </svg>
+  );
+}
+
+export function TerminalIcon({ className = 'w-5 h-5' }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="3" width="20" height="18" rx="3" fill="#1A1B20" stroke="#4B5563" strokeWidth="1.5"/>
+      <path d="M7 8l4 4-4 4M13 16h4" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 export function getOfficialIcon(name: string, className = 'w-5 h-5') {
   const n = name.toLowerCase();
   if (n.includes('next.js') || n.includes('next')) return <NextJsIcon className={className} />;
   if (n.includes('react')) return <ReactIcon className={className} />;
   if (n.includes('typescript')) return <TypeScriptIcon className={className} />;
   if (n.includes('tailwind')) return <TailwindIcon className={className} />;
+  if (n.includes('vite') || n.includes('design')) return <ViteIcon className={className} />;
+  if (n.includes('html') || n.includes('css')) return <HtmlCssIcon className={className} />;
   if (n.includes('framer')) return <FramerMotionIcon className={className} />;
   if (n.includes('state') || n.includes('zustand') || n.includes('redux')) return <ReduxIcon className={className} />;
   if (n.includes('node') || n.includes('express')) return <NodeJsIcon className={className} />;
   if (n.includes('mongo')) return <MongoDbIcon className={className} />;
   if (n.includes('postgres') || n.includes('prisma')) return <PostgreSqlIcon className={className} />;
   if (n.includes('auth')) return <AuthIcon className={className} />;
-  if (n.includes('payment') || n.includes('paystack')) return <PaystackIcon className={className} />;
+  if (n.includes('payment') || n.includes('paystack') || n.includes('momo')) return <PaystackIcon className={className} />;
+  if (n.includes('socket')) return <SocketIoIcon className={className} />;
+  if (n.includes('cloud') || n.includes('media')) return <CloudinaryIcon className={className} />;
   if (n.includes('git')) return <GitIcon className={className} />;
   if (n.includes('docker')) return <DockerIcon className={className} />;
-  if (n.includes('vercel') || n.includes('cloud')) return <VercelIcon className={className} />;
+  if (n.includes('vercel')) return <VercelIcon className={className} />;
+  if (n.includes('terminal') || n.includes('bash')) return <TerminalIcon className={className} />;
   if (n.includes('api')) return <ApiIcon className={className} />;
   if (n.includes('performance') || n.includes('optimization')) return <LighthouseIcon className={className} />;
   return <NextJsIcon className={className} />;

@@ -121,11 +121,11 @@ export default function About({ onOpenResume }: AboutProps) {
               </h3>
 
               <p className="text-base text-foreground-muted leading-relaxed font-sans">
-                I specialize in engineering modern web applications, scalable system architectures, and localized e-commerce solutions. My work sits at the intersection of engineering rigor, clean design, and pragmatic product thinking.
+                Third-year Computer Science student at UTAS and full-stack developer specializing in the MERN stack, with hands-on experience building and shipping production web apps solo and in teams. Focused on real-world payment (Paystack) and e-commerce systems for the Ghanaian market, comfortable across the stack from UI design to backend architecture and third-party integrations.
               </p>
 
               <p className="text-sm text-foreground-muted leading-relaxed font-sans">
-                Whether architecting multi-vendor logistics pipelines for Northern Ghana or engineering sub-second Continuous Assessment engines for schools, I build robust software designed to perform under real-world constraints.
+                From building one-click GPS water delivery platforms (<span className="text-foreground font-semibold">Kaypacks</span>) and multi-vendor marketplaces with split Paystack payouts (<span className="text-foreground font-semibold">AfriCart</span>), to architecting 36-model school management systems (<span className="text-foreground font-semibold">HANARA SMS</span>), I engineer robust software designed to perform under real-world constraints.
               </p>
             </div>
 
