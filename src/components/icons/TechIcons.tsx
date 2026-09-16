@@ -10,6 +10,7 @@ export function NextJsIcon({ className = 'w-5 h-5' }: { className?: string }) {
       </mask>
       <g mask="url(#mask0_next)">
         <circle cx="90" cy="90" r="90" fill="black"/>
+        <circle cx="90" cy="90" r="88" stroke="rgba(255,255,255,0.25)" strokeWidth="3" fill="none"/>
         <path d="M149.508 157.438L69.1478 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.137 149.508 157.438Z" fill="url(#paint0_linear_next)"/>
         <rect x="115" y="54" width="12" height="72" fill="url(#paint1_linear_next)"/>
       </g>

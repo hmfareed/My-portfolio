@@ -396,6 +396,55 @@ body {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
 }
 
+/* ==========================================================================
+   CARDLESS PENCIL-SHADED TECH STACK LOGOS (2-Column Left-Right Stagger)
+   ========================================================================== */
+.pencil-shaded-item {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pencil-shaded-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Default & AMOLED Themes */
+.pencil-shaded-logo svg {
+  filter: grayscale(100%) contrast(125%) brightness(105%) drop-shadow(0 4px 14px rgba(0, 0, 0, 0.6));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+}
+
+.pencil-shaded-item:hover .pencil-shaded-logo svg {
+  filter: grayscale(15%) contrast(135%) brightness(120%) drop-shadow(0 8px 24px rgba(0, 229, 255, 0.35));
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* Pencil Theme: Pure Monochromatic Graphite Shading with Tactile Paper Drop Shadow */
+[data-theme='pencil'] .pencil-shaded-item {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+[data-theme='pencil'] .pencil-shaded-item:hover {
+  background: rgba(35, 36, 42, 0.03) !important;
+  border-radius: 20px !important;
+}
+
+[data-theme='pencil'] .pencil-shaded-logo svg {
+  filter: grayscale(100%) contrast(145%) brightness(82%) drop-shadow(2px 3px 0px rgba(35, 36, 42, 0.45)) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+}
+
+[data-theme='pencil'] .pencil-shaded-item:hover .pencil-shaded-logo svg {
+  filter: grayscale(100%) contrast(165%) brightness(72%) drop-shadow(3px 5px 0px rgba(35, 36, 42, 0.65)) !important;
+  transform: translateY(-5px) scale(1.1);
+}
+
 /* Sketchbook paper cross-hatching grid */
 [data-theme='pencil'] .bg-grid-pattern {
   background-size: 28px 28px !important;
