@@ -2,20 +2,16 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Radio } from 'lucide-react';
+import { ArrowUpRight, Radio, Server, Layers } from 'lucide-react';
+import GlowKpiCard, { cardColorMap } from '@/components/ui/GlowKpiCard';
 
 interface CurrentlyBuildingProps {
   onOpenCaseStudy: (slug: string) => void;
 }
 
-const springTransition = {
-  type: 'spring',
-  damping: 15,
-  stiffness: 100,
-  mass: 0.8,
-};
-
 export default function CurrentlyBuilding({ onOpenCaseStudy }: CurrentlyBuildingProps) {
+  const config = cardColorMap.primary;
+
   return (
     <section className="px-6 sm:px-12 lg:px-20 py-16 relative font-sans">
       <div className="max-w-5xl mx-auto">
@@ -24,76 +20,91 @@ export default function CurrentlyBuilding({ onOpenCaseStudy }: CurrentlyBuilding
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: '0px 0px -80px 0px', amount: 0.15 }}
           transition={{ type: 'spring', damping: 18, stiffness: 90, mass: 0.9 }}
-          className="currently-building-card rounded-3xl bg-surface-200/75 backdrop-blur-xl border border-border-strong p-8 sm:p-12 relative overflow-hidden shadow-2xl"
+          className="h-full"
         >
-          {/* Subtle glow circle */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-accent-dynamic opacity-[0.06] blur-[80px] pointer-events-none rounded-full" />
-
-          <div className="space-y-8 relative z-10">
-            {/* Tag line */}
-            <div className="flex items-center justify-between text-xs font-semibold text-foreground-subtle border-b border-border-subtle pb-4">
-              <div className="flex items-center gap-2">
-                <Radio className="w-3.5 h-3.5 text-accent-dynamic animate-pulse" />
-                <span className="text-foreground uppercase tracking-wider">
-                  Active Sprint
-                </span>
-                <span>•</span>
-                <span className="text-accent-dynamic font-bold">2026 ROADMAP</span>
-              </div>
-              <span>TAMALE // ACCRA</span>
-            </div>
-
-            {/* Content Row */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-              <div className="md:col-span-8 space-y-4">
-                <div className="space-y-1">
-                  <span className="text-xs text-accent-dynamic uppercase tracking-widest font-bold">
-                    Primary Venture Focus
+          <GlowKpiCard
+            accentColor="primary"
+            borderRadius="rounded-3xl"
+            borderWidth="p-[1.5px]"
+            className="h-full w-full"
+            innerClassName="currently-building-card p-8 sm:p-12 min-h-[380px] flex flex-col justify-between"
+          >
+            <div className="space-y-8 relative z-10">
+              {/* Top Header Row: Left Status Pill + Right Location Pill */}
+              <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-semibold text-foreground-subtle border-b border-border-subtle pb-4">
+                <div className="flex items-center gap-2">
+                  <span
+                    className={`kpi-status-pill inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md border ${config.pillBg}`}
+                  >
+                    <Radio className="w-3.5 h-3.5 text-primary-dynamic animate-pulse" />
+                    <span className="uppercase tracking-wider">Active Sprint</span>
+                    <span>•</span>
+                    <span className="font-bold">2026 ROADMAP</span>
                   </span>
-                  <h3 className="text-3xl sm:text-4xl font-black font-sans text-foreground tracking-tight">
-                    NorthMarket Commerce Engine
-                  </h3>
                 </div>
 
-                <p className="text-sm text-foreground-muted leading-relaxed font-sans max-w-xl">
-                  Transforming regional commerce across Northern Ghana. Solving slow multi-day delivery times with localized vendor clustering, real-time rider tracking, and instant Mobile Money transactions.
-                </p>
-
-                {/* Progress bar */}
-                <div className="space-y-2 max-w-md pt-2">
-                  <div className="flex items-center justify-between text-xs font-medium">
-                    <span className="text-foreground-muted">Milestone: Core Beta Engine</span>
-                    <span className="text-accent-dynamic font-bold">80% Complete</span>
-                  </div>
-                  <div className="w-full h-2.5 rounded-full bg-surface-100 overflow-hidden border border-border-subtle p-0.5">
-                    <motion.div
-                      initial={{ width: '0%' }}
-                      whileInView={{ width: '80%' }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                      className="h-full rounded-full bg-accent-dynamic shadow-[0_0_10px_var(--color-accent)]"
-                    />
-                  </div>
-                </div>
+                <span className="px-3.5 py-1.5 rounded-full bg-surface-100 border border-border-subtle text-[11px] font-medium text-foreground-subtle">
+                  TAMALE // ACCRA
+                </span>
               </div>
 
-              {/* Action column */}
-              <div className="md:col-span-4 flex flex-col gap-3 justify-center">
-                <button
-                  onClick={() => onOpenCaseStudy('northmarket')}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-accent-dynamic text-black font-sans text-xs font-bold hover:shadow-[0_0_20px_var(--color-accent-glow)] transition-all active:scale-95 shadow-md"
-                >
-                  <span>Inspect System Architecture</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </button>
+              {/* Content Row */}
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div className="md:col-span-8 space-y-4">
+                  <div className="space-y-1">
+                    <span className="text-xs text-primary-dynamic uppercase tracking-widest font-bold">
+                      Primary Venture Focus
+                    </span>
+                    <h3 className="text-3xl sm:text-4xl font-black font-sans text-foreground tracking-tight">
+                      <span className="text-primary-dynamic">North</span>
+                      <span className="text-secondary-dynamic">Market</span>{' '}
+                      <span>Commerce Engine</span>
+                    </h3>
+                  </div>
 
-                <div className="p-4 rounded-xl bg-surface-100/80 border border-border-subtle text-xs text-foreground-subtle space-y-1 font-sans">
-                  <div className="text-foreground font-semibold">Stack in flight:</div>
-                  <div>Next.js 14 • MongoDB Geospatial • Paystack MoMo Webhooks • Redis</div>
+                  <p className="text-sm text-foreground-muted leading-relaxed font-sans max-w-xl">
+                    Transforming regional commerce across Northern Ghana. Solving slow multi-day delivery times with localized vendor clustering, real-time rider tracking, and instant Mobile Money transactions.
+                  </p>
+
+                  {/* Progress bar */}
+                  <div className="space-y-2 max-w-md pt-2">
+                    <div className="flex items-center justify-between text-xs font-medium">
+                      <span className="text-foreground-muted">Milestone: Core Beta Engine</span>
+                      <span className="text-primary-dynamic font-bold">80% Complete</span>
+                    </div>
+                    <div className="w-full h-2.5 rounded-full bg-surface-100 overflow-hidden border border-border-subtle p-0.5">
+                      <motion.div
+                        initial={{ width: '0%' }}
+                        whileInView={{ width: '80%' }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                        className="h-full rounded-full bg-primary-dynamic shadow-[0_0_10px_var(--color-primary)]"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Action column */}
+                <div className="md:col-span-4 flex flex-col gap-3 justify-center">
+                  <button
+                    onClick={() => onOpenCaseStudy('northmarket')}
+                    className="kpi-explore-btn w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-primary-dynamic text-black font-sans text-xs font-bold transition-all active:scale-95 shadow-md hover:scale-[1.02]"
+                  >
+                    <span>Inspect System Architecture</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </button>
+
+                  <div className="p-4 rounded-2xl bg-surface-100/80 border border-border-subtle text-xs text-foreground-subtle space-y-1 font-sans">
+                    <div className="text-foreground font-semibold flex items-center gap-1.5">
+                      <Layers className="w-3.5 h-3.5 text-primary-dynamic" />
+                      <span>Stack in flight:</span>
+                    </div>
+                    <div>Next.js 14 • MongoDB Geospatial • Paystack MoMo Webhooks • Redis</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </GlowKpiCard>
         </motion.div>
       </div>
     </section>

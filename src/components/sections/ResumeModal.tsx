@@ -54,10 +54,10 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
           className="relative w-full max-w-3xl max-h-[92vh] bg-surface-200/95 backdrop-blur-2xl border border-border-strong rounded-3xl shadow-2xl overflow-y-auto z-10 p-6 sm:p-10 flex flex-col gap-6"
         >
-          {/* Header Action Bar */}
+          {/* Header Action Bar: Header-Style Buttons */}
           <div className="flex items-center justify-between border-b border-border-subtle pb-4">
             <div className="flex items-center gap-2">
-              <span className="text-xs font-bold text-accent-dynamic px-3 py-1 bg-surface-100 rounded-lg border border-border-subtle">
+              <span className="text-xs font-bold text-primary-dynamic px-3.5 py-1 bg-surface-100 rounded-full border border-border-subtle">
                 CURRICULUM VITAE
               </span>
               <span className="text-xs text-foreground-subtle hidden sm:inline-block font-medium">
@@ -68,7 +68,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <div className="flex items-center gap-2">
               <button
                 onClick={handlePrint}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-100 hover:bg-surface-50 border border-border-subtle text-xs font-sans text-foreground hover:text-accent-dynamic transition-colors font-medium"
+                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-100 hover:bg-surface-50 border border-border-subtle text-xs font-sans text-foreground hover:text-primary-dynamic transition-colors font-medium active:scale-95 shadow-sm"
                 title="Print or Save as PDF"
               >
                 <Printer className="w-3.5 h-3.5" />
@@ -77,7 +77,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
               <button
                 onClick={onClose}
-                className="p-1.5 rounded-lg bg-surface-100 hover:bg-surface-50 border border-border-subtle text-foreground-muted hover:text-foreground transition-colors"
+                className="p-2 rounded-full bg-surface-100 hover:bg-surface-50 border border-border-subtle text-foreground-muted hover:text-foreground transition-colors active:scale-95"
               >
                 <X className="w-4 h-4" />
               </button>

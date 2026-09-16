@@ -249,116 +249,119 @@ export default function Hero() {
         >
           <div className="absolute left-[7%] right-[7%] top-0 hidden h-px bg-gradient-to-r from-transparent via-accent-dynamic/40 to-transparent md:block" />
 
-          {/* Animated horizontal connecting laser line bridging all 4 cards in-line */}
-          <div className="hero-kpi-laser-track absolute top-[48%] -translate-y-1/2 left-[5%] right-[5%] h-[2.5px] hidden lg:block pointer-events-none z-0">
-            <motion.div
-              variants={lineVariants}
-              className="hero-kpi-laser-line h-full w-full origin-left bg-gradient-to-r from-[#00E5FF] via-[#A78BFA] via-[#F43F5E] via-[#F5B942] to-[#10B981] shadow-[0_0_12px_rgba(0,229,255,0.8)]"
-            />
-            {/* Connection junction nodes between cards */}
-            <div className="hero-kpi-laser-node absolute top-1/2 -translate-y-1/2 left-[25%] -translate-x-1/2 z-10 flex items-center justify-center">
-              <span className="hero-kpi-node-ping w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping absolute opacity-75" />
-              <span className="hero-kpi-node-dot w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#00E5FF]" />
+          {/* Relative wrapper so horizontal laser line is centered vertically against the KPI cards */}
+          <div className="relative">
+            {/* Animated horizontal connecting laser line bridging all 4 cards in-line */}
+            <div className="hero-kpi-laser-track absolute top-1/2 -translate-y-1/2 left-[4%] right-[4%] h-[2.5px] hidden lg:block pointer-events-none z-0">
+              <motion.div
+                variants={lineVariants}
+                className="hero-kpi-laser-line h-full w-full origin-left bg-gradient-to-r from-[#00E5FF] via-[#A78BFA] via-[#F43F5E] via-[#F5B942] to-[#10B981] shadow-[0_0_12px_rgba(0,229,255,0.8)]"
+              />
+              {/* Connection junction nodes between cards */}
+              <div className="hero-kpi-laser-node absolute top-1/2 -translate-y-1/2 left-[25%] -translate-x-1/2 z-10 flex items-center justify-center">
+                <span className="hero-kpi-node-ping w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping absolute opacity-75" />
+                <span className="hero-kpi-node-dot w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#00E5FF]" />
+              </div>
+              <div className="hero-kpi-laser-node absolute top-1/2 -translate-y-1/2 left-[50%] -translate-x-1/2 z-10 flex items-center justify-center">
+                <span className="hero-kpi-node-ping w-2.5 h-2.5 rounded-full bg-rose-400 animate-ping absolute opacity-75" />
+                <span className="hero-kpi-node-dot w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#F43F5E]" />
+              </div>
+              <div className="hero-kpi-laser-node absolute top-1/2 -translate-y-1/2 left-[75%] -translate-x-1/2 z-10 flex items-center justify-center">
+                <span className="hero-kpi-node-ping w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping absolute opacity-75" />
+                <span className="hero-kpi-node-dot w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#F5B942]" />
+              </div>
             </div>
-            <div className="hero-kpi-laser-node absolute top-1/2 -translate-y-1/2 left-[50%] -translate-x-1/2 z-10 flex items-center justify-center">
-              <span className="hero-kpi-node-ping w-2.5 h-2.5 rounded-full bg-rose-400 animate-ping absolute opacity-75" />
-              <span className="hero-kpi-node-dot w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#F43F5E]" />
-            </div>
-            <div className="hero-kpi-laser-node absolute top-1/2 -translate-y-1/2 left-[75%] -translate-x-1/2 z-10 flex items-center justify-center">
-              <span className="hero-kpi-node-ping w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping absolute opacity-75" />
-              <span className="hero-kpi-node-dot w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#F5B942]" />
-            </div>
-          </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 relative z-10">
-            {kpis.map((kpi, index) => {
-              const Icon = kpi.icon;
-              const isActive = activeKpi === index;
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 relative z-10">
+              {kpis.map((kpi, index) => {
+                const Icon = kpi.icon;
+                const isActive = activeKpi === index;
 
-              return (
-                <motion.div
-                  key={kpi.label}
-                  variants={kpiCardVariants}
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="h-full"
-                >
-                  <GlowKpiCard
-                    active={isActive}
-                    accentColor={kpi.accent}
-                    onClick={() => setActiveKpi(isActive ? null : index)}
-                    borderRadius="rounded-2xl"
-                    borderWidth="p-[1.5px]"
-                    className="h-full"
-                    innerClassName="p-5 min-h-[195px] flex flex-col justify-between"
-                    dataCursor="INSPECT"
+                return (
+                  <motion.div
+                    key={kpi.label}
+                    variants={kpiCardVariants}
+                    whileHover={{ y: -4, scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="h-full min-h-[210px]"
                   >
-                    <div className="space-y-2.5">
-                      {/* Top Header Row: Left Icon Box + Right Status Badge */}
-                      <div className="flex items-center justify-between gap-2">
-                        <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-white/5 border border-white/10">
-                          <Icon className={`h-4 w-4 ${kpi.accent === 'primary' ? 'text-primary-dynamic' : 'text-secondary-dynamic'}`} />
-                        </div>
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-white/5 border border-white/10 text-foreground-subtle">
-                          <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${kpi.accent === 'primary' ? 'bg-primary-dynamic' : 'bg-secondary-dynamic'}`} />
-                          <span>{kpi.badge}</span>
-                        </span>
-                      </div>
-
-                      {/* Value & Subtitle with split styling */}
-                      <div>
-                        <div className="text-2xl sm:text-3xl font-black tracking-tight text-foreground font-sans">
-                          {kpi.value}
-                        </div>
-                        <div className="text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
-                          <span className={kpi.accent === 'primary' ? 'text-primary-dynamic' : 'text-secondary-dynamic'}>
-                            {kpi.subtitle.split(' ')[0]}
-                          </span>
-                          <span className="text-foreground-subtle">
-                            {kpi.subtitle.split(' ').slice(1).join(' ')}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Feature Bullets with colored dots */}
-                      <div className="space-y-1 text-[11px] text-foreground-muted font-sans">
-                        {kpi.bullets.map((b, bi) => (
-                          <div key={bi} className="flex items-center gap-1.5">
-                            <span className={`w-1 h-1 rounded-full shrink-0 ${kpi.accent === 'primary' ? 'bg-primary-dynamic' : 'bg-secondary-dynamic'}`} />
-                            <span className="truncate">{b}</span>
+                    <GlowKpiCard
+                      active={isActive}
+                      accentColor={kpi.accent}
+                      onClick={() => setActiveKpi(isActive ? null : index)}
+                      borderRadius="rounded-2xl"
+                      borderWidth="p-[1.5px]"
+                      className="h-full min-h-[210px]"
+                      innerClassName="p-5 min-h-[210px] flex flex-col justify-between"
+                      dataCursor="INSPECT"
+                    >
+                      <div className="space-y-2.5">
+                        {/* Top Header Row: Left Icon Box + Right Status Badge */}
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-white/5 border border-white/10">
+                            <Icon className={`h-4 w-4 ${kpi.accent === 'primary' ? 'text-primary-dynamic' : 'text-secondary-dynamic'}`} />
                           </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <AnimatePresence mode="wait">
-                      {isActive ? (
-                        <motion.div
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 8 }}
-                          className={`mt-3 pt-3 border-t border-white/10 text-[11px] leading-relaxed font-medium ${
-                            kpi.accent === 'primary' ? 'text-primary-dynamic' : 'text-secondary-dynamic'
-                          }`}
-                        >
-                          <code className="text-[10px] bg-black/40 px-1.5 py-0.5 rounded font-mono">{kpi.code}</code>
-                          <p className="mt-1 text-foreground-muted text-[10px]">{kpi.detail}</p>
-                        </motion.div>
-                      ) : (
-                        <div className="mt-3 pt-2 flex items-center justify-between text-[10px] text-foreground-subtle border-t border-white/5">
-                          <span>0{index + 1} // {kpi.label}</span>
-                          <span className={`font-semibold group-hover:translate-x-0.5 transition-transform ${
-                            kpi.accent === 'primary' ? 'text-primary-dynamic' : 'text-secondary-dynamic'
-                          }`}>
-                            Inspect →
+                          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-white/5 border border-white/10 text-foreground-subtle">
+                            <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${kpi.accent === 'primary' ? 'bg-primary-dynamic' : 'bg-secondary-dynamic'}`} />
+                            <span>{kpi.badge}</span>
                           </span>
                         </div>
-                      )}
-                    </AnimatePresence>
-                  </GlowKpiCard>
-                </motion.div>
-              );
-            })}
+
+                        {/* Value & Subtitle with split styling */}
+                        <div>
+                          <div className="text-2xl sm:text-3xl font-black tracking-tight text-foreground font-sans">
+                            {kpi.value}
+                          </div>
+                          <div className="text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+                            <span className={kpi.accent === 'primary' ? 'text-primary-dynamic' : 'text-secondary-dynamic'}>
+                              {kpi.subtitle.split(' ')[0]}
+                            </span>
+                            <span className="text-foreground-subtle">
+                              {kpi.subtitle.split(' ').slice(1).join(' ')}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Feature Bullets with colored dots */}
+                        <div className="space-y-1 text-[11px] text-foreground-muted font-sans">
+                          {kpi.bullets.map((b, bi) => (
+                            <div key={bi} className="flex items-center gap-1.5">
+                              <span className={`w-1 h-1 rounded-full shrink-0 ${kpi.accent === 'primary' ? 'bg-primary-dynamic' : 'bg-secondary-dynamic'}`} />
+                              <span className="truncate">{b}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <AnimatePresence mode="wait">
+                        {isActive ? (
+                          <motion.div
+                            initial={{ opacity: 0, y: 8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 8 }}
+                            className={`mt-3 pt-3 border-t border-white/10 text-[11px] leading-relaxed font-medium ${
+                              kpi.accent === 'primary' ? 'text-primary-dynamic' : 'text-secondary-dynamic'
+                            }`}
+                          >
+                            <code className="text-[10px] bg-black/40 px-1.5 py-0.5 rounded font-mono">{kpi.code}</code>
+                            <p className="mt-1 text-foreground-muted text-[10px]">{kpi.detail}</p>
+                          </motion.div>
+                        ) : (
+                          <div className="mt-3 pt-2 flex items-center justify-between text-[10px] text-foreground-subtle border-t border-white/5">
+                            <span>0{index + 1} // {kpi.label}</span>
+                            <span className={`font-semibold group-hover:translate-x-0.5 transition-transform ${
+                              kpi.accent === 'primary' ? 'text-primary-dynamic' : 'text-secondary-dynamic'
+                            }`}>
+                              Inspect →
+                            </span>
+                          </div>
+                        )}
+                      </AnimatePresence>
+                    </GlowKpiCard>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
       </div>

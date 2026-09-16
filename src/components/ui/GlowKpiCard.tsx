@@ -181,7 +181,7 @@ export default function GlowKpiCard({
 
       {/* Main card container with four cut perimeter lines moving smoothly */}
       <div
-        className={`kpi-card-box relative h-full w-full ${borderWidth} ${borderRadius} overflow-hidden shadow-2xl transition-transform duration-300 border border-white/10`}
+        className={`kpi-card-box relative h-full w-full flex flex-col ${borderWidth} ${borderRadius} overflow-hidden shadow-2xl transition-transform duration-300 border border-white/10`}
       >
         {/* Four-Cut rotating perimeter conic mask (smooth 10s calm orbit around edges and corners) */}
         <div
@@ -193,7 +193,7 @@ export default function GlowKpiCard({
 
         {/* Inner Card Surface: Super AMOLED Dark with Glassmorphism */}
         <div
-          className={`kpi-card-surface relative h-full w-full ${borderRadius} transition-all duration-300 backdrop-blur-2xl overflow-hidden border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),0_12px_40px_rgba(0,0,0,0.85)] ${
+          className={`kpi-card-surface relative h-full w-full flex-1 flex flex-col justify-between ${borderRadius} transition-all duration-300 backdrop-blur-2xl overflow-hidden border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),0_12px_40px_rgba(0,0,0,0.85)] ${
             active
               ? 'ring-1 ring-white/15'
               : 'group-hover:border-white/15'

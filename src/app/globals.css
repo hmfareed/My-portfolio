@@ -435,8 +435,7 @@ body {
 [data-theme='pencil'] .kpi-conic-glow,
 [data-theme='pencil'] .kpi-conic-border,
 [data-theme='pencil'] [data-kpi-card] .animate-border-spin-calm,
-[data-theme='pencil'] [data-kpi-card] .animate-border-spin,
-[data-theme='pencil'] [data-kpi-card] [class*='blur-'] {
+[data-theme='pencil'] [data-kpi-card] .animate-border-spin {
   display: none !important;
 }
 
@@ -447,18 +446,28 @@ body {
   background-color: #FAF6EE !important;
   border: 2px solid rgba(35, 36, 42, 0.8) !important;
   box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.25) !important;
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
+  border-radius: 20px !important;
+  min-height: 200px !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 /* KPI Card Inner Surface: seamless sketchbook paper, no dark wash or glass blur */
 [data-theme='pencil'] .kpi-card-surface,
 [data-theme='pencil'] [data-kpi-card] .kpi-card-surface {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  min-height: 195px !important;
+  height: 100% !important;
   background: #FAF6EE !important;
   background-color: #FAF6EE !important;
   border: none !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
+  border-radius: 18px !important;
 }
 
 /* Hide glass specular sheen lines and glow particles inside KPI cards */
@@ -746,23 +755,47 @@ body {
   color: #FFFFFF !important;
 }
 
-/* Projects Active Filter Button */
-[data-theme='pencil'] #projects button.bg-primary-dynamic {
+/* ==========================================================================
+   PENCIL THEME: ALL TOGGLES & BUTTONS LIKE THE ONES ON THE HEADER
+   ========================================================================== */
+
+/* Active / Selected Buttons & Filter Toggles: Solid Black Pill with Pure White Text */
+[data-theme='pencil'] #projects button.bg-primary-dynamic,
+[data-theme='pencil'] #skills button.bg-primary-dynamic,
+[data-theme='pencil'] #skills button[class*='bg-accent-dynamic'],
+[data-theme='pencil'] #contact button.bg-primary-dynamic,
+[data-theme='pencil'] .navbar-contact-btn {
   background-color: #1A1B20 !important;
   color: #FFFFFF !important;
   border: 2px solid #1A1B20 !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.4) !important;
+  border-radius: 9999px !important;
+}
+
+[data-theme='pencil'] #projects button.bg-primary-dynamic *,
+[data-theme='pencil'] #skills button.bg-primary-dynamic *,
+[data-theme='pencil'] #skills button[class*='bg-accent-dynamic'] *,
+[data-theme='pencil'] #contact button.bg-primary-dynamic * {
+  color: #FFFFFF !important;
+}
+
+/* Inactive / Standard Buttons & Toggles: Pure White Pill with Black Graphite Text (Header Button Style) */
+[data-theme='pencil'] #projects button:not(.bg-primary-dynamic),
+[data-theme='pencil'] #skills div.rounded-full button:not(.bg-primary-dynamic):not([class*='bg-accent-dynamic']),
+[data-theme='pencil'] .experience-toggle-btn,
+[data-theme='pencil'] #contact div.grid button:not(.bg-primary-dynamic) {
+  background-color: #FFFFFF !important;
+  color: #1A1B20 !important;
+  border: 2px solid #232428 !important;
   box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.35) !important;
+  border-radius: 9999px !important;
 }
 
-/* TechStack Category Tabs: active black button + white text */
-[data-theme='pencil'] #skills button[class*='bg-accent-dynamic'] {
-  background-color: #1A1B20 !important;
-  color: #FFFFFF !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
-}
-
-[data-theme='pencil'] #skills div.rounded-full.bg-surface-100\/80 button {
-  color: #FFFFFF !important;
+[data-theme='pencil'] #projects button:not(.bg-primary-dynamic) *,
+[data-theme='pencil'] #skills div.rounded-full button:not(.bg-primary-dynamic) *,
+[data-theme='pencil'] .experience-toggle-btn *,
+[data-theme='pencil'] #contact div.grid button:not(.bg-primary-dynamic) * {
+  color: #1A1B20 !important;
 }
 
 /* ==========================================================================

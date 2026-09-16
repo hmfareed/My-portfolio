@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, MapPin, Calendar } from 'lucide-react';
+import { ChevronDown, MapPin, Calendar, Briefcase } from 'lucide-react';
 import { experienceData } from '@/data/experience';
+import GlowKpiCard, { cardColorMap } from '@/components/ui/GlowKpiCard';
 
 const springTransition = {
   type: 'spring',
@@ -34,7 +35,7 @@ export default function Experience() {
           className="space-y-2 pb-6 border-b border-border-subtle"
         >
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-foreground-subtle">
-            <span className="text-accent-dynamic font-bold">04 //</span>
+            <span className="text-primary-dynamic font-bold">04 //</span>
             <span>Career Trajectory</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-bold font-sans text-foreground tracking-tight">
@@ -45,10 +46,12 @@ export default function Experience() {
           </p>
         </motion.div>
 
-        {/* Timeline Items with Horizontal Kinetic Rail Slide */}
-        <div className="space-y-4">
+        {/* Timeline Items with Unified KPI Design */}
+        <div className="space-y-6">
           {experienceData.map((item, idx) => {
             const isExpanded = expandedIndices.includes(idx);
+            const accent = idx % 2 === 0 ? 'primary' : 'secondary';
+            const config = cardColorMap[accent] || cardColorMap.primary;
 
             return (
               <motion.div
@@ -58,92 +61,125 @@ export default function Experience() {
                 viewport={{ once: true, margin: '0px 0px -60px 0px', amount: 0.15 }}
                 transition={{ ...springTransition, delay: idx * 0.12 }}
                 style={{ transformOrigin: 'left center' }}
-                className={`rounded-2xl border transition-all duration-300 overflow-hidden backdrop-blur-md ${
-                  isExpanded
-                    ? 'bg-surface-200/80 border-accent-dynamic/40 shadow-xl'
-                    : 'bg-surface-100/60 border-border-subtle hover:border-border-strong'
-                }`}
+                className="h-full"
               >
-                {/* Header Row */}
-                <button
+                <GlowKpiCard
+                  accentColor={accent}
+                  borderRadius="rounded-2xl"
+                  borderWidth="p-[1.5px]"
+                  className="h-full w-full"
+                  innerClassName="p-6 sm:p-8 flex flex-col justify-between"
                   onClick={() => toggleExpand(idx)}
-                  className="w-full p-6 text-left flex flex-col sm:flex-row sm:items-center justify-between gap-4 select-none cursor-pointer"
                 >
-                  <div className="space-y-1">
-                    <div className="flex items-center gap-2 text-xs text-foreground-subtle font-medium">
-                      <Calendar className="w-3.5 h-3.5 text-accent-dynamic" />
-                      <span>{item.period}</span>
-                      <span>•</span>
-                      <span>{item.type}</span>
-                    </div>
-
-                    <h3 className="text-lg sm:text-xl font-bold font-sans text-foreground">
-                      {item.role}
-                    </h3>
-
-                    <div className="text-sm text-foreground-muted flex items-center gap-2 font-medium">
-                      <span className="text-foreground">{item.organization}</span>
-                      <span>—</span>
-                      <span className="flex items-center gap-1 text-foreground-subtle">
-                        <MapPin className="w-3 h-3 text-accent-dynamic" />
-                        {item.location}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3 self-end sm:self-center">
-                    <span className="text-xs text-accent-dynamic hidden sm:inline-block font-medium">
-                      {isExpanded ? 'Collapse' : 'Details'}
-                    </span>
-                    <div
-                      className={`w-8 h-8 rounded-full bg-surface-100 border border-border-subtle flex items-center justify-center transition-transform duration-300 ${
-                        isExpanded ? 'rotate-180 text-accent-dynamic' : 'text-foreground-muted'
-                      }`}
-                    >
-                      <ChevronDown className="w-4 h-4" />
-                    </div>
-                  </div>
-                </button>
-
-                {/* Collapsible Content */}
-                <AnimatePresence>
-                  {isExpanded && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="border-t border-border-subtle px-6 pb-6 pt-4 space-y-4 font-sans text-xs sm:text-sm text-foreground-muted"
-                    >
-                      <p className="leading-relaxed">{item.description}</p>
-
-                      <div className="space-y-2">
-                        <div className="text-xs uppercase font-semibold text-foreground tracking-wider">
-                          Key Deliverables
+                  <div className="space-y-5">
+                    {/* Top Header Row: Left Icon Box + Right Status Pill + Header-style Toggle */}
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <div
+                          className={`kpi-icon-box w-12 h-12 rounded-xl flex items-center justify-center border shadow-inner ${config.iconBg}`}
+                        >
+                          <Briefcase className="w-5 h-5" />
                         </div>
-                        <ul className="space-y-1.5 text-xs">
-                          {item.highlights.map((h, i) => (
-                            <li key={i} className="flex items-start gap-2">
-                              <span className="text-accent-dynamic mt-0.5 font-bold">•</span>
-                              <span className="leading-relaxed">{h}</span>
-                            </li>
-                          ))}
-                        </ul>
+                        <div className="flex flex-col">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-foreground-subtle flex items-center gap-1.5">
+                            <Calendar className="w-3 h-3 text-primary-dynamic" />
+                            <span>{item.period}</span>
+                          </span>
+                          <span className="text-xs font-semibold text-foreground-muted">
+                            {item.type}
+                          </span>
+                        </div>
                       </div>
 
-                      <div className="pt-2 flex flex-wrap gap-1.5 text-xs">
-                        {item.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-2.5 py-1 rounded-lg bg-surface-100 border border-border-subtle text-foreground-subtle font-medium"
-                          >
-                            {tech}
-                          </span>
-                        ))}
+                      {/* Header-Style Pill Toggle Button */}
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleExpand(idx);
+                        }}
+                        className="experience-toggle-btn flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-100 hover:bg-surface-50 border border-border-subtle hover:border-primary-dynamic text-xs font-sans font-medium text-foreground transition-all active:scale-95 shadow-sm"
+                      >
+                        <span
+                          className="w-2 h-2 rounded-full animate-pulse"
+                          style={{ backgroundColor: config.dotColor }}
+                        />
+                        <span>{isExpanded ? 'Collapse' : 'Details'}</span>
+                        <ChevronDown
+                          className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                            isExpanded ? 'rotate-180 text-primary-dynamic' : 'text-foreground-muted'
+                          }`}
+                        />
+                      </button>
+                    </div>
+
+                    {/* Role Title & Organization */}
+                    <div className="space-y-1">
+                      <h3 className="text-xl sm:text-2xl font-bold font-sans text-foreground tracking-tight">
+                        <span className={accent === 'primary' ? 'text-primary-dynamic' : 'text-secondary-dynamic'}>
+                          {item.role.split(' ')[0]}
+                        </span>{' '}
+                        <span>{item.role.split(' ').slice(1).join(' ')}</span>
+                      </h3>
+
+                      <div className="text-xs sm:text-sm text-foreground-muted flex items-center gap-2 font-medium">
+                        <span className="text-foreground font-semibold">{item.organization}</span>
+                        <span>—</span>
+                        <span className="flex items-center gap-1 text-foreground-subtle">
+                          <MapPin className="w-3 h-3 text-primary-dynamic" />
+                          {item.location}
+                        </span>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    </div>
+
+                    {/* Description Paragraph */}
+                    <p className="text-xs sm:text-sm text-foreground-muted leading-relaxed font-sans">
+                      {item.description}
+                    </p>
+
+                    {/* Collapsible Key Deliverables & Tech Stack */}
+                    <AnimatePresence>
+                      {isExpanded && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="space-y-4 pt-3 border-t border-white/5 font-sans text-xs sm:text-sm text-foreground-muted overflow-hidden"
+                        >
+                          <div className="space-y-2">
+                            <div className="text-xs uppercase font-bold text-foreground tracking-wider">
+                              Key Production Deliverables
+                            </div>
+                            <div className="space-y-2 text-xs">
+                              {item.highlights.map((h, i) => (
+                                <div key={i} className="flex items-start gap-2">
+                                  <span
+                                    className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0"
+                                    style={{ backgroundColor: config.dotColor }}
+                                  />
+                                  <span className="leading-relaxed">{h}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Tech Tags */}
+                          <div className="pt-2 flex flex-wrap gap-1.5 text-xs">
+                            {item.technologies.map((tech) => (
+                              <span
+                                key={tech}
+                                className="px-3 py-1 rounded-full bg-surface-100/90 border border-border-subtle text-foreground-subtle text-[11px] font-medium"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </GlowKpiCard>
               </motion.div>
             );
           })}

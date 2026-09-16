@@ -2,7 +2,8 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Move, Zap } from 'lucide-react';
+import { Move, Zap, Terminal } from 'lucide-react';
+import GlowKpiCard from '@/components/ui/GlowKpiCard';
 
 interface Particle {
   x: number;
@@ -161,38 +162,52 @@ export default function Playground() {
           </div>
         </motion.div>
 
-        {/* Unique Terminal Console Vertical Expansion Animation */}
+        {/* Terminal Console with Unified KPI Card Design */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 30 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, margin: '0px 0px -80px 0px', amount: 0.15 }}
           transition={{ type: 'spring', damping: 16, stiffness: 95 }}
-          className="relative w-full rounded-3xl bg-surface-200/80 backdrop-blur-xl border border-border-strong overflow-hidden p-6 sm:p-8 space-y-4 shadow-2xl"
+          className="w-full h-full"
         >
-          <div className="flex items-center justify-between text-xs text-foreground-subtle border-b border-border-subtle pb-4">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-accent-dynamic" />
-              <span className="text-foreground font-semibold">interactive_particles.canvas</span>
+          <GlowKpiCard
+            accentColor="secondary"
+            borderRadius="rounded-3xl"
+            borderWidth="p-[1.5px]"
+            className="w-full h-full"
+            innerClassName="p-6 sm:p-8 space-y-5 flex flex-col justify-between"
+          >
+            {/* Top Header Row: Left Script Pill + Right FPS Badge */}
+            <div className="flex items-center justify-between text-xs text-foreground-subtle border-b border-border-subtle pb-4">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-secondary-dynamic animate-pulse" />
+                <span className="text-foreground font-bold font-mono">interactive_particles.canvas</span>
+              </div>
+              <span className="kpi-status-pill inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-surface-100 border border-border-subtle text-foreground-subtle">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary-dynamic" />
+                <span>60 FPS Active Render</span>
+              </span>
             </div>
-            <span>60 FPS Active Render</span>
-          </div>
 
-          <div className="relative w-full h-[360px] rounded-2xl bg-surface-300/80 border border-border-subtle overflow-hidden">
-            <canvas ref={canvasRef} className="w-full h-full block" />
-            <div className="absolute top-4 left-4 pointer-events-none text-xs text-foreground-subtle bg-surface-200/90 px-3 py-1 rounded-lg border border-border-subtle backdrop-blur-sm">
-              Gravity: Dynamic • Repulsion Field: 120px
+            {/* Canvas Screen */}
+            <div className="relative w-full h-[360px] rounded-2xl bg-surface-300/80 border border-border-subtle overflow-hidden">
+              <canvas ref={canvasRef} className="w-full h-full block" />
+              <div className="absolute top-4 left-4 pointer-events-none text-xs text-foreground-subtle bg-surface-200/90 px-3 py-1 rounded-lg border border-border-subtle backdrop-blur-sm">
+                Gravity: Dynamic • Repulsion Field: 120px
+              </div>
             </div>
-          </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-2 text-xs text-foreground-muted">
-            <div className="flex items-center gap-2">
-              <Zap className="w-3.5 h-3.5 text-accent-dynamic" />
-              <span>HTML5 2D Canvas Context • Pure Procedural Math</span>
+            {/* Bottom Details Footer */}
+            <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-white/5 text-xs text-foreground-muted">
+              <div className="flex items-center gap-2">
+                <Zap className="w-3.5 h-3.5 text-secondary-dynamic" />
+                <span>HTML5 2D Canvas Context • Pure Procedural Math</span>
+              </div>
+              <div className="text-foreground-subtle">
+                Zero External Physics Libraries
+              </div>
             </div>
-            <div className="text-foreground-subtle">
-              Zero External Physics Libraries
-            </div>
-          </div>
+          </GlowKpiCard>
         </motion.div>
       </div>
     </section>
