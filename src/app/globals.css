@@ -326,18 +326,25 @@ body {
   border-color: rgba(35, 36, 42, 0.45) !important;
 }
 
-/* Wobbly hand-drawn pencil borders */
-[data-theme='pencil'] .rounded-2xl,
-[data-theme='pencil'] .rounded-3xl {
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
+/* Unfolded flat sketchbook card borders (no bent or pinched dog-eared folds) */
+[data-theme='pencil'] .rounded-2xl {
+  border-radius: 20px !important;
   border-width: 2px !important;
   border-style: solid !important;
-  border-color: rgba(35, 36, 42, 0.75) !important;
-  box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.35) !important;
+  border-color: rgba(35, 36, 42, 0.8) !important;
+  box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.25) !important;
+}
+
+[data-theme='pencil'] .rounded-3xl {
+  border-radius: 28px !important;
+  border-width: 2px !important;
+  border-style: solid !important;
+  border-color: rgba(35, 36, 42, 0.8) !important;
+  box-shadow: 4px 5px 0px rgba(35, 36, 42, 0.25) !important;
 }
 
 [data-theme='pencil'] .rounded-full {
-  border-radius: 255px 20px 225px 20px/20px 225px 20px 255px !important;
+  border-radius: 9999px !important;
 }
 
 [data-theme='pencil'] button,
@@ -611,7 +618,23 @@ body {
   color: #FFFFFF !important;
 }
 
-/* Navbar Right Buttons */
+/* Navbar Right Buttons: Pure black text on white buttons */
+[data-theme='pencil'] .theme-switcher-btn,
+[data-theme='pencil'] .theme-switcher-btn *,
+[data-theme='pencil'] .navbar-cmd-btn,
+[data-theme='pencil'] .navbar-cmd-btn *,
+[data-theme='pencil'] .navbar-cv-btn,
+[data-theme='pencil'] .navbar-cv-btn * {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .theme-switcher-btn svg,
+[data-theme='pencil'] .navbar-cmd-btn svg,
+[data-theme='pencil'] .navbar-cv-btn svg {
+  color: #1A1B20 !important;
+}
+
+/* Navbar Contact CTA (black button with pure white text) */
 [data-theme='pencil'] .navbar-contact-btn,
 [data-theme='pencil'] header a[href='#contact'] {
   background-color: #1A1B20 !important;
@@ -623,6 +646,16 @@ body {
 [data-theme='pencil'] .navbar-contact-btn *,
 [data-theme='pencil'] header a[href='#contact'] * {
   color: #FFFFFF !important;
+}
+
+/* About Section: Inspect Resume & Stack Button (pure black text on white button) */
+[data-theme='pencil'] .about-resume-btn,
+[data-theme='pencil'] .about-resume-btn * {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .about-resume-btn svg {
+  color: #1A1B20 !important;
 }
 
 /* Hero Availability Pill */
@@ -721,51 +754,151 @@ body {
   box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.35) !important;
 }
 
-/* Universal System Rule: ANY black or dark button/container in pencil theme uses pure white text */
+/* TechStack Category Tabs: active black button + white text */
+[data-theme='pencil'] #skills button[class*='bg-accent-dynamic'] {
+  background-color: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme='pencil'] #skills div.rounded-full.bg-surface-100\/80 button {
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   PENCIL THEME: SKILLS & CORE TECHNOLOGIES CARDS (WHITE TEXT ON BLACK PARTS)
+   ========================================================================== */
+[data-theme='pencil'] .tech-skill-card,
+[data-theme='pencil'] #skills .tech-skill-card {
+  background-color: #181A22 !important;
+  background: #181A22 !important;
+  border: 2px solid rgba(35, 36, 42, 0.8) !important;
+}
+
+[data-theme='pencil'] .tech-skill-card h4,
+[data-theme='pencil'] #skills .tech-skill-card h4 {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .tech-skill-card p,
+[data-theme='pencil'] #skills .tech-skill-card p,
+[data-theme='pencil'] .tech-skill-card .text-foreground-muted {
+  color: #E2E8F0 !important;
+}
+
+[data-theme='pencil'] .tech-skill-card .text-accent-dynamic,
+[data-theme='pencil'] #skills .tech-skill-card .text-accent-dynamic {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .tech-skill-card span.animate-pulse,
+[data-theme='pencil'] .tech-skill-card span[class*='rounded-full'][class*='bg-accent-dynamic'] {
+  background-color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .tech-skill-card svg {
+  color: #FFFFFF !important;
+}
+
+/* Level badge inside skill card: white sketch tag with black text */
+[data-theme='pencil'] .tech-skill-card span.rounded-full.bg-surface-100 {
+  background-color: #FFFFFF !important;
+  color: #1A1B20 !important;
+  border: 1.5px solid rgba(35, 36, 42, 0.6) !important;
+}
+
+[data-theme='pencil'] .tech-skill-card span.rounded-full.bg-surface-100 * {
+  color: #1A1B20 !important;
+}
+
+/* ==========================================================================
+   PENCIL THEME: ARCHITECTURE STRIP (WHITE TEXT ON BLACK CONTAINER)
+   ========================================================================== */
+[data-theme='pencil'] .tech-arch-strip,
+[data-theme='pencil'] #skills .tech-arch-strip {
+  background-color: #181A22 !important;
+  background: #181A22 !important;
+  border: 2px solid rgba(35, 36, 42, 0.8) !important;
+}
+
+[data-theme='pencil'] .tech-arch-strip .text-foreground,
+[data-theme='pencil'] .tech-arch-strip div.flex.items-center span:last-child {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .tech-arch-strip p,
+[data-theme='pencil'] .tech-arch-strip .text-foreground-muted {
+  color: #E2E8F0 !important;
+}
+
+/* ==========================================================================
+   FROM TECHSTACK DOWN TO FOOTER: ALL DARK CARDS HAVE WHITE TEXT
+   ========================================================================== */
+
+/* Playground section card */
+[data-theme='pencil'] #playground [class*='bg-surface-200'],
+[data-theme='pencil'] #playground [class*='bg-surface-200'] * {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] #playground [class*='bg-surface-200'] p,
+[data-theme='pencil'] #playground [class*='bg-surface-200'] .text-foreground-muted,
+[data-theme='pencil'] #playground [class*='bg-surface-200'] .text-foreground-subtle {
+  color: #E2E8F0 !important;
+}
+
+/* Currently Building card */
+[data-theme='pencil'] .currently-building-card,
+[data-theme='pencil'] .currently-building-card * {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .currently-building-card p,
+[data-theme='pencil'] .currently-building-card .text-foreground-muted,
+[data-theme='pencil'] .currently-building-card .text-foreground-subtle {
+  color: #E2E8F0 !important;
+}
+
+[data-theme='pencil'] .currently-building-card button {
+  background-color: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Contact Inquiry card */
+[data-theme='pencil'] .contact-inquiry-card,
+[data-theme='pencil'] .contact-inquiry-card h3,
+[data-theme='pencil'] .contact-inquiry-card label,
+[data-theme='pencil'] .contact-inquiry-card input {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .contact-inquiry-card p,
+[data-theme='pencil'] .contact-inquiry-card .text-foreground-muted,
+[data-theme='pencil'] .contact-inquiry-card .text-foreground-subtle {
+  color: #E2E8F0 !important;
+}
+
+/* Footer & Built in Public Card */
+[data-theme='pencil'] footer,
+[data-theme='pencil'] footer * {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] footer p,
+[data-theme='pencil'] footer .text-foreground-muted,
+[data-theme='pencil'] footer .text-foreground-subtle {
+  color: #CBD5E1 !important;
+}
+
+/* General Rule for any other black button */
 [data-theme='pencil'] button[class*='bg-black'],
-[data-theme='pencil'] button[class*='bg-surface-100'],
-[data-theme='pencil'] button[class*='bg-surface-200'],
-[data-theme='pencil'] button[class*='bg-surface-300'],
-[data-theme='pencil'] a[class*='bg-black'],
-[data-theme='pencil'] a[class*='bg-surface-100'],
-[data-theme='pencil'] a[class*='bg-surface-200'],
-[data-theme='pencil'] a[class*='bg-surface-300'],
-[data-theme='pencil'] [class*='bg-surface-100\/90'],
-[data-theme='pencil'] [class*='bg-surface-100\/95'],
-[data-theme='pencil'] [class*='bg-surface-100\/80'],
-[data-theme='pencil'] [class*='bg-surface-200\/70'],
-[data-theme='pencil'] [class*='bg-surface-300\/90'],
-[data-theme='pencil'] [class*='bg-surface-300\/60'] button,
-[data-theme='pencil'] [class*='bg-accent-dynamic']:is(button, a),
-[data-theme='pencil'] [class*='bg-primary-dynamic']:is(button, a) {
+[data-theme='pencil'] a[class*='bg-black'] {
   color: #FFFFFF !important;
 }
 
 [data-theme='pencil'] button[class*='bg-black'] *,
-[data-theme='pencil'] button[class*='bg-surface-100'] *,
-[data-theme='pencil'] button[class*='bg-surface-200'] *,
-[data-theme='pencil'] button[class*='bg-surface-300'] *,
-[data-theme='pencil'] a[class*='bg-black'] *,
-[data-theme='pencil'] a[class*='bg-surface-100'] *,
-[data-theme='pencil'] a[class*='bg-surface-200'] *,
-[data-theme='pencil'] a[class*='bg-surface-300'] *,
-[data-theme='pencil'] [class*='bg-surface-100\/90'] *,
-[data-theme='pencil'] [class*='bg-surface-100\/95'] *,
-[data-theme='pencil'] [class*='bg-surface-100\/80'] *,
-[data-theme='pencil'] [class*='bg-surface-200\/70'] *,
-[data-theme='pencil'] [class*='bg-surface-300\/90'] *,
-[data-theme='pencil'] [class*='bg-surface-300\/60'] button *,
-[data-theme='pencil'] [class*='bg-accent-dynamic']:is(button, a) *,
-[data-theme='pencil'] [class*='bg-primary-dynamic']:is(button, a) * {
-  color: #FFFFFF !important;
-}
-
-[data-theme='pencil'] button[class*='bg-black'] svg,
-[data-theme='pencil'] button[class*='bg-surface-'] svg,
-[data-theme='pencil'] a[class*='bg-black'] svg,
-[data-theme='pencil'] a[class*='bg-surface-'] svg,
-[data-theme='pencil'] [class*='bg-surface-100\/90'] svg,
-[data-theme='pencil'] [class*='bg-surface-100\/95'] svg {
+[data-theme='pencil'] a[class*='bg-black'] * {
   color: #FFFFFF !important;
 }
 

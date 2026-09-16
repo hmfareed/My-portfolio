@@ -24,7 +24,7 @@ export default function CurrentlyBuilding({ onOpenCaseStudy }: CurrentlyBuilding
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: '0px 0px -80px 0px', amount: 0.15 }}
           transition={{ type: 'spring', damping: 18, stiffness: 90, mass: 0.9 }}
-          className="rounded-3xl bg-surface-200/75 backdrop-blur-xl border border-border-strong p-8 sm:p-12 relative overflow-hidden shadow-2xl"
+          className="currently-building-card rounded-3xl bg-surface-200/75 backdrop-blur-xl border border-border-strong p-8 sm:p-12 relative overflow-hidden shadow-2xl"
         >
           {/* Subtle glow circle */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-accent-dynamic opacity-[0.06] blur-[80px] pointer-events-none rounded-full" />

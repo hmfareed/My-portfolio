@@ -110,7 +110,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: '0px 0px -80px 0px', amount: 0.15 }}
           transition={{ type: 'spring', damping: 16, stiffness: 100, delay: 0.2 }}
-          className="max-w-2xl mx-auto rounded-3xl bg-surface-200/80 backdrop-blur-xl border border-border-strong p-6 sm:p-10 shadow-2xl"
+          className="contact-inquiry-card max-w-2xl mx-auto rounded-3xl bg-surface-200/80 backdrop-blur-xl border border-border-strong p-6 sm:p-10 shadow-2xl"
         >
           {submitted ? (
             <motion.div

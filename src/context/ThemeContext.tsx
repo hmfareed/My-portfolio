@@ -29,7 +29,7 @@ export const THEMES: ThemeOption[] = [
     id: 'pencil',
     name: 'Pencil Sketch',
     accentColor: '#1A1B20',
-    secondaryColor: '#525560',
+    secondaryColor: 'rgba(255, 255, 255, 1)',
     description: 'Hand-drawn sketchbook on textured paper with graphite typography, sketch borders, and monochromatic artwork',
     category: 'Special World',
     iconName: 'pencil',

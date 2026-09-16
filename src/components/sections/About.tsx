@@ -179,7 +179,7 @@ export default function About({ onOpenResume }: AboutProps) {
               <button
                 onClick={onOpenResume}
                 data-cursor="VIEW CV"
-                className="flex items-center gap-2 px-6 py-3.5 rounded-full bg-surface-100 hover:bg-surface-50 border border-black/60 text-foreground text-xs font-sans font-bold hover:border-accent-dynamic transition-all active:scale-95 shadow-md"
+                className="about-resume-btn flex items-center gap-2 px-6 py-3.5 rounded-full bg-surface-100 hover:bg-surface-50 border border-black/60 text-foreground text-xs font-sans font-bold hover:border-accent-dynamic transition-all active:scale-95 shadow-md"
               >
                 <FileText className="w-4 h-4 text-accent-dynamic" />
                 <span>Inspect Resume & Stack</span>

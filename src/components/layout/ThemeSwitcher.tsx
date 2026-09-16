@@ -44,7 +44,7 @@ export default function ThemeSwitcher() {
     <div ref={dropdownRef} className="relative font-sans">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-100 hover:bg-surface-50 border border-border-subtle hover:border-accent-dynamic text-xs font-sans text-foreground transition-all active:scale-95"
+        className="theme-switcher-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-100 hover:bg-surface-50 border border-border-subtle hover:border-accent-dynamic text-xs font-sans text-foreground transition-all active:scale-95"
         title="Switch Portfolio Theme"
       >
         <span

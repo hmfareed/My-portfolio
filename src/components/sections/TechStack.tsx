@@ -68,7 +68,7 @@ export default function TechStack() {
                 viewport={{ once: true, margin: '0px 0px -60px 0px', amount: 0.15 }}
                 transition={{ ...bloomSpring, delay: (index % 3) * 0.08 }}
                 whileHover={{ y: -6, scale: 1.03 }}
-                className="p-6 rounded-2xl bg-surface-200/75 backdrop-blur-md border border-border-subtle hover:border-accent-dynamic/40 transition-colors space-y-3 group cursor-pointer shadow-lg"
+                className="tech-skill-card p-6 rounded-2xl bg-surface-200/75 backdrop-blur-md border border-border-subtle hover:border-accent-dynamic/40 transition-colors space-y-3 group cursor-pointer shadow-lg"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -106,7 +106,7 @@ export default function TechStack() {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, margin: '0px 0px -80px 0px', amount: 0.2 }}
           transition={{ type: 'spring', damping: 15, stiffness: 100 }}
-          className="p-8 rounded-3xl bg-surface-200/80 backdrop-blur-xl border border-border-strong grid grid-cols-1 md:grid-cols-3 gap-6 text-xs shadow-2xl"
+          className="tech-arch-strip p-8 rounded-3xl bg-surface-200/80 backdrop-blur-xl border border-border-strong grid grid-cols-1 md:grid-cols-3 gap-6 text-xs shadow-2xl"
         >
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-foreground font-bold text-sm">

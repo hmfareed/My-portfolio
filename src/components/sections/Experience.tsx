@@ -13,10 +13,13 @@ const springTransition = {
 };
 
 export default function Experience() {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  // All experience milestone cards unfolded by default
+  const [expandedIndices, setExpandedIndices] = useState<number[]>([0, 1, 2, 3]);
 
   const toggleExpand = (idx: number) => {
-    setExpandedIndex(expandedIndex === idx ? null : idx);
+    setExpandedIndices((prev) =>
+      prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]
+    );
   };
 
   return (
@@ -45,7 +48,7 @@ export default function Experience() {
         {/* Timeline Items with Horizontal Kinetic Rail Slide */}
         <div className="space-y-4">
           {experienceData.map((item, idx) => {
-            const isExpanded = expandedIndex === idx;
+            const isExpanded = expandedIndices.includes(idx);
 
             return (
               <motion.div
