@@ -7,10 +7,50 @@ import { ArrowDownRight, ArrowUpRight, Code2, Database, Gauge, Layers3, Terminal
 import GlowKpiCard from '@/components/ui/GlowKpiCard';
 
 const kpis = [
-  { label: 'Build status', value: '80%', code: 'northmarket.progress = 0.80', detail: 'NorthMarket is actively being shaped into a focused local-commerce platform.', icon: Layers3 },
-  { label: 'Core stack', value: 'MERN', code: 'stack = ["Next", "Node", "Mongo"]', detail: 'Comfortable taking a product from interface and API design to deployment.', icon: Code2 },
-  { label: 'Commerce', value: 'MoMo', code: 'payments.connect("Paystack")', detail: 'Built for Ghanaian checkout flows and practical payment integrations.', icon: Database },
-  { label: 'Performance', value: 'Fast', code: 'target.lcp < 2.2s', detail: 'Thoughtful loading states and responsive, accessible interfaces come first.', icon: Gauge },
+  {
+    label: 'Build status',
+    value: '80%',
+    subtitle: 'LOCAL COMMERCE PWA',
+    badge: 'Now in Beta',
+    bullets: ['Next.js 14 App Router', 'Local-Commerce PWA'],
+    code: 'northmarket.progress = 0.80',
+    detail: 'NorthMarket is actively being shaped into a focused local-commerce platform.',
+    icon: Layers3,
+    accent: 'amber' as const,
+  },
+  {
+    label: 'Core stack',
+    value: 'MERN',
+    subtitle: 'CORE ARCHITECTURE',
+    badge: 'Full-Stack Native',
+    bullets: ['Next.js + Node Runtime', 'MongoDB 2dsphere'],
+    code: 'stack = ["Next", "Node", "Mongo"]',
+    detail: 'Comfortable taking a product from interface and API design to deployment.',
+    icon: Code2,
+    accent: 'teal' as const,
+  },
+  {
+    label: 'Commerce',
+    value: 'MoMo',
+    subtitle: 'PAYMENTS & LOGISTICS',
+    badge: 'Paystack Live',
+    bullets: ['MTN & Telecel Webhooks', 'Automated Receipts'],
+    code: 'payments.connect("Paystack")',
+    detail: 'Built for Ghanaian checkout flows and practical payment integrations.',
+    icon: Database,
+    accent: 'violet' as const,
+  },
+  {
+    label: 'Performance',
+    value: 'Fast',
+    subtitle: 'RUNTIME EFFICIENCY',
+    badge: 'Target LCP < 2.2s',
+    bullets: ['Optimized Bundles', '60 FPS Transitions'],
+    code: 'target.lcp < 2.2s',
+    detail: 'Thoughtful loading states and responsive, accessible interfaces come first.',
+    icon: Gauge,
+    accent: 'lime' as const,
+  },
 ];
 
 const iosSpring = {
@@ -236,45 +276,65 @@ export default function Hero() {
                 >
                   <GlowKpiCard
                     active={isActive}
+                    accentColor={kpi.accent}
                     onClick={() => setActiveKpi(isActive ? null : index)}
                     borderRadius="rounded-2xl"
                     borderWidth="p-[1.5px]"
                     className="h-full"
-                    innerClassName="p-5 min-h-[148px] flex flex-col justify-between"
+                    innerClassName="p-5 min-h-[195px] flex flex-col justify-between"
                     dataCursor="INSPECT"
                   >
-                    <div>
-                      <div className="mb-4 flex items-start justify-between">
-                        <Icon className="h-4 w-4 text-accent-dynamic" />
-                        <span className="text-[11px] font-bold uppercase tracking-widest text-foreground-subtle">
-                          0{index + 1}
+                    <div className="space-y-2.5">
+                      {/* Top Header Row: Left Icon Box + Right Status Badge */}
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-white/5 border border-white/10">
+                          <Icon className="h-4 w-4 text-accent-dynamic" />
+                        </div>
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-white/5 border border-white/10 text-foreground-subtle">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent-dynamic animate-pulse" />
+                          <span>{kpi.badge}</span>
                         </span>
                       </div>
-                      <div className="text-xs font-medium text-foreground-subtle">{kpi.label}</div>
-                      <div className="mt-1 text-2xl font-black tracking-tight text-foreground font-sans">
-                        {kpi.value}
+
+                      {/* Value & Subtitle */}
+                      <div>
+                        <div className="text-2xl sm:text-3xl font-black tracking-tight text-foreground font-sans">
+                          {kpi.value}
+                        </div>
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-accent-dynamic">
+                          {kpi.subtitle}
+                        </div>
+                      </div>
+
+                      {/* Feature Bullets with colored dots */}
+                      <div className="space-y-1 text-[11px] text-foreground-muted font-sans">
+                        {kpi.bullets.map((b, bi) => (
+                          <div key={bi} className="flex items-center gap-1.5">
+                            <span className="w-1 h-1 rounded-full bg-accent-dynamic shrink-0" />
+                            <span className="truncate">{b}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
+
                     <AnimatePresence mode="wait">
                       {isActive ? (
-                        <motion.p
+                        <motion.div
                           initial={{ opacity: 0, y: 8 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 8 }}
-                          className="mt-3 text-xs leading-relaxed text-accent-dynamic font-medium"
+                          className="mt-3 pt-3 border-t border-white/10 text-[11px] leading-relaxed text-accent-dynamic font-medium"
                         >
-                          {kpi.code}
-                          <br />
-                          <span className="text-foreground-muted">{kpi.detail}</span>
-                        </motion.p>
+                          <code className="text-[10px] bg-black/40 px-1.5 py-0.5 rounded font-mono">{kpi.code}</code>
+                          <p className="mt-1 text-foreground-muted text-[10px]">{kpi.detail}</p>
+                        </motion.div>
                       ) : (
-                        <motion.p
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          className="mt-3 text-xs text-foreground-muted group-hover:text-accent-dynamic transition-colors font-medium"
-                        >
-                          Click to inspect ↗
-                        </motion.p>
+                        <div className="mt-3 pt-2 flex items-center justify-between text-[10px] text-foreground-subtle border-t border-white/5">
+                          <span>0{index + 1} // {kpi.label}</span>
+                          <span className="text-accent-dynamic font-semibold group-hover:translate-x-0.5 transition-transform">
+                            Inspect →
+                          </span>
+                        </div>
                       )}
                     </AnimatePresence>
                   </GlowKpiCard>

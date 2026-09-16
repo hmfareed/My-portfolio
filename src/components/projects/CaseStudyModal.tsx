@@ -197,39 +197,61 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
             </div>
           </div>
 
-          {/* Footer Action Links */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-border-subtle">
-            <div className="flex items-center gap-3">
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-100 hover:bg-surface-50 border border-border-subtle text-xs text-foreground hover:border-accent-dynamic transition-colors font-medium"
-                >
-                  <Github className="w-3.5 h-3.5" />
-                  <span>Inspect Source</span>
-                </a>
-              )}
-              {project.liveUrl && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-accent-dynamic text-black text-xs font-bold hover:opacity-90 transition-opacity"
-                >
-                  <span>Launch Project</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              )}
+          {/* End-of-Page Launch & Links Hub */}
+          <div className="rounded-2xl p-6 sm:p-8 bg-surface-100/90 border border-border-strong space-y-5 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-accent-dynamic opacity-10 blur-[80px] pointer-events-none rounded-full" />
+
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="space-y-1">
+                <span className="text-[11px] font-bold uppercase tracking-widest text-accent-dynamic">
+                  Ready to inspect in production?
+                </span>
+                <h3 className="text-xl sm:text-2xl font-black font-sans text-foreground">
+                  Launch & Explore {project.title}
+                </h3>
+                {project.liveUrl && (
+                  <p className="text-xs text-foreground-muted font-mono">
+                    {project.liveUrl}
+                  </p>
+                )}
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-accent-dynamic text-black font-black text-xs sm:text-sm tracking-wide transition-all hover:scale-105 active:scale-95 shadow-[0_0_24px_var(--color-accent-glow)]"
+                  >
+                    <span>Visit Live Website</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
+
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full bg-surface-200 hover:bg-surface-50 border border-border-subtle text-foreground text-xs sm:text-sm font-semibold transition-all hover:scale-105 active:scale-95"
+                  >
+                    <Github className="w-4 h-4" />
+                    <span>View Repository</span>
+                  </a>
+                )}
+              </div>
             </div>
 
-            <button
-              onClick={onClose}
-              className="text-xs text-foreground-muted hover:text-foreground font-medium"
-            >
-              Close Window
-            </button>
+            <div className="flex items-center justify-between pt-4 border-t border-white/10 text-xs text-foreground-subtle">
+              <span>{project.category} • Architecture Completed {project.year}</span>
+              <button
+                onClick={onClose}
+                className="hover:text-foreground font-medium underline underline-offset-4"
+              >
+                Close Case Study
+              </button>
+            </div>
           </div>
         </motion.div>
       </div>

@@ -125,26 +125,38 @@ export default function About({ onOpenResume }: AboutProps) {
               </p>
             </div>
 
-            {/* Quick Metrics Cards with Glowing Colors */}
+            {/* Quick Metrics Cards with Reference Styling */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs pt-4 font-sans">
-              <GlowKpiCard borderRadius="rounded-xl" borderWidth="p-[1.5px]" className="h-full">
-                <div className="p-4 rounded-[inherit] bg-surface-100/90 space-y-1 h-full">
-                  <div className="text-2xl font-bold font-sans text-accent-dynamic">6+</div>
-                  <div className="text-foreground-subtle text-xs font-medium">Production Apps Delivered</div>
+              <GlowKpiCard accentColor="amber" borderRadius="rounded-2xl" borderWidth="p-[1.5px]" className="h-full">
+                <div className="p-4 rounded-[inherit] bg-surface-100/90 space-y-1.5 h-full">
+                  <div className="flex items-center justify-between text-foreground-subtle">
+                    <span className="text-2xl font-black font-sans text-[#F5B942]">6+</span>
+                    <span className="w-2 h-2 rounded-full bg-[#F5B942] animate-pulse" />
+                  </div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#F5B942]">PRODUCTION APPS</div>
+                  <div className="text-foreground-muted text-xs">Delivered to Clients</div>
                 </div>
               </GlowKpiCard>
 
-              <GlowKpiCard borderRadius="rounded-xl" borderWidth="p-[1.5px]" className="h-full">
-                <div className="p-4 rounded-[inherit] bg-surface-100/90 space-y-1 h-full">
-                  <div className="text-2xl font-bold font-sans text-accent-dynamic">100%</div>
-                  <div className="text-foreground-subtle text-xs font-medium">TypeScript Rigor</div>
+              <GlowKpiCard accentColor="teal" borderRadius="rounded-2xl" borderWidth="p-[1.5px]" className="h-full">
+                <div className="p-4 rounded-[inherit] bg-surface-100/90 space-y-1.5 h-full">
+                  <div className="flex items-center justify-between text-foreground-subtle">
+                    <span className="text-2xl font-black font-sans text-[#00E5FF]">100%</span>
+                    <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse" />
+                  </div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#00E5FF]">TYPESCRIPT RIGOR</div>
+                  <div className="text-foreground-muted text-xs">Zero Any Tolerance</div>
                 </div>
               </GlowKpiCard>
 
-              <GlowKpiCard borderRadius="rounded-xl" borderWidth="p-[1.5px]" className="col-span-2 sm:col-span-1 h-full">
-                <div className="p-4 rounded-[inherit] bg-surface-100/90 space-y-1 h-full">
-                  <div className="text-2xl font-bold font-sans text-accent-dynamic">GMT</div>
-                  <div className="text-foreground-subtle text-xs font-medium">Remote UTC/GMT Native</div>
+              <GlowKpiCard accentColor="violet" borderRadius="rounded-2xl" borderWidth="p-[1.5px]" className="col-span-2 sm:col-span-1 h-full">
+                <div className="p-4 rounded-[inherit] bg-surface-100/90 space-y-1.5 h-full">
+                  <div className="flex items-center justify-between text-foreground-subtle">
+                    <span className="text-2xl font-black font-sans text-[#A78BFA]">GMT</span>
+                    <span className="w-2 h-2 rounded-full bg-[#A78BFA] animate-pulse" />
+                  </div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#A78BFA]">GLOBAL REMOTE</div>
+                  <div className="text-foreground-muted text-xs">Tamale Base & UTC Sync</div>
                 </div>
               </GlowKpiCard>
             </div>

@@ -2,12 +2,19 @@ export interface Project {
   id: string;
   slug: string;
   title: string;
+  subtitle: string;
   tagline: string;
   category: 'E-Commerce' | 'Systems' | 'Web' | 'All';
   description: string;
   coverImage: string;
   year: number;
   featured: boolean;
+  accentColor: 'amber' | 'teal' | 'violet' | 'rose' | 'lime' | 'sky';
+  status: {
+    text: string;
+    state: 'active' | 'production' | 'beta' | 'live';
+  };
+  bulletPoints: string[];
   technologies: string[];
   metrics: { label: string; value: string }[];
   liveUrl?: string;
@@ -31,6 +38,7 @@ export const projectsData: Project[] = [
     id: '01',
     slug: 'northmarket',
     title: 'NorthMarket',
+    subtitle: 'LOCAL COMMERCE INFRASTRUCTURE',
     tagline: 'Local commerce infrastructure engineered for Northern Ghana.',
     category: 'Systems',
     description:
@@ -38,6 +46,19 @@ export const projectsData: Project[] = [
     coverImage: '/images/africart.png',
     year: 2026,
     featured: true,
+    accentColor: 'amber',
+    status: {
+      text: 'Now in Beta Testing',
+      state: 'beta',
+    },
+    bulletPoints: [
+      'Instant MoMo Webhooks',
+      'Sub-500ms Geospatial',
+      'Multi-Vendor Architecture',
+      'Offline-First 3G PWA',
+      'Automated Rider Dispatch',
+      'Zero Settlement Delay',
+    ],
     technologies: ['Next.js 14', 'TypeScript', 'MongoDB', 'Paystack MoMo', 'Tailwind CSS', 'Framer Motion', 'Zustand'],
     metrics: [
       { label: 'Sub-second', value: '450ms Latency' },
@@ -90,6 +111,7 @@ export const projectsData: Project[] = [
     id: '02',
     slug: 'africart',
     title: 'AfriCart',
+    subtitle: 'MULTI-TENANT COMMERCE ENGINE',
     tagline: 'Multi-vendor digital retail engine with integrated POS and inventory sync.',
     category: 'E-Commerce',
     description:
@@ -97,6 +119,19 @@ export const projectsData: Project[] = [
     coverImage: '/images/africart.png',
     year: 2025,
     featured: true,
+    accentColor: 'teal',
+    status: {
+      text: 'Live Production',
+      state: 'production',
+    },
+    bulletPoints: [
+      'Dual-Channel Inventory POS',
+      '0% Stock Drift Across Stores',
+      'Instant Mobile Money Checkout',
+      'Transactional Row Locking',
+      'Row-Level Security Multitenant',
+      'Sub-Second Barcode Sync',
+    ],
     technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Prisma'],
     metrics: [
       { label: 'Stock Sync', value: '0% Drift' },
@@ -144,6 +179,7 @@ export const projectsData: Project[] = [
     id: '03',
     slug: 'hanaraschools',
     title: 'Hanara School Management',
+    subtitle: 'CONTINUOUS ASSESSMENT SYSTEM',
     tagline: 'Enterprise school operations, grading, and administrative ledger platform.',
     category: 'Systems',
     description:
@@ -151,6 +187,19 @@ export const projectsData: Project[] = [
     coverImage: '/images/hanaraschools.png',
     year: 2025,
     featured: true,
+    accentColor: 'violet',
+    status: {
+      text: 'Institutional Rollout',
+      state: 'production',
+    },
+    bulletPoints: [
+      'Automated Continuous Assessment',
+      'Batch PDF Report Compiler',
+      'Granular Role-Based Access',
+      'Real-Time Academic Transcripts',
+      '100% Deterministic GPA Rules',
+      'Sub-Second Student Record Queries',
+    ],
     technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'PDFKit'],
     metrics: [
       { label: 'Reporting Speed', value: '85% Faster' },
@@ -198,6 +247,7 @@ export const projectsData: Project[] = [
     id: '04',
     slug: 'kayspacks',
     title: "Kay's Packs",
+    subtitle: 'CUSTOM PACKAGING PLATFORM',
     tagline: 'Bespoke packaging and luxury container e-commerce experience.',
     category: 'E-Commerce',
     description:
@@ -205,6 +255,19 @@ export const projectsData: Project[] = [
     coverImage: '/images/kayspacks.png',
     year: 2025,
     featured: false,
+    accentColor: 'rose',
+    status: {
+      text: 'Active Commerce',
+      state: 'active',
+    },
+    bulletPoints: [
+      'Parametric Volume Calculator',
+      'Dynamic Bulk Discount Tiers',
+      'Interactive 3D Container Specs',
+      'Automated Instant Quotations',
+      'Frictionless Direct Checkout',
+      '60 FPS Reactive Matrix',
+    ],
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Paystack'],
     metrics: [
       { label: 'Volume Tiering', value: 'Dynamic' },
@@ -240,6 +303,7 @@ export const projectsData: Project[] = [
     id: '05',
     slug: 'slaybyhumu',
     title: 'Slay by Humu',
+    subtitle: 'SALON RESERVATION ENGINE',
     tagline: 'Luxury salon appointment scheduling & stylist booking system.',
     category: 'Web',
     description:
@@ -247,6 +311,19 @@ export const projectsData: Project[] = [
     coverImage: '/images/slaybyhumu.png',
     year: 2024,
     featured: false,
+    accentColor: 'lime',
+    status: {
+      text: 'Live Service',
+      state: 'production',
+    },
+    bulletPoints: [
+      'Dynamic Time Slot Booking',
+      'Automated WhatsApp & SMS Alerts',
+      '70% No-Show Reduction Rate',
+      'Upfront Mobile Money Deposit',
+      'Stylist Schedule Buffer Matrix',
+      '< 90s Client Booking Flow',
+    ],
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Supabase'],
     metrics: [
       { label: 'No-Show Rate', value: 'Reduced 70%' },
@@ -282,6 +359,7 @@ export const projectsData: Project[] = [
     id: '06',
     slug: 'novelverse',
     title: 'NovelVerse',
+    subtitle: 'OFFLINE PUBLISHING HUB',
     tagline: 'Distraction-free episodic fiction reading & publishing platform.',
     category: 'Systems',
     description:
@@ -289,6 +367,19 @@ export const projectsData: Project[] = [
     coverImage: '/images/hanaraschools.png',
     year: 2024,
     featured: false,
+    accentColor: 'sky',
+    status: {
+      text: 'Web App Live',
+      state: 'active',
+    },
+    bulletPoints: [
+      'IndexedDB Offline Chapter Caching',
+      'Distraction-Free Typography Engine',
+      'Real-Time Community Discussions',
+      'OLED / Sepia / Dark Reading Themes',
+      'Zero Latency Gesture Navigation',
+      'Cross-Device Reading Sync',
+    ],
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'IndexedDB'],
     metrics: [
       { label: 'Reading Speed', value: 'Zero Latency' },
