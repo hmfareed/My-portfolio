@@ -191,25 +191,20 @@ export default function GlowKpiCard({
           }}
         />
 
-        {/* Inner Card Surface: Super AMOLED Dark with Glassmorphism */}
+        {/* Inner Card Surface: Glassmorphic surface styled via theme classes */}
         <div
           className={`kpi-card-surface relative h-full w-full flex-1 flex flex-col justify-between ${borderRadius} transition-all duration-300 backdrop-blur-2xl overflow-hidden border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),0_12px_40px_rgba(0,0,0,0.85)] ${
             active
               ? 'ring-1 ring-white/15'
               : 'group-hover:border-white/15'
           } ${innerClassName}`}
-          style={{
-            background:
-              'linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(0, 0, 0, 0.75) 45%, rgba(0, 0, 0, 0.98) 100%)',
-            backgroundColor: '#000000',
-          }}
         >
           {/* Subtle top specular glass sheen line */}
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none z-20" />
+          <div className="kpi-glass-sheen absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none z-20" />
 
-          {/* Calm luminous particles in card background (Primary & Secondary only) */}
+          {/* Calm luminous particles in card background (Primary & Secondary only, suppressed in Pencil theme) */}
           {showParticles && (
-            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 select-none">
+            <div className="kpi-particles-layer absolute inset-0 overflow-hidden pointer-events-none z-0 select-none">
               <span
                 className="absolute top-[20%] right-[26%] w-1.5 h-1.5 rounded-full opacity-45 animate-pulse"
                 style={{ backgroundColor: '#00E5FF' }}

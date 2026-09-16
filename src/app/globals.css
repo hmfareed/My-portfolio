@@ -505,6 +505,14 @@ body {
 }
 
 /* ==========================================================================
+   DEFAULT & AMOLED KPI CARD SURFACE BASE (Super AMOLED Glassmorphic)
+   ========================================================================== */
+.kpi-card-surface {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(0, 0, 0, 0.75) 45%, rgba(0, 0, 0, 0.98) 100%);
+  background-color: #000000;
+}
+
+/* ==========================================================================
    PENCIL THEME: AUTHENTIC SKETCHBOOK KPI CARDS (NO DARK BACKGROUNDS)
    Light sketchbook paper, hand-drawn wobbly graphite borders & graphite typography
    ========================================================================== */
@@ -550,6 +558,10 @@ body {
 }
 
 /* Hide glass specular sheen lines and glow particles inside KPI cards */
+[data-theme='pencil'] .kpi-particles-layer,
+[data-theme='pencil'] .kpi-glass-sheen,
+[data-theme='pencil'] [data-kpi-card] .kpi-particles-layer,
+[data-theme='pencil'] [data-kpi-card] .kpi-glass-sheen,
 [data-theme='pencil'] [data-kpi-card] .kpi-card-surface > div.pointer-events-none {
   display: none !important;
 }
@@ -670,40 +682,50 @@ body {
    Ensures crystal-clear readability and contrast for all dark elements
    ========================================================================== */
 
+/* Header / Navbar in Pencil Theme: Authentic sketchbook paper bar with graphite typography */
+[data-theme='pencil'] header.fixed {
+  background: rgba(250, 246, 238, 0.95) !important;
+  background-color: rgba(250, 246, 238, 0.95) !important;
+  border-bottom: 2px solid rgba(35, 36, 42, 0.25) !important;
+  box-shadow: 0 4px 16px rgba(35, 36, 42, 0.06) !important;
+}
+
 /* Navbar Brand text */
 [data-theme='pencil'] header a[aria-label="Mohammed Fareed Homepage"] .navbar-brand-name,
 [data-theme='pencil'] header a[aria-label="Mohammed Fareed Homepage"] .navbar-brand-name * {
-  color: #FFFFFF !important;
+  color: #1A1B20 !important;
 }
 
 [data-theme='pencil'] header a[aria-label="Mohammed Fareed Homepage"] .navbar-brand-title {
-  color: #CBD5E1 !important;
+  color: #555863 !important;
 }
 
 [data-theme='pencil'] header a[aria-label="Mohammed Fareed Homepage"] span.rounded-xl {
   background-color: #FFFFFF !important;
   color: #1A1B20 !important;
-  border-color: #1A1B20 !important;
+  border: 1.5px solid rgba(35, 36, 42, 0.75) !important;
+  box-shadow: 2px 2px 0px rgba(35, 36, 42, 0.2) !important;
 }
 
 /* Navbar Nav Links & Capsule */
 [data-theme='pencil'] .navbar-nav-capsule {
-  background-color: rgba(15, 23, 42, 0.9) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: #FFFFFF !important;
+  border: 1.5px solid rgba(35, 36, 42, 0.45) !important;
+  box-shadow: 2px 2px 0px rgba(35, 36, 42, 0.15) !important;
 }
 
 [data-theme='pencil'] .navbar-nav-link,
 [data-theme='pencil'] header nav a,
 [data-theme='pencil'] nav a {
-  color: #FFFFFF !important;
+  color: #1A1B20 !important;
   font-weight: 600 !important;
 }
 
 [data-theme='pencil'] .navbar-nav-link:hover,
 [data-theme='pencil'] header nav a:hover,
 [data-theme='pencil'] nav a:hover {
-  background-color: rgba(255, 255, 255, 0.22) !important;
-  color: #FFFFFF !important;
+  background-color: rgba(35, 36, 42, 0.08) !important;
+  color: #000000 !important;
 }
 
 /* Navbar Right Buttons: Pure black text on white buttons */
@@ -713,7 +735,10 @@ body {
 [data-theme='pencil'] .navbar-cmd-btn *,
 [data-theme='pencil'] .navbar-cv-btn,
 [data-theme='pencil'] .navbar-cv-btn * {
+  background-color: #FFFFFF !important;
   color: #1A1B20 !important;
+  border: 1.5px solid rgba(35, 36, 42, 0.6) !important;
+  box-shadow: 2px 2px 0px rgba(35, 36, 42, 0.2) !important;
 }
 
 [data-theme='pencil'] .theme-switcher-btn svg,
@@ -722,13 +747,18 @@ body {
   color: #1A1B20 !important;
 }
 
-/* Navbar Contact CTA (black button with pure white text) */
+/* Navbar Contact CTA (Solid Black button with Pure White text) */
 [data-theme='pencil'] .navbar-contact-btn,
 [data-theme='pencil'] header a[href='#contact'] {
   background-color: #1A1B20 !important;
   color: #FFFFFF !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
-  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5) !important;
+  border: 2px solid #1A1B20 !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.45) !important;
+}
+
+[data-theme='pencil'] .navbar-contact-btn *,
+[data-theme='pencil'] header a[href='#contact'] * {
+  color: #FFFFFF !important;
 }
 
 [data-theme='pencil'] .navbar-contact-btn *,
@@ -878,38 +908,47 @@ body {
 }
 
 /* ==========================================================================
-   PENCIL THEME: SKILLS & CORE TECHNOLOGIES CARDS (WHITE TEXT ON BLACK PARTS)
+   PENCIL THEME: SKILLS & ARCHITECTURE (AUTHENTIC SKETCHBOOK PAPER)
    ========================================================================== */
 [data-theme='pencil'] .tech-skill-card,
-[data-theme='pencil'] #skills .tech-skill-card {
-  background-color: #181A22 !important;
-  background: #181A22 !important;
+[data-theme='pencil'] #skills .tech-skill-card,
+[data-theme='pencil'] .tech-arch-strip,
+[data-theme='pencil'] #skills .tech-arch-strip {
+  background-color: #FAF6EE !important;
+  background: #FAF6EE !important;
   border: 2px solid rgba(35, 36, 42, 0.8) !important;
+  box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.25) !important;
+  border-radius: 20px !important;
 }
 
 [data-theme='pencil'] .tech-skill-card h4,
-[data-theme='pencil'] #skills .tech-skill-card h4 {
-  color: #FFFFFF !important;
+[data-theme='pencil'] #skills .tech-skill-card h4,
+[data-theme='pencil'] .tech-arch-strip .text-foreground,
+[data-theme='pencil'] .tech-arch-strip h3,
+[data-theme='pencil'] .tech-arch-strip h4 {
+  color: #1A1B20 !important;
 }
 
 [data-theme='pencil'] .tech-skill-card p,
 [data-theme='pencil'] #skills .tech-skill-card p,
-[data-theme='pencil'] .tech-skill-card .text-foreground-muted {
-  color: #E2E8F0 !important;
+[data-theme='pencil'] .tech-skill-card .text-foreground-muted,
+[data-theme='pencil'] .tech-arch-strip p,
+[data-theme='pencil'] .tech-arch-strip .text-foreground-muted {
+  color: #383B44 !important;
 }
 
 [data-theme='pencil'] .tech-skill-card .text-accent-dynamic,
 [data-theme='pencil'] #skills .tech-skill-card .text-accent-dynamic {
-  color: #FFFFFF !important;
+  color: #1A1B20 !important;
 }
 
 [data-theme='pencil'] .tech-skill-card span.animate-pulse,
 [data-theme='pencil'] .tech-skill-card span[class*='rounded-full'][class*='bg-accent-dynamic'] {
-  background-color: #FFFFFF !important;
+  background-color: #1A1B20 !important;
 }
 
 [data-theme='pencil'] .tech-skill-card svg {
-  color: #FFFFFF !important;
+  color: #1A1B20 !important;
 }
 
 /* Level badge inside skill card: white sketch tag with black text */
@@ -924,110 +963,143 @@ body {
 }
 
 /* ==========================================================================
-   PENCIL THEME: ARCHITECTURE STRIP (WHITE TEXT ON BLACK CONTAINER)
+   PENCIL THEME: ALL SECTIONS & CONTAINERS (CLEAN SKETCHBOOK PAPER)
    ========================================================================== */
-[data-theme='pencil'] .tech-arch-strip,
-[data-theme='pencil'] #skills .tech-arch-strip {
-  background-color: #181A22 !important;
-  background: #181A22 !important;
-  border: 2px solid rgba(35, 36, 42, 0.8) !important;
-}
 
-[data-theme='pencil'] .tech-arch-strip .text-foreground,
-[data-theme='pencil'] .tech-arch-strip div.flex.items-center span:last-child {
-  color: #FFFFFF !important;
+/* Section background cleanups: eliminate dark surface fills */
+[data-theme='pencil'] #skills,
+[data-theme='pencil'] #experience,
+[data-theme='pencil'] #playground,
+[data-theme='pencil'] #contact {
+  background-color: transparent !important;
+  border-color: rgba(35, 36, 42, 0.25) !important;
 }
-
-[data-theme='pencil'] .tech-arch-strip p,
-[data-theme='pencil'] .tech-arch-strip .text-foreground-muted {
-  color: #E2E8F0 !important;
-}
-
-/* ==========================================================================
-   FROM TECHSTACK DOWN TO FOOTER: ALL DARK CARDS HAVE WHITE TEXT
-   ========================================================================== */
 
 /* Playground section card */
 [data-theme='pencil'] #playground [class*='bg-surface-200'],
 [data-theme='pencil'] #playground [class*='bg-surface-200'] * {
-  color: #FFFFFF !important;
+  color: #1A1B20 !important;
 }
 
 [data-theme='pencil'] #playground [class*='bg-surface-200'] p,
 [data-theme='pencil'] #playground [class*='bg-surface-200'] .text-foreground-muted,
 [data-theme='pencil'] #playground [class*='bg-surface-200'] .text-foreground-subtle {
-  color: #E2E8F0 !important;
+  color: #383B44 !important;
+}
+
+[data-theme='pencil'] #playground .relative.w-full.h-\[360px\] {
+  background-color: #FFFFFF !important;
+  border: 2px solid rgba(35, 36, 42, 0.6) !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.2) !important;
 }
 
 /* Currently Building card */
-[data-theme='pencil'] .currently-building-card,
+[data-theme='pencil'] .currently-building-card {
+  background-color: #FAF6EE !important;
+  background: #FAF6EE !important;
+}
+
 [data-theme='pencil'] .currently-building-card * {
-  color: #FFFFFF !important;
+  color: #1A1B20 !important;
 }
 
 [data-theme='pencil'] .currently-building-card p,
 [data-theme='pencil'] .currently-building-card .text-foreground-muted,
 [data-theme='pencil'] .currently-building-card .text-foreground-subtle {
-  color: #E2E8F0 !important;
+  color: #383B44 !important;
 }
 
-[data-theme='pencil'] .currently-building-card button {
+/* Solid Black Buttons in Pencil Theme: Pure White Text */
+[data-theme='pencil'] .currently-building-card button,
+[data-theme='pencil'] .currently-building-card .kpi-explore-btn,
+[data-theme='pencil'] button[class*='bg-black'],
+[data-theme='pencil'] a[class*='bg-black'],
+[data-theme='pencil'] .kpi-explore-btn {
   background-color: #1A1B20 !important;
   color: #FFFFFF !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  border: 2px solid #1A1B20 !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.4) !important;
+}
+
+[data-theme='pencil'] .currently-building-card button *,
+[data-theme='pencil'] .currently-building-card .kpi-explore-btn *,
+[data-theme='pencil'] button[class*='bg-black'] *,
+[data-theme='pencil'] a[class*='bg-black'] *,
+[data-theme='pencil'] .kpi-explore-btn * {
+  color: #FFFFFF !important;
 }
 
 /* Contact Inquiry card */
-[data-theme='pencil'] .contact-inquiry-card,
+[data-theme='pencil'] .contact-inquiry-card {
+  background-color: #FAF6EE !important;
+  background: #FAF6EE !important;
+}
+
 [data-theme='pencil'] .contact-inquiry-card h3,
-[data-theme='pencil'] .contact-inquiry-card label,
-[data-theme='pencil'] .contact-inquiry-card input {
-  color: #FFFFFF !important;
+[data-theme='pencil'] .contact-inquiry-card label {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .contact-inquiry-card input,
+[data-theme='pencil'] .contact-inquiry-card textarea {
+  background-color: #FFFFFF !important;
+  border: 1.5px solid rgba(35, 36, 42, 0.6) !important;
+  color: #1A1B20 !important;
+  box-shadow: inset 1px 1px 2px rgba(35, 36, 42, 0.1) !important;
 }
 
 [data-theme='pencil'] .contact-inquiry-card p,
 [data-theme='pencil'] .contact-inquiry-card .text-foreground-muted,
 [data-theme='pencil'] .contact-inquiry-card .text-foreground-subtle {
-  color: #E2E8F0 !important;
+  color: #383B44 !important;
 }
 
 /* Footer & Built in Public Card */
-[data-theme='pencil'] footer,
+[data-theme='pencil'] footer {
+  background-color: #FAF6EE !important;
+  background: #FAF6EE !important;
+  border-top: 2px solid rgba(35, 36, 42, 0.4) !important;
+}
+
 [data-theme='pencil'] footer * {
-  color: #FFFFFF !important;
+  color: #1A1B20 !important;
 }
 
 [data-theme='pencil'] footer p,
 [data-theme='pencil'] footer .text-foreground-muted,
 [data-theme='pencil'] footer .text-foreground-subtle {
-  color: #CBD5E1 !important;
+  color: #4A4D56 !important;
 }
 
-/* General Rule for any other black button */
-[data-theme='pencil'] button[class*='bg-black'],
-[data-theme='pencil'] a[class*='bg-black'] {
-  color: #FFFFFF !important;
+[data-theme='pencil'] footer a {
+  color: #1A1B20 !important;
 }
 
-[data-theme='pencil'] button[class*='bg-black'] *,
-[data-theme='pencil'] a[class*='bg-black'] * {
-  color: #FFFFFF !important;
+[data-theme='pencil'] footer a:hover {
+  color: #000000 !important;
+  text-decoration: underline !important;
 }
 
-/* Marquee Billboard: AMOLED black bar with pure white text and monochrome sketch laser lines */
-[data-theme='pencil'] .marquee-billboard,
+/* Marquee Billboard in Pencil Theme: light sketchbook strip with graphite typography */
+[data-theme='pencil'] .marquee-billboard {
+  background-color: #FAF6EE !important;
+  background: #FAF6EE !important;
+  border-top: 2px solid rgba(35, 36, 42, 0.3) !important;
+  border-bottom: 2px solid rgba(35, 36, 42, 0.3) !important;
+}
+
 [data-theme='pencil'] .marquee-billboard * {
-  color: #FFFFFF !important;
+  color: #1A1B20 !important;
 }
 
 [data-theme='pencil'] .marquee-billboard svg {
-  color: #FFFFFF !important;
+  color: #1A1B20 !important;
 }
 
 [data-theme='pencil'] .marquee-billboard .animate-laser-flow,
 [data-theme='pencil'] .marquee-billboard .animate-laser-flow-reverse {
-  background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.4) 25%, transparent 40%, transparent 50%, #FFFFFF 60%, rgba(255, 255, 255, 0.4) 85%, transparent 100%) !important;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4) !important;
+  background: linear-gradient(90deg, #1A1B20 0%, rgba(35, 36, 42, 0.3) 25%, transparent 40%, transparent 50%, #1A1B20 60%, rgba(35, 36, 42, 0.3) 85%, transparent 100%) !important;
+  box-shadow: none !important;
 }
 
 
