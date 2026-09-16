@@ -81,12 +81,8 @@ export default function ConnectingDotsBackground() {
     };
 
     const amoledPalette = [
-      '0, 229, 255',   // Cyan
-      '245, 185, 66',  // Amber
-      '167, 139, 250', // Violet
-      '244, 63, 94',   // Rose
-      '200, 255, 0',   // Lime
-      '56, 189, 248',  // Sky
+      '0, 229, 255',   // Primary: Cyan
+      '167, 139, 250', // Secondary: Violet
     ];
 
     const render = () => {
@@ -104,9 +100,14 @@ export default function ConnectingDotsBackground() {
 
           if (dist < maxLinkDistance) {
             const alpha = (1 - dist / maxLinkDistance) * 0.28;
-            const lineColor = theme === 'amoled' ? amoledPalette[i % amoledPalette.length] : rgb;
+            const lineColor =
+              theme === 'amoled'
+                ? amoledPalette[i % amoledPalette.length]
+                : theme === 'pencil'
+                ? '45, 48, 56'
+                : rgb;
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(${lineColor}, ${alpha})`;
+            ctx.strokeStyle = `rgba(${lineColor}, ${theme === 'pencil' ? alpha * 0.6 : alpha})`;
             ctx.lineWidth = 0.8;
             ctx.moveTo(dots[i].x, dots[i].y);
             ctx.lineTo(dots[j].x, dots[j].y);
@@ -124,7 +125,12 @@ export default function ConnectingDotsBackground() {
 
           if (dist < mouseRadius) {
             const alpha = (1 - dist / mouseRadius) * 0.4;
-            const cursorLineColor = theme === 'amoled' ? amoledPalette[i % amoledPalette.length] : secondaryRgb;
+            const cursorLineColor =
+              theme === 'amoled'
+                ? amoledPalette[i % amoledPalette.length]
+                : theme === 'pencil'
+                ? '60, 64, 74'
+                : secondaryRgb;
             ctx.beginPath();
             ctx.strokeStyle = `rgba(${cursorLineColor}, ${alpha})`;
             ctx.lineWidth = 1;

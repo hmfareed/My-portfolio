@@ -31,11 +31,14 @@ export default function ProjectGrid({ onOpenCaseStudy }: ProjectGridProps) {
         >
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-foreground-subtle">
-              <span className="text-accent-dynamic font-bold">02 //</span>
-              <span>Selected Architectures</span>
+              <span className="text-primary-dynamic font-bold">02 //</span>
+              <span>
+                <span className="text-primary-dynamic">ARCHI</span>
+                <span className="text-secondary-dynamic">TECTURES</span> & SYSTEMS
+              </span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold font-sans text-foreground tracking-tight">
-              Production Work & Systems
+              <span className="text-primary-dynamic">Pro</span>duction Work & <span className="text-secondary-dynamic">Sys</span>tems
             </h2>
             <p className="text-sm text-foreground-muted max-w-lg font-sans">
               Real-world products engineered for scale, resilience, and business impact. Click any project to inspect the case study.
@@ -50,7 +53,7 @@ export default function ProjectGrid({ onOpenCaseStudy }: ProjectGridProps) {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-1.5 rounded-full text-xs font-sans font-medium transition-all whitespace-nowrap ${
                   selectedCategory === cat
-                    ? 'bg-accent-dynamic text-black font-bold shadow-sm'
+                    ? 'bg-primary-dynamic text-black font-bold shadow-sm'
                     : 'text-foreground-muted hover:text-foreground hover:bg-surface-50'
                 }`}
               >

@@ -89,13 +89,17 @@ export default function About({ onOpenResume }: AboutProps) {
               {/* Attached Software Engineer Role & Metadata Overlay */}
               <div className="absolute inset-x-6 bottom-6 flex flex-col justify-end space-y-2 font-sans text-xs z-10">
                 <div className="flex items-center justify-between text-foreground">
-                  <span className="font-black tracking-wider text-sm">MOHAMMED FAREED</span>
-                  <span className="text-accent-dynamic font-bold">2026</span>
+                  <span className="font-black tracking-wider text-sm">
+                    MOHAM<span className="text-primary-dynamic">MED</span> <span className="text-primary-dynamic">FAR</span><span className="text-secondary-dynamic">EED</span>
+                  </span>
+                  <span className="text-primary-dynamic font-bold">2026</span>
                 </div>
                 <div className="flex items-center justify-between text-foreground-subtle text-xs pt-2 border-t border-white/15">
-                  <span className="font-semibold text-foreground tracking-wide uppercase">SOFTWARE ENGINEER</span>
+                  <span className="font-semibold tracking-wide uppercase">
+                    <span className="text-primary-dynamic">SOFT</span><span className="text-secondary-dynamic">WARE</span> <span className="text-foreground">ENGINEER</span>
+                  </span>
                   <span className="flex items-center gap-1.5 font-medium">
-                    <MapPin className="w-3.5 h-3.5 text-accent-dynamic" />
+                    <MapPin className="w-3.5 h-3.5 text-primary-dynamic" />
                     <span>Tamale, Ghana</span>
                   </span>
                 </div>
@@ -113,7 +117,7 @@ export default function About({ onOpenResume }: AboutProps) {
           >
             <div className="space-y-4">
               <h3 className="text-3xl sm:text-4xl font-bold font-sans text-foreground leading-tight tracking-tight">
-                Crafting interfaces that feel as good as they work.
+                Crafting <span className="text-primary-dynamic">inter</span><span className="text-secondary-dynamic">faces</span> that feel as good as they work.
               </h3>
 
               <p className="text-base text-foreground-muted leading-relaxed font-sans">
@@ -125,37 +129,46 @@ export default function About({ onOpenResume }: AboutProps) {
               </p>
             </div>
 
-            {/* Quick Metrics Cards with Reference Styling */}
+            {/* Quick Metrics Cards with Super AMOLED Dark Glassy Styling */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs pt-4 font-sans">
-              <GlowKpiCard accentColor="amber" borderRadius="rounded-2xl" borderWidth="p-[1.5px]" className="h-full">
-                <div className="p-4 rounded-[inherit] bg-surface-100/90 space-y-1.5 h-full">
+              <GlowKpiCard accentColor="primary" borderRadius="rounded-2xl" borderWidth="p-[1.5px]" className="h-full">
+                <div className="p-4 rounded-[inherit] space-y-1.5 h-full bg-transparent">
                   <div className="flex items-center justify-between text-foreground-subtle">
-                    <span className="text-2xl font-black font-sans text-[#F5B942]">6+</span>
-                    <span className="w-2 h-2 rounded-full bg-[#F5B942] animate-pulse" />
+                    <span className="text-2xl font-black font-sans text-primary-dynamic">6+</span>
+                    <span className="w-2 h-2 rounded-full bg-primary-dynamic animate-pulse" />
                   </div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#F5B942]">PRODUCTION APPS</div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+                    <span className="text-primary-dynamic">PRODUC</span>
+                    <span className="text-secondary-dynamic">TION</span>
+                  </div>
                   <div className="text-foreground-muted text-xs">Delivered to Clients</div>
                 </div>
               </GlowKpiCard>
 
-              <GlowKpiCard accentColor="teal" borderRadius="rounded-2xl" borderWidth="p-[1.5px]" className="h-full">
-                <div className="p-4 rounded-[inherit] bg-surface-100/90 space-y-1.5 h-full">
+              <GlowKpiCard accentColor="secondary" borderRadius="rounded-2xl" borderWidth="p-[1.5px]" className="h-full">
+                <div className="p-4 rounded-[inherit] space-y-1.5 h-full bg-transparent">
                   <div className="flex items-center justify-between text-foreground-subtle">
-                    <span className="text-2xl font-black font-sans text-[#00E5FF]">100%</span>
-                    <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse" />
+                    <span className="text-2xl font-black font-sans text-secondary-dynamic">100%</span>
+                    <span className="w-2 h-2 rounded-full bg-secondary-dynamic animate-pulse" />
                   </div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#00E5FF]">TYPESCRIPT RIGOR</div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+                    <span className="text-secondary-dynamic">TYPE</span>
+                    <span className="text-primary-dynamic">SCRIPT</span>
+                  </div>
                   <div className="text-foreground-muted text-xs">Zero Any Tolerance</div>
                 </div>
               </GlowKpiCard>
 
-              <GlowKpiCard accentColor="violet" borderRadius="rounded-2xl" borderWidth="p-[1.5px]" className="col-span-2 sm:col-span-1 h-full">
-                <div className="p-4 rounded-[inherit] bg-surface-100/90 space-y-1.5 h-full">
+              <GlowKpiCard accentColor="primary" borderRadius="rounded-2xl" borderWidth="p-[1.5px]" className="col-span-2 sm:col-span-1 h-full">
+                <div className="p-4 rounded-[inherit] space-y-1.5 h-full bg-transparent">
                   <div className="flex items-center justify-between text-foreground-subtle">
-                    <span className="text-2xl font-black font-sans text-[#A78BFA]">GMT</span>
-                    <span className="w-2 h-2 rounded-full bg-[#A78BFA] animate-pulse" />
+                    <span className="text-2xl font-black font-sans text-primary-dynamic">GMT</span>
+                    <span className="w-2 h-2 rounded-full bg-primary-dynamic animate-pulse" />
                   </div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#A78BFA]">GLOBAL REMOTE</div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+                    <span className="text-primary-dynamic">GLOBAL</span>
+                    <span className="text-secondary-dynamic">REMOTE</span>
+                  </div>
                   <div className="text-foreground-muted text-xs">Tamale Base & UTC Sync</div>
                 </div>
               </GlowKpiCard>

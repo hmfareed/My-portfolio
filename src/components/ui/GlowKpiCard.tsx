@@ -2,7 +2,16 @@
 
 import React from 'react';
 
-export type CardAccentColor = 'amber' | 'teal' | 'violet' | 'rose' | 'lime' | 'sky' | 'spectrum';
+export type CardAccentColor =
+  | 'primary'
+  | 'secondary'
+  | 'amber'
+  | 'teal'
+  | 'violet'
+  | 'rose'
+  | 'lime'
+  | 'sky'
+  | 'spectrum';
 
 export interface GlowKpiCardProps {
   children: React.ReactNode;
@@ -19,7 +28,7 @@ export interface GlowKpiCardProps {
 }
 
 export const cardColorMap: Record<
-  CardAccentColor,
+  string,
   {
     dotColor: string;
     pillBg: string;
@@ -28,110 +37,94 @@ export const cardColorMap: Record<
     iconBg: string;
   }
 > = {
-  amber: {
-    dotColor: '#F5B942',
-    pillBg: 'bg-[#F5B942]/10 border-[#F5B942]/30 text-[#F5B942]',
-    btnBg: 'bg-[#F5B942] hover:bg-[#FCD34D] text-black shadow-[0_0_24px_rgba(245,185,66,0.4)]',
-    textAccent: 'text-[#F5B942]',
-    iconBg: 'bg-[#F5B942]/15 text-[#F5B942] border-[#F5B942]/30',
+  primary: {
+    dotColor: '#00E5FF',
+    pillBg: 'bg-[#00E5FF]/10 border-[#00E5FF]/30 text-[#00E5FF]',
+    btnBg: 'bg-[#00E5FF] hover:bg-[#38BDF8] text-black shadow-[0_0_20px_rgba(0,229,255,0.35)]',
+    textAccent: 'text-[#00E5FF]',
+    iconBg: 'bg-[#00E5FF]/15 text-[#00E5FF] border-[#00E5FF]/30',
   },
+  secondary: {
+    dotColor: '#A78BFA',
+    pillBg: 'bg-[#A78BFA]/10 border-[#A78BFA]/30 text-[#A78BFA]',
+    btnBg: 'bg-[#A78BFA] hover:bg-[#C4B5FD] text-black shadow-[0_0_20px_rgba(167,139,250,0.35)]',
+    textAccent: 'text-[#A78BFA]',
+    iconBg: 'bg-[#A78BFA]/15 text-[#A78BFA] border-[#A78BFA]/30',
+  },
+  // Backward compatibility mappings strictly mapped to primary & secondary
   teal: {
     dotColor: '#00E5FF',
     pillBg: 'bg-[#00E5FF]/10 border-[#00E5FF]/30 text-[#00E5FF]',
-    btnBg: 'bg-[#00E5FF] hover:bg-[#38BDF8] text-black shadow-[0_0_24px_rgba(0,229,255,0.4)]',
+    btnBg: 'bg-[#00E5FF] hover:bg-[#38BDF8] text-black shadow-[0_0_20px_rgba(0,229,255,0.35)]',
+    textAccent: 'text-[#00E5FF]',
+    iconBg: 'bg-[#00E5FF]/15 text-[#00E5FF] border-[#00E5FF]/30',
+  },
+  sky: {
+    dotColor: '#00E5FF',
+    pillBg: 'bg-[#00E5FF]/10 border-[#00E5FF]/30 text-[#00E5FF]',
+    btnBg: 'bg-[#00E5FF] hover:bg-[#38BDF8] text-black shadow-[0_0_20px_rgba(0,229,255,0.35)]',
+    textAccent: 'text-[#00E5FF]',
+    iconBg: 'bg-[#00E5FF]/15 text-[#00E5FF] border-[#00E5FF]/30',
+  },
+  lime: {
+    dotColor: '#00E5FF',
+    pillBg: 'bg-[#00E5FF]/10 border-[#00E5FF]/30 text-[#00E5FF]',
+    btnBg: 'bg-[#00E5FF] hover:bg-[#38BDF8] text-black shadow-[0_0_20px_rgba(0,229,255,0.35)]',
     textAccent: 'text-[#00E5FF]',
     iconBg: 'bg-[#00E5FF]/15 text-[#00E5FF] border-[#00E5FF]/30',
   },
   violet: {
     dotColor: '#A78BFA',
     pillBg: 'bg-[#A78BFA]/10 border-[#A78BFA]/30 text-[#A78BFA]',
-    btnBg: 'bg-[#A78BFA] hover:bg-[#C4B5FD] text-black shadow-[0_0_24px_rgba(167,139,250,0.4)]',
+    btnBg: 'bg-[#A78BFA] hover:bg-[#C4B5FD] text-black shadow-[0_0_20px_rgba(167,139,250,0.35)]',
+    textAccent: 'text-[#A78BFA]',
+    iconBg: 'bg-[#A78BFA]/15 text-[#A78BFA] border-[#A78BFA]/30',
+  },
+  amber: {
+    dotColor: '#A78BFA',
+    pillBg: 'bg-[#A78BFA]/10 border-[#A78BFA]/30 text-[#A78BFA]',
+    btnBg: 'bg-[#A78BFA] hover:bg-[#C4B5FD] text-black shadow-[0_0_20px_rgba(167,139,250,0.35)]',
     textAccent: 'text-[#A78BFA]',
     iconBg: 'bg-[#A78BFA]/15 text-[#A78BFA] border-[#A78BFA]/30',
   },
   rose: {
-    dotColor: '#F43F5E',
-    pillBg: 'bg-[#F43F5E]/10 border-[#F43F5E]/30 text-[#F43F5E]',
-    btnBg: 'bg-[#F43F5E] hover:bg-[#FB7185] text-black shadow-[0_0_24px_rgba(244,63,94,0.4)]',
-    textAccent: 'text-[#F43F5E]',
-    iconBg: 'bg-[#F43F5E]/15 text-[#F43F5E] border-[#F43F5E]/30',
-  },
-  lime: {
-    dotColor: '#C8FF00',
-    pillBg: 'bg-[#C8FF00]/10 border-[#C8FF00]/30 text-[#C8FF00]',
-    btnBg: 'bg-[#C8FF00] hover:bg-[#D7FF4F] text-black shadow-[0_0_24px_rgba(200,255,0,0.4)]',
-    textAccent: 'text-[#C8FF00]',
-    iconBg: 'bg-[#C8FF00]/15 text-[#C8FF00] border-[#C8FF00]/30',
-  },
-  sky: {
-    dotColor: '#38BDF8',
-    pillBg: 'bg-[#38BDF8]/10 border-[#38BDF8]/30 text-[#38BDF8]',
-    btnBg: 'bg-[#38BDF8] hover:bg-[#60A5FA] text-black shadow-[0_0_24px_rgba(56,189,248,0.4)]',
-    textAccent: 'text-[#38BDF8]',
-    iconBg: 'bg-[#38BDF8]/15 text-[#38BDF8] border-[#38BDF8]/30',
+    dotColor: '#A78BFA',
+    pillBg: 'bg-[#A78BFA]/10 border-[#A78BFA]/30 text-[#A78BFA]',
+    btnBg: 'bg-[#A78BFA] hover:bg-[#C4B5FD] text-black shadow-[0_0_20px_rgba(167,139,250,0.35)]',
+    textAccent: 'text-[#A78BFA]',
+    iconBg: 'bg-[#A78BFA]/15 text-[#A78BFA] border-[#A78BFA]/30',
   },
   spectrum: {
     dotColor: '#00E5FF',
-    pillBg: 'bg-accent-muted border-accent-dynamic/40 text-accent-dynamic',
-    btnBg: 'bg-accent-dynamic text-black hover:opacity-95 shadow-[0_0_24px_var(--color-accent-glow)]',
-    textAccent: 'text-accent-dynamic',
-    iconBg: 'bg-accent-muted text-accent-dynamic border-accent-dynamic/30',
+    pillBg: 'bg-[#00E5FF]/10 border-[#00E5FF]/30 text-[#00E5FF]',
+    btnBg: 'bg-[#00E5FF] hover:bg-[#38BDF8] text-black shadow-[0_0_20px_rgba(0,229,255,0.35)]',
+    textAccent: 'text-[#00E5FF]',
+    iconBg: 'bg-[#00E5FF]/15 text-[#00E5FF] border-[#00E5FF]/30',
   },
 };
 
 /**
- * Creates a 4-cut luminous conic gradient with four distinct laser segments
- * spaced at 90-degree intervals around the perimeter.
+ * Creates a slow, calm 4-cut perimeter conic gradient alternating Primary (#00E5FF)
+ * and Secondary (#A78BFA), smoothly tracing edges and rounded corners without disco flashing.
  */
-function getFourCutConic(color: string) {
-  if (color === '#00E5FF') {
-    // Polychromatic spectrum mode
-    return `conic-gradient(from 0deg at 50% 50%, 
-      transparent 0deg, 
-      #00E5FF 12deg, 
-      #ffffff 22deg,
-      #00E5FF 32deg, 
-      transparent 45deg,
-      transparent 90deg, 
-      #A78BFA 102deg, 
-      #ffffff 112deg,
-      #A78BFA 122deg, 
-      transparent 135deg,
-      transparent 180deg, 
-      #F43F5E 192deg, 
-      #ffffff 202deg,
-      #F43F5E 212deg, 
-      transparent 225deg,
-      transparent 270deg, 
-      #F5B942 282deg, 
-      #ffffff 292deg,
-      #F5B942 302deg, 
-      transparent 315deg,
-      transparent 360deg
-    )`;
-  }
-
+function getFourCutConic() {
   return `conic-gradient(from 0deg at 50% 50%, 
     transparent 0deg, 
-    ${color} 12deg, 
-    #ffffff 22deg,
-    ${color} 32deg, 
-    transparent 45deg,
+    var(--kpi-cut-1, #00E5FF) 12deg, 
+    var(--kpi-cut-1, #00E5FF) 36deg, 
+    transparent 50deg,
     transparent 90deg, 
-    ${color} 102deg, 
-    #ffffff 112deg,
-    ${color} 122deg, 
-    transparent 135deg,
+    var(--kpi-cut-2, #A78BFA) 102deg, 
+    var(--kpi-cut-2, #A78BFA) 126deg, 
+    transparent 140deg,
     transparent 180deg, 
-    ${color} 192deg, 
-    #ffffff 202deg,
-    ${color} 212deg, 
-    transparent 225deg,
+    var(--kpi-cut-1, #00E5FF) 192deg, 
+    var(--kpi-cut-1, #00E5FF) 216deg, 
+    transparent 230deg,
     transparent 270deg, 
-    ${color} 282deg, 
-    #ffffff 292deg,
-    ${color} 302deg, 
-    transparent 315deg,
+    var(--kpi-cut-2, #A78BFA) 282deg, 
+    var(--kpi-cut-2, #A78BFA) 306deg, 
+    transparent 320deg,
     transparent 360deg
   )`;
 }
@@ -146,17 +139,18 @@ export default function GlowKpiCard({
   onClick,
   dataCursor,
   speed = 'normal',
-  accentColor = 'spectrum',
+  accentColor = 'primary',
   showParticles = true,
 }: GlowKpiCardProps) {
   const isClickable = !!onClick;
-  const config = cardColorMap[accentColor] || cardColorMap.spectrum;
-  const fourCutConic = getFourCutConic(config.dotColor);
+  const config = cardColorMap[accentColor] || cardColorMap.primary;
+  const fourCutConic = getFourCutConic();
 
   return (
     <div
       onClick={onClick}
       data-cursor={dataCursor}
+      data-kpi-card="true"
       role={isClickable ? 'button' : undefined}
       tabIndex={isClickable ? 0 : undefined}
       onKeyDown={
@@ -171,116 +165,71 @@ export default function GlowKpiCard({
       }
       className={`group relative ${isClickable ? 'cursor-pointer select-none' : ''} ${className}`}
     >
-      {/* Ambient outer glow halo with 4 moving cut lines */}
+      {/* Calm ambient outer glow halo (slow 10s rotation, no disco flashing) */}
       <div
-        className={`absolute -inset-1.5 ${borderRadius} overflow-hidden pointer-events-none transition-opacity duration-500 ${
-          active ? 'opacity-90 blur-lg' : 'opacity-40 group-hover:opacity-80 blur-md'
+        className={`kpi-outer-halo absolute -inset-1 ${borderRadius} overflow-hidden pointer-events-none transition-opacity duration-700 ${
+          active ? 'opacity-80 blur-md' : 'opacity-25 group-hover:opacity-65 blur-sm'
         }`}
       >
         <div
-          className={`absolute top-1/2 left-1/2 w-[350%] h-[350%] ${
-            speed === 'slow' ? 'animate-border-spin-slow' : 'animate-border-spin'
-          }`}
+          className="kpi-conic-glow absolute top-1/2 left-1/2 w-[350%] h-[350%] pointer-events-none animate-border-spin-calm"
           style={{
             background: fourCutConic,
           }}
         />
       </div>
 
-      {/* Main card container with border cut & four moving perimeter lines */}
+      {/* Main card container with four cut perimeter lines moving smoothly */}
       <div
-        className={`relative h-full w-full ${borderWidth} ${borderRadius} overflow-hidden shadow-2xl transition-transform duration-300 border border-white/10`}
+        className={`kpi-card-box relative h-full w-full ${borderWidth} ${borderRadius} overflow-hidden shadow-2xl transition-transform duration-300 border border-white/10`}
       >
-        {/* Four-Cut rotating perimeter conic mask (tracing the rounded corners) */}
+        {/* Four-Cut rotating perimeter conic mask (smooth 10s calm orbit around edges and corners) */}
         <div
-          className={`absolute top-1/2 left-1/2 w-[350%] h-[350%] pointer-events-none ${
-            speed === 'slow' ? 'animate-border-spin-slow' : 'animate-border-spin'
-          }`}
+          className="kpi-conic-border absolute top-1/2 left-1/2 w-[350%] h-[350%] pointer-events-none animate-border-spin-calm"
           style={{
             background: fourCutConic,
           }}
         />
 
-        {/* Four Traveling Laser Cut Lines Chasing Each Other Along the 4 Edges */}
-        {/* 1. Top Cut Line: moves left to right */}
-        <div className="absolute top-0 left-0 right-0 h-[2.5px] overflow-hidden pointer-events-none z-30">
-          <div
-            className="absolute h-full w-36 sm:w-52 animate-beam-top rounded-full"
-            style={{
-              background: `linear-gradient(90deg, transparent 0%, ${config.dotColor} 50%, #ffffff 85%, transparent 100%)`,
-              boxShadow: `0 0 14px ${config.dotColor}, 0 0 4px #ffffff`,
-            }}
-          />
-        </div>
-
-        {/* 2. Right Cut Line: moves top to bottom */}
-        <div className="absolute top-0 right-0 bottom-0 w-[2.5px] overflow-hidden pointer-events-none z-30">
-          <div
-            className="absolute w-full h-36 sm:h-52 animate-beam-right rounded-full"
-            style={{
-              background: `linear-gradient(180deg, transparent 0%, ${config.dotColor} 50%, #ffffff 85%, transparent 100%)`,
-              boxShadow: `0 0 14px ${config.dotColor}, 0 0 4px #ffffff`,
-            }}
-          />
-        </div>
-
-        {/* 3. Bottom Cut Line: moves right to left */}
-        <div className="absolute bottom-0 left-0 right-0 h-[2.5px] overflow-hidden pointer-events-none z-30">
-          <div
-            className="absolute h-full w-36 sm:w-52 animate-beam-bottom rounded-full"
-            style={{
-              background: `linear-gradient(270deg, transparent 0%, ${config.dotColor} 50%, #ffffff 85%, transparent 100%)`,
-              boxShadow: `0 0 14px ${config.dotColor}, 0 0 4px #ffffff`,
-            }}
-          />
-        </div>
-
-        {/* 4. Left Cut Line: moves bottom to top */}
-        <div className="absolute top-0 left-0 bottom-0 w-[2.5px] overflow-hidden pointer-events-none z-30">
-          <div
-            className="absolute w-full h-36 sm:h-52 animate-beam-left rounded-full"
-            style={{
-              background: `linear-gradient(0deg, transparent 0%, ${config.dotColor} 50%, #ffffff 85%, transparent 100%)`,
-              boxShadow: `0 0 14px ${config.dotColor}, 0 0 4px #ffffff`,
-            }}
-          />
-        </div>
-
-        {/* Inner Card Surface */}
+        {/* Inner Card Surface: Super AMOLED Dark with Glassmorphism */}
         <div
-          className={`relative h-full w-full ${borderRadius} transition-all duration-300 ${
+          className={`kpi-card-surface relative h-full w-full ${borderRadius} transition-all duration-300 backdrop-blur-2xl overflow-hidden border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),0_12px_40px_rgba(0,0,0,0.85)] ${
             active
-              ? 'bg-[#050810]/98 ring-1 ring-white/10 shadow-[inset_0_0_30px_rgba(0,0,0,0.85)]'
-              : 'bg-[#080C16]/96 group-hover:bg-[#050810]/98'
-          } backdrop-blur-2xl overflow-hidden ${innerClassName}`}
+              ? 'ring-1 ring-white/15'
+              : 'group-hover:border-white/15'
+          } ${innerClassName}`}
+          style={{
+            background:
+              'linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(0, 0, 0, 0.75) 45%, rgba(0, 0, 0, 0.98) 100%)',
+            backgroundColor: '#000000',
+          }}
         >
-          {/* Floating luminous dust particles in card background */}
+          {/* Subtle top specular glass sheen line */}
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none z-20" />
+
+          {/* Calm luminous particles in card background (Primary & Secondary only) */}
           {showParticles && (
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 select-none">
               <span
-                className="absolute top-[20%] right-[28%] w-1.5 h-1.5 rounded-full opacity-60 animate-pulse"
-                style={{ backgroundColor: config.dotColor }}
+                className="absolute top-[20%] right-[26%] w-1.5 h-1.5 rounded-full opacity-45 animate-pulse"
+                style={{ backgroundColor: '#00E5FF' }}
               />
               <span
-                className="absolute top-[48%] left-[58%] w-1 h-1 rounded-full opacity-40"
-                style={{ backgroundColor: config.dotColor }}
+                className="absolute top-[52%] left-[62%] w-1 h-1 rounded-full opacity-35"
+                style={{ backgroundColor: '#A78BFA' }}
               />
               <span
-                className="absolute top-[68%] left-[24%] w-1.5 h-1.5 rounded-full opacity-50 animate-pulse"
-                style={{ backgroundColor: config.dotColor, animationDelay: '1.2s' }}
+                className="absolute top-[72%] left-[22%] w-1.5 h-1.5 rounded-full opacity-40 animate-pulse"
+                style={{ backgroundColor: '#00E5FF', animationDelay: '2.5s' }}
               />
               <span
-                className="absolute top-[36%] left-[34%] w-1 h-1 rounded-full opacity-35"
-                style={{ backgroundColor: config.dotColor }}
-              />
-              <span
-                className="absolute top-[76%] right-[18%] w-1 h-1 rounded-full opacity-45 animate-pulse"
-                style={{ backgroundColor: config.dotColor, animationDelay: '2.4s' }}
+                className="absolute top-[34%] left-[36%] w-1 h-1 rounded-full opacity-30"
+                style={{ backgroundColor: '#A78BFA' }}
               />
             </div>
           )}
 
-          {/* Child content container above particles */}
+          {/* Child content container */}
           <div className="relative z-10 h-full w-full flex flex-col justify-between">
             {children}
           </div>

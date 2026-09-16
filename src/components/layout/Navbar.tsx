@@ -54,23 +54,23 @@ export default function Navbar({ onOpenCommand, onOpenResume }: NavbarProps) {
               MF
             </span>
             <div className="flex flex-col">
-              <span className="text-xs font-semibold tracking-wide uppercase font-sans text-foreground flex items-center gap-1.5">
+              <span className="navbar-brand-name text-xs font-semibold tracking-wide uppercase font-sans text-foreground flex items-center gap-1.5">
                 Mohammed Fareed
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-dynamic animate-pulse" />
               </span>
-              <span className="text-[10px] text-foreground-subtle hidden sm:inline-block font-sans font-medium">
+              <span className="navbar-brand-title text-[10px] text-foreground-subtle hidden sm:inline-block font-sans font-medium">
                 Software Engineer
               </span>
             </div>
           </a>
 
           {/* Nav Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-surface-100/60 px-2 py-1 rounded-full border border-border-subtle backdrop-blur-sm">
+          <nav className="navbar-nav-capsule hidden md:flex items-center gap-1 bg-surface-100/60 px-2 py-1 rounded-full border border-border-subtle backdrop-blur-sm">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3 py-1.5 text-xs font-medium text-foreground-muted hover:text-foreground hover:bg-surface-50 rounded-full transition-all duration-200"
+                className="navbar-nav-link px-3 py-1.5 text-xs font-medium text-foreground-muted hover:text-foreground hover:bg-surface-50 rounded-full transition-all duration-200"
               >
                 {link.name}
               </a>
@@ -85,7 +85,7 @@ export default function Navbar({ onOpenCommand, onOpenResume }: NavbarProps) {
             {/* Quick Command Trigger */}
             <button
               onClick={onOpenCommand}
-              className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-sans text-foreground-muted hover:text-foreground bg-surface-100 hover:bg-surface-50 border border-border-subtle rounded-full transition-colors"
+              className="navbar-cmd-btn hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-sans text-foreground-muted hover:text-foreground bg-surface-100 hover:bg-surface-50 border border-border-subtle rounded-full transition-colors"
               title="Open Command Menu (Ctrl+K)"
             >
               <Command className="w-3.5 h-3.5 text-accent-dynamic" />
@@ -95,7 +95,7 @@ export default function Navbar({ onOpenCommand, onOpenResume }: NavbarProps) {
             {/* Resume Button */}
             <button
               onClick={onOpenResume}
-              className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 text-xs font-sans font-medium text-foreground-muted hover:text-foreground bg-surface-100 hover:bg-surface-50 border border-border-subtle rounded-full transition-colors"
+              className="navbar-cv-btn hidden lg:flex items-center gap-1.5 px-3 py-1.5 text-xs font-sans font-medium text-foreground-muted hover:text-foreground bg-surface-100 hover:bg-surface-50 border border-border-subtle rounded-full transition-colors"
             >
               <FileText className="w-3.5 h-3.5" />
               <span>CV</span>
@@ -104,7 +104,7 @@ export default function Navbar({ onOpenCommand, onOpenResume }: NavbarProps) {
             {/* Contact CTA */}
             <a
               href="#contact"
-              className="flex items-center gap-1 px-4 py-1.5 text-xs font-semibold rounded-full bg-accent-dynamic text-black hover:opacity-90 transition-transform active:scale-95 shadow-sm"
+              className="navbar-contact-btn flex items-center gap-1 px-4 py-1.5 text-xs font-semibold rounded-full bg-accent-dynamic text-black hover:opacity-90 transition-transform active:scale-95 shadow-sm"
             >
               <span>Let&apos;s talk</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

@@ -41,8 +41,8 @@ function getProjectIcon(slug: string, className: string) {
 }
 
 export default function ProjectCard({ project, onOpenCaseStudy }: ProjectCardProps) {
-  const accent = project.accentColor || 'amber';
-  const config = cardColorMap[accent] || cardColorMap.amber;
+  const accent = project.accentColor || 'primary';
+  const config = cardColorMap[accent] || cardColorMap.primary;
 
   return (
     <GlowKpiCard
@@ -58,13 +58,13 @@ export default function ProjectCard({ project, onOpenCaseStudy }: ProjectCardPro
         {/* Top Header Row: Left Icon Container + Right Status Pill */}
         <div className="flex items-center justify-between gap-4">
           <div
-            className={`w-14 h-14 rounded-2xl flex items-center justify-center border transition-transform duration-300 group-hover:scale-105 shadow-inner ${config.iconBg}`}
+            className={`kpi-icon-box w-14 h-14 rounded-2xl flex items-center justify-center border transition-transform duration-300 group-hover:scale-105 shadow-inner ${config.iconBg}`}
           >
             {getProjectIcon(project.slug, 'w-7 h-7')}
           </div>
 
           <div
-            className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md border ${config.pillBg}`}
+            className={`kpi-status-pill inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md border ${config.pillBg}`}
           >
             <span
               className="w-2 h-2 rounded-full animate-pulse"
@@ -74,13 +74,25 @@ export default function ProjectCard({ project, onOpenCaseStudy }: ProjectCardPro
           </div>
         </div>
 
-        {/* Title & Uppercase Subtitle */}
+        {/* Title & Uppercase Subtitle with Split Word Colors */}
         <div className="space-y-1.5">
           <h3 className="text-3xl sm:text-4xl font-black font-sans text-foreground tracking-tight group-hover:text-white transition-colors">
             {project.title}
           </h3>
-          <p className={`text-xs font-bold uppercase tracking-widest ${config.textAccent}`}>
-            {project.subtitle || project.tagline}
+          <p className="text-xs font-bold uppercase tracking-widest flex items-center gap-1.5 flex-wrap">
+            <span className="text-primary-dynamic">
+              {project.subtitle.split(' ')[0]}
+            </span>
+            {project.subtitle.split(' ').slice(1, 2).length > 0 && (
+              <span className="text-secondary-dynamic">
+                {project.subtitle.split(' ')[1]}
+              </span>
+            )}
+            {project.subtitle.split(' ').slice(2).length > 0 && (
+              <span className="text-foreground-muted">
+                {project.subtitle.split(' ').slice(2).join(' ')}
+              </span>
+            )}
           </p>
         </div>
 
@@ -113,7 +125,7 @@ export default function ProjectCard({ project, onOpenCaseStudy }: ProjectCardPro
             onOpenCaseStudy(project.slug);
           }}
           data-cursor="EXPLORE"
-          className={`inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-bold transition-all hover:scale-105 active:scale-95 shadow-lg ${config.btnBg}`}
+          className={`kpi-explore-btn inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-bold transition-all hover:scale-105 active:scale-95 shadow-lg ${config.btnBg}`}
         >
           <span>Explore</span>
           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

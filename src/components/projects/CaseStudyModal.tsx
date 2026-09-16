@@ -107,9 +107,15 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
           {/* Key Metrics Grid with Glowing Moving Borders */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {project.metrics.map((m, idx) => (
-              <GlowKpiCard key={idx} borderRadius="rounded-xl" borderWidth="p-[1.5px]" className="h-full">
-                <div className="p-4 rounded-[inherit] bg-surface-100/90 space-y-1 text-center h-full flex flex-col justify-center">
-                  <div className="text-lg sm:text-xl font-bold text-accent-dynamic">{m.value}</div>
+              <GlowKpiCard
+                key={idx}
+                accentColor={idx % 2 === 0 ? 'primary' : 'secondary'}
+                borderRadius="rounded-xl"
+                borderWidth="p-[1.5px]"
+                className="h-full"
+              >
+                <div className="p-4 rounded-[inherit] space-y-1 text-center h-full flex flex-col justify-center bg-transparent">
+                  <div className={`text-lg sm:text-xl font-bold ${idx % 2 === 0 ? 'text-primary-dynamic' : 'text-secondary-dynamic'}`}>{m.value}</div>
                   <div className="text-[11px] text-foreground-subtle uppercase font-medium">{m.label}</div>
                 </div>
               </GlowKpiCard>

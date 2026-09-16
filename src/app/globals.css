@@ -8,6 +8,12 @@
   --color-accent-hover: #38BDF8;
   --color-accent-muted: rgba(0, 229, 255, 0.12);
   --color-accent-glow: rgba(0, 229, 255, 0.4);
+  --color-primary: #00E5FF;
+  --color-secondary: #A78BFA;
+  --color-primary-glow: rgba(0, 229, 255, 0.4);
+  --color-secondary-glow: rgba(167, 139, 250, 0.4);
+  --kpi-cut-1: #00E5FF;
+  --kpi-cut-2: #A78BFA;
   --bg-gradient: radial-gradient(circle at 50% -10%, #092661 0%, #04102e 28%, #020617 55%, #01030a 100%);
   --surface-1: rgba(9, 23, 56, 0.6);
   --surface-2: rgba(4, 15, 40, 0.75);
@@ -70,14 +76,20 @@
 }
 
 [data-theme='pencil'] {
-  --color-accent: #232429;
-  --color-accent-hover: #3D3F47;
-  --color-accent-muted: rgba(35, 36, 41, 0.12);
-  --color-accent-glow: rgba(35, 36, 41, 0.25);
+  --color-accent: #1A1B20;
+  --color-accent-hover: #33363F;
+  --color-accent-muted: rgba(26, 27, 32, 0.1);
+  --color-accent-glow: rgba(26, 27, 32, 0.2);
+  --color-primary: #1A1B20;
+  --color-secondary: #525560;
+  --color-primary-glow: rgba(26, 27, 32, 0.25);
+  --color-secondary-glow: rgba(82, 85, 96, 0.2);
+  --kpi-cut-1: transparent;
+  --kpi-cut-2: transparent;
   --bg-gradient: radial-gradient(circle at 50% -10%, #FAF6EE 0%, #F3EFE6 45%, #E9E3D4 100%);
-  --surface-1: rgba(255, 255, 255, 0.85);
-  --surface-2: rgba(248, 245, 237, 0.94);
-  --surface-border: rgba(35, 36, 41, 0.5);
+  --surface-1: rgba(255, 255, 255, 0.88);
+  --surface-2: rgba(248, 245, 237, 0.95);
+  --surface-border: rgba(35, 36, 42, 0.6);
 }
 
 [data-theme='lego'] {
@@ -103,14 +115,18 @@
 }
 
 [data-theme='amoled'] {
-  --color-accent: #FFFFFF;
-  --color-accent-hover: #E2E8F0;
-  --color-accent-muted: rgba(255, 255, 255, 0.08);
-  --color-accent-glow: rgba(0, 229, 255, 0.35);
+  --color-accent: #00E5FF;
+  --color-accent-hover: #38BDF8;
+  --color-accent-muted: rgba(0, 229, 255, 0.12);
+  --color-accent-glow: rgba(0, 229, 255, 0.4);
+  --color-primary: #00E5FF;
+  --color-secondary: #A78BFA;
+  --color-primary-glow: rgba(0, 229, 255, 0.4);
+  --color-secondary-glow: rgba(167, 139, 250, 0.4);
   --bg-gradient: radial-gradient(circle at 50% -10%, #000000 0%, #000000 50%, #000000 100%);
-  --surface-1: rgba(10, 10, 10, 0.95);
-  --surface-2: rgba(4, 4, 4, 0.98);
-  --surface-border: rgba(255, 255, 255, 0.12);
+  --surface-1: rgba(0, 0, 0, 0.95);
+  --surface-2: rgba(0, 0, 0, 0.98);
+  --surface-border: rgba(255, 255, 255, 0.1);
   background-color: #000000 !important;
 }
 
@@ -210,6 +226,31 @@ body {
 .border-accent-dynamic {
   border-color: var(--color-accent);
 }
+
+.text-primary-dynamic {
+  color: var(--color-primary, #00E5FF);
+}
+
+.text-secondary-dynamic {
+  color: var(--color-secondary, #A78BFA);
+}
+
+.bg-primary-dynamic {
+  background-color: var(--color-primary, #00E5FF);
+}
+
+.bg-secondary-dynamic {
+  background-color: var(--color-secondary, #A78BFA);
+}
+
+.border-primary-dynamic {
+  border-color: var(--color-primary, #00E5FF);
+}
+
+.border-secondary-dynamic {
+  border-color: var(--color-secondary, #A78BFA);
+}
+
 
 /* Desktop custom cursor hiding */
 @media (hover: hover) and (pointer: fine) {
@@ -331,6 +372,419 @@ body {
   background-color: #232429 !important;
   color: #F8F5EE !important;
 }
+
+/* ==========================================================================
+   PENCIL THEME: ZERO COLOR OVERRIDES (Monochromatic Graphite & Charcoal)
+   ========================================================================== */
+[data-theme='pencil'] .text-primary-dynamic {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .text-secondary-dynamic {
+  color: #525560 !important;
+}
+
+[data-theme='pencil'] .text-accent-dynamic {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .bg-accent-dynamic,
+[data-theme='pencil'] .bg-primary-dynamic {
+  background-color: #1A1B20 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .border-primary-dynamic,
+[data-theme='pencil'] .border-secondary-dynamic,
+[data-theme='pencil'] .border-accent-dynamic {
+  border-color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .hero-accent-name {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #1A1B20 !important;
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .hero-cta-btn {
+  background: #1A1B20 !important;
+  color: #FFFFFF !important;
+  box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.45) !important;
+}
+
+[data-theme='pencil'] .hero-cta-btn span,
+[data-theme='pencil'] .hero-cta-btn svg {
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   PENCIL THEME: AUTHENTIC SKETCHBOOK KPI CARDS (NO DARK BACKGROUNDS)
+   Light sketchbook paper, hand-drawn wobbly graphite borders & graphite typography
+   ========================================================================== */
+
+/* Completely hide rotating glow halo and conic borders around KPI cards */
+[data-theme='pencil'] .kpi-outer-halo,
+[data-theme='pencil'] .kpi-conic-glow,
+[data-theme='pencil'] .kpi-conic-border,
+[data-theme='pencil'] [data-kpi-card] .animate-border-spin-calm,
+[data-theme='pencil'] [data-kpi-card] .animate-border-spin,
+[data-theme='pencil'] [data-kpi-card] [class*='blur-'] {
+  display: none !important;
+}
+
+/* KPI Card Box: light sketchbook paper with authentic hand-drawn pencil border */
+[data-theme='pencil'] .kpi-card-box,
+[data-theme='pencil'] [data-kpi-card] .kpi-card-box {
+  background: #FAF6EE !important;
+  background-color: #FAF6EE !important;
+  border: 2px solid rgba(35, 36, 42, 0.8) !important;
+  box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.25) !important;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
+}
+
+/* KPI Card Inner Surface: seamless sketchbook paper, no dark wash or glass blur */
+[data-theme='pencil'] .kpi-card-surface,
+[data-theme='pencil'] [data-kpi-card] .kpi-card-surface {
+  background: #FAF6EE !important;
+  background-color: #FAF6EE !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Hide glass specular sheen lines and glow particles inside KPI cards */
+[data-theme='pencil'] [data-kpi-card] .kpi-card-surface > div.pointer-events-none {
+  display: none !important;
+}
+
+/* Authentic Graphite Pencil Typography inside KPI cards */
+[data-theme='pencil'] [data-kpi-card] *,
+[data-theme='pencil'] .kpi-card-surface * {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] [data-kpi-card] h1,
+[data-theme='pencil'] [data-kpi-card] h2,
+[data-theme='pencil'] [data-kpi-card] h3,
+[data-theme='pencil'] [data-kpi-card] h4,
+[data-theme='pencil'] [data-kpi-card] .font-black,
+[data-theme='pencil'] [data-kpi-card] .font-bold {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] [data-kpi-card] p,
+[data-theme='pencil'] [data-kpi-card] .text-foreground-muted,
+[data-theme='pencil'] .kpi-card-surface .text-foreground-muted {
+  color: #383B44 !important;
+}
+
+[data-theme='pencil'] [data-kpi-card] .text-foreground-subtle,
+[data-theme='pencil'] .kpi-card-surface .text-foreground-subtle {
+  color: #555863 !important;
+}
+
+[data-theme='pencil'] [data-kpi-card] .text-primary-dynamic,
+[data-theme='pencil'] [data-kpi-card] .text-secondary-dynamic,
+[data-theme='pencil'] .kpi-card-surface .text-primary-dynamic,
+[data-theme='pencil'] .kpi-card-surface .text-secondary-dynamic {
+  color: #1A1B20 !important;
+}
+
+/* Icon boxes inside KPI cards: light sketchbook tag with pencil border */
+[data-theme='pencil'] [data-kpi-card] .w-8.h-8,
+[data-theme='pencil'] [data-kpi-card] .kpi-icon-box,
+[data-theme='pencil'] .kpi-card-surface .kpi-icon-box {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border: 1.5px solid rgba(35, 36, 42, 0.75) !important;
+  box-shadow: 2px 2px 0px rgba(35, 36, 42, 0.2) !important;
+}
+
+[data-theme='pencil'] [data-kpi-card] svg,
+[data-theme='pencil'] .kpi-card-surface svg,
+[data-theme='pencil'] .kpi-icon-box svg {
+  color: #1A1B20 !important;
+}
+
+/* Status badges inside KPI cards: light sketchbook tag */
+[data-theme='pencil'] [data-kpi-card] span.inline-flex,
+[data-theme='pencil'] [data-kpi-card] .kpi-status-pill,
+[data-theme='pencil'] .kpi-card-surface .kpi-status-pill {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border: 1.5px solid rgba(35, 36, 42, 0.6) !important;
+  color: #1A1B20 !important;
+  box-shadow: 1px 1px 0px rgba(35, 36, 42, 0.15) !important;
+}
+
+[data-theme='pencil'] [data-kpi-card] span.inline-flex *,
+[data-theme='pencil'] [data-kpi-card] .kpi-status-pill * {
+  color: #1A1B20 !important;
+}
+
+/* Bullet dots and live status indicators inside KPI cards: graphite black */
+[data-theme='pencil'] [data-kpi-card] span[class*='rounded-full'][class*='bg-'],
+[data-theme='pencil'] .kpi-card-surface span[class*='rounded-full'][class*='bg-'] {
+  background-color: #1A1B20 !important;
+}
+
+/* Divider lines inside KPI cards: subtle pencil graphite rule */
+[data-theme='pencil'] [data-kpi-card] .border-t,
+[data-theme='pencil'] .kpi-card-surface .border-t,
+[data-theme='pencil'] [data-kpi-card] [class*='border-white'] {
+  border-color: rgba(35, 36, 42, 0.25) !important;
+}
+
+/* Code block inside active KPI card: sketch paper block */
+[data-theme='pencil'] [data-kpi-card] code {
+  background-color: rgba(35, 36, 42, 0.08) !important;
+  border: 1px dashed rgba(35, 36, 42, 0.4) !important;
+  color: #1A1B20 !important;
+}
+
+/* Hero connecting laser line: graphite sketch line with graphite junction nodes */
+[data-theme='pencil'] .hero-kpi-laser-track .hero-kpi-laser-line {
+  background: rgba(35, 36, 42, 0.6) !important;
+  box-shadow: none !important;
+}
+
+[data-theme='pencil'] .hero-kpi-laser-node .hero-kpi-node-dot {
+  background-color: #1A1B20 !important;
+  box-shadow: none !important;
+}
+
+[data-theme='pencil'] .hero-kpi-laser-node .hero-kpi-node-ping {
+  display: none !important;
+}
+
+/* Project KPI Card Explore Button: Solid black sketch button with pure white text */
+[data-theme='pencil'] .kpi-explore-btn {
+  background: #1A1B20 !important;
+  background-color: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #1A1B20 !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.4) !important;
+}
+
+[data-theme='pencil'] .kpi-explore-btn * {
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   PENCIL THEME: WHITE TEXT ON BLACK BUTTONS & NAV BUTTONS ACROSS WHOLE SYSTEM
+   Ensures crystal-clear readability and contrast for all dark elements
+   ========================================================================== */
+
+/* Navbar Brand text */
+[data-theme='pencil'] header a[aria-label="Mohammed Fareed Homepage"] .navbar-brand-name,
+[data-theme='pencil'] header a[aria-label="Mohammed Fareed Homepage"] .navbar-brand-name * {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] header a[aria-label="Mohammed Fareed Homepage"] .navbar-brand-title {
+  color: #CBD5E1 !important;
+}
+
+[data-theme='pencil'] header a[aria-label="Mohammed Fareed Homepage"] span.rounded-xl {
+  background-color: #FFFFFF !important;
+  color: #1A1B20 !important;
+  border-color: #1A1B20 !important;
+}
+
+/* Navbar Nav Links & Capsule */
+[data-theme='pencil'] .navbar-nav-capsule {
+  background-color: rgba(15, 23, 42, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme='pencil'] .navbar-nav-link,
+[data-theme='pencil'] header nav a,
+[data-theme='pencil'] nav a {
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+}
+
+[data-theme='pencil'] .navbar-nav-link:hover,
+[data-theme='pencil'] header nav a:hover,
+[data-theme='pencil'] nav a:hover {
+  background-color: rgba(255, 255, 255, 0.22) !important;
+  color: #FFFFFF !important;
+}
+
+/* Navbar Right Buttons */
+[data-theme='pencil'] .navbar-contact-btn,
+[data-theme='pencil'] header a[href='#contact'] {
+  background-color: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme='pencil'] .navbar-contact-btn *,
+[data-theme='pencil'] header a[href='#contact'] * {
+  color: #FFFFFF !important;
+}
+
+/* Hero Availability Pill */
+[data-theme='pencil'] .hero-availability-pill {
+  background-color: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.35) !important;
+}
+
+[data-theme='pencil'] .hero-availability-pill * {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .hero-availability-pill span.animate-pulse {
+  background-color: #FFFFFF !important;
+}
+
+/* Hero Role Badge */
+[data-theme='pencil'] .hero-role-badge {
+  background-color: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.35) !important;
+}
+
+[data-theme='pencil'] .hero-role-badge * {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .hero-role-badge svg {
+  color: #FFFFFF !important;
+}
+
+/* Hero Primary CTA: Explore my work */
+[data-theme='pencil'] .hero-cta-btn {
+  background-color: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #232428 !important;
+  box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.45) !important;
+}
+
+[data-theme='pencil'] .hero-cta-btn * {
+  color: #FFFFFF !important;
+}
+
+/* Hero Secondary CTA: Let's connect */
+[data-theme='pencil'] .hero-secondary-btn {
+  background-color: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #232428 !important;
+  box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.45) !important;
+}
+
+[data-theme='pencil'] .hero-secondary-btn * {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .hero-secondary-btn svg {
+  color: #FFFFFF !important;
+}
+
+/* Hero Location Pill: Based in Tamale, Ghana */
+[data-theme='pencil'] .hero-location-pill {
+  background-color: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.35) !important;
+}
+
+[data-theme='pencil'] .hero-location-pill * {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .hero-location-pill span.animate-pulse {
+  background-color: #FFFFFF !important;
+}
+
+/* Contact Section CTA: Send Email Directly */
+[data-theme='pencil'] #contact a[href^='mailto'] {
+  background-color: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #232428 !important;
+  box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.45) !important;
+}
+
+[data-theme='pencil'] #contact a[href^='mailto'] * {
+  color: #FFFFFF !important;
+}
+
+/* Projects Active Filter Button */
+[data-theme='pencil'] #projects button.bg-primary-dynamic {
+  background-color: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #1A1B20 !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.35) !important;
+}
+
+/* Universal System Rule: ANY black or dark button/container in pencil theme uses pure white text */
+[data-theme='pencil'] button[class*='bg-black'],
+[data-theme='pencil'] button[class*='bg-surface-100'],
+[data-theme='pencil'] button[class*='bg-surface-200'],
+[data-theme='pencil'] button[class*='bg-surface-300'],
+[data-theme='pencil'] a[class*='bg-black'],
+[data-theme='pencil'] a[class*='bg-surface-100'],
+[data-theme='pencil'] a[class*='bg-surface-200'],
+[data-theme='pencil'] a[class*='bg-surface-300'],
+[data-theme='pencil'] [class*='bg-surface-100\/90'],
+[data-theme='pencil'] [class*='bg-surface-100\/95'],
+[data-theme='pencil'] [class*='bg-surface-100\/80'],
+[data-theme='pencil'] [class*='bg-surface-200\/70'],
+[data-theme='pencil'] [class*='bg-surface-300\/90'],
+[data-theme='pencil'] [class*='bg-surface-300\/60'] button,
+[data-theme='pencil'] [class*='bg-accent-dynamic']:is(button, a),
+[data-theme='pencil'] [class*='bg-primary-dynamic']:is(button, a) {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] button[class*='bg-black'] *,
+[data-theme='pencil'] button[class*='bg-surface-100'] *,
+[data-theme='pencil'] button[class*='bg-surface-200'] *,
+[data-theme='pencil'] button[class*='bg-surface-300'] *,
+[data-theme='pencil'] a[class*='bg-black'] *,
+[data-theme='pencil'] a[class*='bg-surface-100'] *,
+[data-theme='pencil'] a[class*='bg-surface-200'] *,
+[data-theme='pencil'] a[class*='bg-surface-300'] *,
+[data-theme='pencil'] [class*='bg-surface-100\/90'] *,
+[data-theme='pencil'] [class*='bg-surface-100\/95'] *,
+[data-theme='pencil'] [class*='bg-surface-100\/80'] *,
+[data-theme='pencil'] [class*='bg-surface-200\/70'] *,
+[data-theme='pencil'] [class*='bg-surface-300\/90'] *,
+[data-theme='pencil'] [class*='bg-surface-300\/60'] button *,
+[data-theme='pencil'] [class*='bg-accent-dynamic']:is(button, a) *,
+[data-theme='pencil'] [class*='bg-primary-dynamic']:is(button, a) * {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] button[class*='bg-black'] svg,
+[data-theme='pencil'] button[class*='bg-surface-'] svg,
+[data-theme='pencil'] a[class*='bg-black'] svg,
+[data-theme='pencil'] a[class*='bg-surface-'] svg,
+[data-theme='pencil'] [class*='bg-surface-100\/90'] svg,
+[data-theme='pencil'] [class*='bg-surface-100\/95'] svg {
+  color: #FFFFFF !important;
+}
+
+/* Marquee Billboard: AMOLED black bar with pure white text and monochrome sketch laser lines */
+[data-theme='pencil'] .marquee-billboard,
+[data-theme='pencil'] .marquee-billboard * {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .marquee-billboard svg {
+  color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .marquee-billboard .animate-laser-flow,
+[data-theme='pencil'] .marquee-billboard .animate-laser-flow-reverse {
+  background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.4) 25%, transparent 40%, transparent 50%, #FFFFFF 60%, rgba(255, 255, 255, 0.4) 85%, transparent 100%) !important;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4) !important;
+}
+
 
 /* ==========================================================================
    THEME: LEGO STUDIO
@@ -470,118 +924,35 @@ body {
   animation: border-spin 7s linear infinite;
 }
 
+.animate-border-spin-calm {
+  animation: border-spin 10s linear infinite;
+}
+
+.animate-border-spin-calm-reverse {
+  animation: border-spin-reverse 10s linear infinite;
+}
+
 .animate-laser-flow {
-  animation: marquee 8s linear infinite;
+  animation: marquee 16s linear infinite;
 }
 
 .animate-laser-flow-reverse {
-  animation: marquee-reverse 8s linear infinite;
+  animation: marquee-reverse 16s linear infinite;
 }
 
 /* ==========================================================================
-   Four Moving Cut Line Beams Chasing Each Other
-   ========================================================================== */
-@keyframes beam-top {
-  0% {
-    left: -40%;
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  85% {
-    opacity: 1;
-  }
-  100% {
-    left: 100%;
-    opacity: 0;
-  }
-}
-
-@keyframes beam-right {
-  0% {
-    top: -40%;
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  85% {
-    opacity: 1;
-  }
-  100% {
-    top: 100%;
-    opacity: 0;
-  }
-}
-
-@keyframes beam-bottom {
-  0% {
-    right: -40%;
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  85% {
-    opacity: 1;
-  }
-  100% {
-    right: 100%;
-    opacity: 0;
-  }
-}
-
-@keyframes beam-left {
-  0% {
-    bottom: -40%;
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  85% {
-    opacity: 1;
-  }
-  100% {
-    bottom: 100%;
-    opacity: 0;
-  }
-}
-
-.animate-beam-top {
-  animation: beam-top 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-.animate-beam-right {
-  animation: beam-right 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  animation-delay: 0.75s;
-}
-
-.animate-beam-bottom {
-  animation: beam-bottom 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  animation-delay: 1.5s;
-}
-
-.animate-beam-left {
-  animation: beam-left 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  animation-delay: 2.25s;
-}
-
-/* ==========================================================================
-   AMOLED POLYCHROMATIC ACCENTS
-   Ensures AMOLED theme is not dominated by a single accent color
+   AMOLED DUAL-TONE ACCENTS (Primary + Secondary)
    ========================================================================== */
 [data-theme='amoled'] .hero-accent-name {
-  background: linear-gradient(135deg, #00E5FF 0%, #A78BFA 33%, #F43F5E 66%, #F5B942 100%) !important;
+  background: linear-gradient(135deg, #00E5FF 0%, #A78BFA 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
 
 [data-theme='amoled'] .hero-cta-btn {
-  background: linear-gradient(135deg, #00E5FF 0%, #A78BFA 50%, #F5B942 100%) !important;
+  background: linear-gradient(135deg, #00E5FF 0%, #A78BFA 100%) !important;
   color: #000000 !important;
-  box-shadow: 0 0 25px rgba(0, 229, 255, 0.4) !important;
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.35) !important;
 }
 
 

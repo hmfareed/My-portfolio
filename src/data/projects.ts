@@ -9,7 +9,7 @@ export interface Project {
   coverImage: string;
   year: number;
   featured: boolean;
-  accentColor: 'amber' | 'teal' | 'violet' | 'rose' | 'lime' | 'sky';
+  accentColor: 'primary' | 'secondary';
   status: {
     text: string;
     state: 'active' | 'production' | 'beta' | 'live';
@@ -46,7 +46,7 @@ export const projectsData: Project[] = [
     coverImage: '/images/africart.png',
     year: 2026,
     featured: true,
-    accentColor: 'amber',
+    accentColor: 'primary',
     status: {
       text: 'Now in Beta Testing',
       state: 'beta',
@@ -119,7 +119,7 @@ export const projectsData: Project[] = [
     coverImage: '/images/africart.png',
     year: 2025,
     featured: true,
-    accentColor: 'teal',
+    accentColor: 'secondary',
     status: {
       text: 'Live Production',
       state: 'production',
@@ -187,7 +187,7 @@ export const projectsData: Project[] = [
     coverImage: '/images/hanaraschools.png',
     year: 2025,
     featured: true,
-    accentColor: 'violet',
+    accentColor: 'primary',
     status: {
       text: 'Institutional Rollout',
       state: 'production',
@@ -255,7 +255,7 @@ export const projectsData: Project[] = [
     coverImage: '/images/kayspacks.png',
     year: 2025,
     featured: false,
-    accentColor: 'rose',
+    accentColor: 'secondary',
     status: {
       text: 'Active Commerce',
       state: 'active',
@@ -311,7 +311,7 @@ export const projectsData: Project[] = [
     coverImage: '/images/slaybyhumu.png',
     year: 2024,
     featured: false,
-    accentColor: 'lime',
+    accentColor: 'primary',
     status: {
       text: 'Live Service',
       state: 'production',
@@ -367,7 +367,7 @@ export const projectsData: Project[] = [
     coverImage: '/images/hanaraschools.png',
     year: 2024,
     featured: false,
-    accentColor: 'sky',
+    accentColor: 'secondary',
     status: {
       text: 'Web App Live',
       state: 'active',

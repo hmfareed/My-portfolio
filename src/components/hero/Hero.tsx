@@ -16,7 +16,7 @@ const kpis = [
     code: 'northmarket.progress = 0.80',
     detail: 'NorthMarket is actively being shaped into a focused local-commerce platform.',
     icon: Layers3,
-    accent: 'amber' as const,
+    accent: 'primary' as const,
   },
   {
     label: 'Core stack',
@@ -27,7 +27,7 @@ const kpis = [
     code: 'stack = ["Next", "Node", "Mongo"]',
     detail: 'Comfortable taking a product from interface and API design to deployment.',
     icon: Code2,
-    accent: 'teal' as const,
+    accent: 'secondary' as const,
   },
   {
     label: 'Commerce',
@@ -38,7 +38,7 @@ const kpis = [
     code: 'payments.connect("Paystack")',
     detail: 'Built for Ghanaian checkout flows and practical payment integrations.',
     icon: Database,
-    accent: 'violet' as const,
+    accent: 'primary' as const,
   },
   {
     label: 'Performance',
@@ -49,7 +49,7 @@ const kpis = [
     code: 'target.lcp < 2.2s',
     detail: 'Thoughtful loading states and responsive, accessible interfaces come first.',
     icon: Gauge,
-    accent: 'lime' as const,
+    accent: 'secondary' as const,
   },
 ];
 
@@ -121,29 +121,38 @@ export default function Hero() {
               transition={{ ...iosSpring, delay: 0.05 }}
               className="flex flex-wrap gap-2.5 text-xs font-sans"
             >
-              <span className="inline-flex items-center gap-2 rounded-full bg-surface-100/90 px-3.5 py-1.5 text-foreground-muted backdrop-blur-md shadow-lg border border-black/40">
+              <span className="hero-availability-pill inline-flex items-center gap-2 rounded-full bg-surface-100/90 px-3.5 py-1.5 text-foreground-muted backdrop-blur-md shadow-lg border border-black/40">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-accent-dynamic" />
                 Available for selected projects
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-muted px-3.5 py-1.5 text-accent-dynamic font-semibold shadow-sm border border-black/30">
-                <Terminal className="h-3.5 w-3.5" />
-                Full-Stack Developer
+              <span className="hero-role-badge inline-flex items-center gap-1.5 rounded-full bg-surface-100/90 px-3.5 py-1.5 font-semibold shadow-sm border border-white/10 text-xs">
+                <Terminal className="h-3.5 w-3.5 text-primary-dynamic" />
+                <span className="text-primary-dynamic">FULL</span>
+                <span className="text-foreground-muted">-</span>
+                <span className="text-secondary-dynamic">STACK</span>
+                <span className="text-foreground ml-0.5">DEVELOPER</span>
               </span>
             </motion.div>
 
-            {/* Headline - "MOHAMMED" on line 1, "FAREED" on line 2 */}
+            {/* Headline - "MOHAMMED" on line 1, "FAREED" on line 2 with dual-tone syllables */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: 55 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ ...iosSpring, delay: 0.15 }}
               className="space-y-1.5"
             >
-              <p className="text-xs sm:text-sm font-bold tracking-widest text-accent-dynamic uppercase">
-                Hello, my name is
+              <p className="text-xs sm:text-sm font-bold tracking-widest uppercase flex items-center gap-1">
+                <span className="text-foreground-muted">HELLO, MY NAME IS</span>
+                <span className="text-primary-dynamic">✦</span>
               </p>
               <h1 className="text-[clamp(3.5rem,8vw,6.8rem)] font-black uppercase leading-[0.88] tracking-tight font-sans">
-                <span className="block text-foreground">MOHAMMED</span>
-                <span className="block text-accent-dynamic hero-accent-name">FAREED</span>
+                <span className="block text-foreground">
+                  MOHAM<span className="text-primary-dynamic">MED</span>
+                </span>
+                <span className="block hero-accent-name tracking-normal">
+                  <span className="text-primary-dynamic">FAR</span>
+                  <span className="text-secondary-dynamic">EED</span>
+                </span>
               </h1>
             </motion.div>
 
@@ -155,7 +164,7 @@ export default function Hero() {
               className="max-w-xl space-y-3"
             >
               <p className="text-lg font-bold leading-relaxed text-foreground sm:text-xl font-sans">
-                I build high-performance, visually thoughtful web experiences.
+                I build <span className="text-primary-dynamic font-black">high-</span><span className="text-secondary-dynamic font-black">performance</span>, visually thoughtful web experiences.
               </p>
               <p className="text-base leading-relaxed text-foreground-muted sm:text-lg font-sans">
                 A Computer Science student and full-stack developer focused on clean interfaces, practical architecture, and commerce systems engineered for real-world impact.
@@ -180,7 +189,7 @@ export default function Hero() {
 
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full bg-surface-100/90 hover:bg-surface-50 px-7 py-4 text-sm font-semibold text-foreground transition-all hover:-translate-y-1 border border-black/60 backdrop-blur-md active:scale-95 shadow-lg"
+                className="hero-secondary-btn inline-flex items-center gap-2 rounded-full bg-surface-100/90 hover:bg-surface-50 px-7 py-4 text-sm font-semibold text-foreground transition-all hover:-translate-y-1 border border-black/60 backdrop-blur-md active:scale-95 shadow-lg"
               >
                 <span>Let&apos;s connect</span>
                 <ArrowUpRight className="h-4 w-4 text-accent-dynamic" />
@@ -221,7 +230,7 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.6, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ ...iosSpring, delay: 0.45 }}
-                className="mt-4 whitespace-nowrap rounded-full bg-surface-100/95 px-5 py-2 text-xs font-semibold text-foreground backdrop-blur-xl shadow-2xl font-sans flex items-center gap-2 border border-black/60"
+                className="hero-location-pill mt-4 whitespace-nowrap rounded-full bg-surface-100/95 px-5 py-2 text-xs font-semibold text-foreground backdrop-blur-xl shadow-2xl font-sans flex items-center gap-2 border border-black/60"
               >
                 <span className="h-2 w-2 rounded-full bg-accent-dynamic animate-pulse" />
                 <span>Based in Tamale, Ghana</span>
@@ -241,23 +250,23 @@ export default function Hero() {
           <div className="absolute left-[7%] right-[7%] top-0 hidden h-px bg-gradient-to-r from-transparent via-accent-dynamic/40 to-transparent md:block" />
 
           {/* Animated horizontal connecting laser line bridging all 4 cards in-line */}
-          <div className="absolute top-[48%] -translate-y-1/2 left-[5%] right-[5%] h-[2.5px] hidden lg:block pointer-events-none z-0">
+          <div className="hero-kpi-laser-track absolute top-[48%] -translate-y-1/2 left-[5%] right-[5%] h-[2.5px] hidden lg:block pointer-events-none z-0">
             <motion.div
               variants={lineVariants}
-              className="h-full w-full origin-left bg-gradient-to-r from-[#00E5FF] via-[#A78BFA] via-[#F43F5E] via-[#F5B942] to-[#10B981] shadow-[0_0_12px_rgba(0,229,255,0.8)]"
+              className="hero-kpi-laser-line h-full w-full origin-left bg-gradient-to-r from-[#00E5FF] via-[#A78BFA] via-[#F43F5E] via-[#F5B942] to-[#10B981] shadow-[0_0_12px_rgba(0,229,255,0.8)]"
             />
             {/* Connection junction nodes between cards */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-[25%] -translate-x-1/2 z-10 flex items-center justify-center">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping absolute opacity-75" />
-              <span className="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#00E5FF]" />
+            <div className="hero-kpi-laser-node absolute top-1/2 -translate-y-1/2 left-[25%] -translate-x-1/2 z-10 flex items-center justify-center">
+              <span className="hero-kpi-node-ping w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping absolute opacity-75" />
+              <span className="hero-kpi-node-dot w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#00E5FF]" />
             </div>
-            <div className="absolute top-1/2 -translate-y-1/2 left-[50%] -translate-x-1/2 z-10 flex items-center justify-center">
-              <span className="w-2.5 h-2.5 rounded-full bg-rose-400 animate-ping absolute opacity-75" />
-              <span className="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#F43F5E]" />
+            <div className="hero-kpi-laser-node absolute top-1/2 -translate-y-1/2 left-[50%] -translate-x-1/2 z-10 flex items-center justify-center">
+              <span className="hero-kpi-node-ping w-2.5 h-2.5 rounded-full bg-rose-400 animate-ping absolute opacity-75" />
+              <span className="hero-kpi-node-dot w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#F43F5E]" />
             </div>
-            <div className="absolute top-1/2 -translate-y-1/2 left-[75%] -translate-x-1/2 z-10 flex items-center justify-center">
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping absolute opacity-75" />
-              <span className="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#F5B942]" />
+            <div className="hero-kpi-laser-node absolute top-1/2 -translate-y-1/2 left-[75%] -translate-x-1/2 z-10 flex items-center justify-center">
+              <span className="hero-kpi-node-ping w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping absolute opacity-75" />
+              <span className="hero-kpi-node-dot w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#F5B942]" />
             </div>
           </div>
 
@@ -288,21 +297,26 @@ export default function Hero() {
                       {/* Top Header Row: Left Icon Box + Right Status Badge */}
                       <div className="flex items-center justify-between gap-2">
                         <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-white/5 border border-white/10">
-                          <Icon className="h-4 w-4 text-accent-dynamic" />
+                          <Icon className={`h-4 w-4 ${kpi.accent === 'primary' ? 'text-primary-dynamic' : 'text-secondary-dynamic'}`} />
                         </div>
                         <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-white/5 border border-white/10 text-foreground-subtle">
-                          <span className="w-1.5 h-1.5 rounded-full bg-accent-dynamic animate-pulse" />
+                          <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${kpi.accent === 'primary' ? 'bg-primary-dynamic' : 'bg-secondary-dynamic'}`} />
                           <span>{kpi.badge}</span>
                         </span>
                       </div>
 
-                      {/* Value & Subtitle */}
+                      {/* Value & Subtitle with split styling */}
                       <div>
                         <div className="text-2xl sm:text-3xl font-black tracking-tight text-foreground font-sans">
                           {kpi.value}
                         </div>
-                        <div className="text-[10px] font-bold uppercase tracking-wider text-accent-dynamic">
-                          {kpi.subtitle}
+                        <div className="text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+                          <span className={kpi.accent === 'primary' ? 'text-primary-dynamic' : 'text-secondary-dynamic'}>
+                            {kpi.subtitle.split(' ')[0]}
+                          </span>
+                          <span className="text-foreground-subtle">
+                            {kpi.subtitle.split(' ').slice(1).join(' ')}
+                          </span>
                         </div>
                       </div>
 
@@ -310,7 +324,7 @@ export default function Hero() {
                       <div className="space-y-1 text-[11px] text-foreground-muted font-sans">
                         {kpi.bullets.map((b, bi) => (
                           <div key={bi} className="flex items-center gap-1.5">
-                            <span className="w-1 h-1 rounded-full bg-accent-dynamic shrink-0" />
+                            <span className={`w-1 h-1 rounded-full shrink-0 ${kpi.accent === 'primary' ? 'bg-primary-dynamic' : 'bg-secondary-dynamic'}`} />
                             <span className="truncate">{b}</span>
                           </div>
                         ))}
@@ -323,7 +337,9 @@ export default function Hero() {
                           initial={{ opacity: 0, y: 8 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 8 }}
-                          className="mt-3 pt-3 border-t border-white/10 text-[11px] leading-relaxed text-accent-dynamic font-medium"
+                          className={`mt-3 pt-3 border-t border-white/10 text-[11px] leading-relaxed font-medium ${
+                            kpi.accent === 'primary' ? 'text-primary-dynamic' : 'text-secondary-dynamic'
+                          }`}
                         >
                           <code className="text-[10px] bg-black/40 px-1.5 py-0.5 rounded font-mono">{kpi.code}</code>
                           <p className="mt-1 text-foreground-muted text-[10px]">{kpi.detail}</p>
@@ -331,7 +347,9 @@ export default function Hero() {
                       ) : (
                         <div className="mt-3 pt-2 flex items-center justify-between text-[10px] text-foreground-subtle border-t border-white/5">
                           <span>0{index + 1} // {kpi.label}</span>
-                          <span className="text-accent-dynamic font-semibold group-hover:translate-x-0.5 transition-transform">
+                          <span className={`font-semibold group-hover:translate-x-0.5 transition-transform ${
+                            kpi.accent === 'primary' ? 'text-primary-dynamic' : 'text-secondary-dynamic'
+                          }`}>
                             Inspect →
                           </span>
                         </div>
