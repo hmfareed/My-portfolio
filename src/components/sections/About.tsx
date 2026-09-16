@@ -80,27 +80,27 @@ export default function About({ onOpenResume }: AboutProps) {
                 src="/images/Fareed.png"
                 alt="Mohammed Fareed"
                 fill
-                className="object-cover object-top filter grayscale contrast-110 brightness-95 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                className="object-cover object-top filter grayscale contrast-110 brightness-105 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
               />
 
               {/* Gradient Scrim */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none" />
 
               {/* Attached Software Engineer Role & Metadata Overlay */}
-              <div className="absolute inset-x-6 bottom-6 flex flex-col justify-end space-y-2 font-sans text-xs z-10">
-                <div className="flex items-center justify-between text-foreground">
-                  <span className="font-black tracking-wider text-sm">
-                    MOHAM<span className="text-primary-dynamic">MED</span> <span className="text-primary-dynamic">FAR</span><span className="text-secondary-dynamic">EED</span>
+              <div className="about-portrait-overlay absolute inset-x-6 bottom-6 flex flex-col justify-end space-y-2 font-sans text-xs z-10">
+                <div className="flex items-center justify-between text-white">
+                  <span className="font-black tracking-wider text-sm text-white">
+                    MOHAMMED FAREED
                   </span>
-                  <span className="text-primary-dynamic font-bold">2026</span>
+                  <span className="text-white font-bold font-mono">2026</span>
                 </div>
-                <div className="flex items-center justify-between text-foreground-subtle text-xs pt-2 border-t border-white/15">
-                  <span className="font-semibold tracking-wide uppercase">
-                    <span className="text-primary-dynamic">SOFT</span><span className="text-secondary-dynamic">WARE</span> <span className="text-foreground">ENGINEER</span>
+                <div className="flex items-center justify-between text-white/90 text-xs pt-2 border-t border-white/20">
+                  <span className="font-semibold tracking-wide uppercase text-white">
+                    SOFTWARE ENGINEER
                   </span>
-                  <span className="flex items-center gap-1.5 font-medium">
-                    <MapPin className="w-3.5 h-3.5 text-primary-dynamic" />
-                    <span>Tamale, Ghana</span>
+                  <span className="flex items-center gap-1.5 font-medium text-white">
+                    <MapPin className="w-3.5 h-3.5 text-white" />
+                    <span className="text-white">Tamale, Ghana</span>
                   </span>
                 </div>
               </div>

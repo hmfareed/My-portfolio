@@ -209,18 +209,18 @@ export default function Hero() {
               className="relative w-full flex flex-col items-center justify-center"
             >
               {/* Soft Ambient Radial Halo behind the circular picture */}
-              <div className="absolute w-72 sm:w-80 md:w-96 aspect-square rounded-full bg-accent-dynamic opacity-25 blur-[75px] pointer-events-none" />
-              <div className="absolute -right-4 top-10 h-48 w-48 rounded-full bg-blue-500/20 blur-[70px] pointer-events-none" />
+              <div className="hero-avatar-halo absolute w-72 sm:w-80 md:w-96 aspect-square rounded-full bg-accent-dynamic opacity-25 blur-[75px] pointer-events-none" />
+              <div className="hero-avatar-halo absolute -right-4 top-10 h-48 w-48 rounded-full bg-blue-500/20 blur-[70px] pointer-events-none" />
 
-              {/* CIRCULAR Picture Container with thin, blended black border */}
-              <div className="relative w-72 sm:w-80 md:w-[370px] aspect-square rounded-full p-2 sm:p-2.5 bg-surface-200/50 backdrop-blur-xl border border-black/80 shadow-2xl shadow-black/90 ring-1 ring-white/10">
-                <div className="relative h-full w-full overflow-hidden rounded-full border border-black/50 bg-surface-300/80">
+              {/* CIRCULAR Picture Container with clean, luminous border */}
+              <div className="hero-avatar-frame relative w-72 sm:w-80 md:w-[370px] aspect-square rounded-full p-2 sm:p-2.5 bg-surface-100/40 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 ring-1 ring-white/15">
+                <div className="hero-avatar-inner relative h-full w-full overflow-hidden rounded-full border border-white/10 bg-transparent">
                   <Image
                     src="/images/Fareed.png"
                     alt="MOHAMMED FAREED"
                     fill
                     priority
-                    className="object-cover object-top scale-105"
+                    className="object-cover object-top scale-105 brightness-105 contrast-105"
                   />
                 </div>
               </div>

@@ -359,11 +359,41 @@ body {
   box-shadow: 4px 5px 0px rgba(35, 36, 42, 0.5) !important;
 }
 
-/* Photos & Screenshots rendered as pencil graphite drawings */
+/* Photos & Screenshots rendered as clean pencil graphite portraits without dark murky multiply */
 [data-theme='pencil'] img,
 [data-theme='pencil'] Image {
-  filter: grayscale(100%) contrast(150%) brightness(105%) !important;
-  mix-blend-mode: multiply !important;
+  filter: grayscale(100%) contrast(115%) brightness(108%) !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Pencil theme hero avatar frame & halo overrides */
+[data-theme='pencil'] .hero-avatar-halo {
+  display: none !important;
+}
+
+[data-theme='pencil'] .hero-avatar-frame {
+  background: #FAF6EE !important;
+  border: 2.5px solid rgba(35, 36, 42, 0.8) !important;
+  box-shadow: 3px 5px 0px rgba(35, 36, 42, 0.25) !important;
+}
+
+[data-theme='pencil'] .hero-avatar-inner {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(35, 36, 42, 0.3) !important;
+}
+
+/* Identity & Background portrait overlay: always pure white and visible over dark scrim across all themes */
+.about-portrait-overlay,
+.about-portrait-overlay *,
+.about-portrait-overlay span,
+.about-portrait-overlay svg,
+[data-theme='pencil'] .about-portrait-overlay,
+[data-theme='pencil'] .about-portrait-overlay *,
+[data-theme='pencil'] .about-portrait-overlay span,
+[data-theme='pencil'] .about-portrait-overlay svg {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
 }
 
 /* Sketchbook paper cross-hatching grid */
