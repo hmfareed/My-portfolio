@@ -1,0 +1,463 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+[data-theme='oceanic-blue'] {
+  --color-accent: #00E5FF;
+  --color-accent-hover: #38BDF8;
+  --color-accent-muted: rgba(0, 229, 255, 0.12);
+  --color-accent-glow: rgba(0, 229, 255, 0.4);
+  --bg-gradient: radial-gradient(circle at 50% -10%, #092661 0%, #04102e 28%, #020617 55%, #01030a 100%);
+  --surface-1: rgba(9, 23, 56, 0.6);
+  --surface-2: rgba(4, 15, 40, 0.75);
+  --surface-border: rgba(0, 229, 255, 0.15);
+}
+
+[data-theme='cyber-lime'] {
+  --color-accent: #C8FF00;
+  --color-accent-hover: #D7FF4F;
+  --color-accent-muted: rgba(200, 255, 0, 0.12);
+  --color-accent-glow: rgba(200, 255, 0, 0.38);
+  --bg-gradient: radial-gradient(circle at 50% -10%, #151d05 0%, #0a0d02 30%, #050505 60%, #020202 100%);
+  --surface-1: rgba(20, 20, 20, 0.7);
+  --surface-2: rgba(12, 12, 12, 0.85);
+  --surface-border: rgba(200, 255, 0, 0.18);
+}
+
+[data-theme='cosmic-violet'] {
+  --color-accent: #A78BFA;
+  --color-accent-hover: #C4B5FD;
+  --color-accent-muted: rgba(167, 139, 250, 0.15);
+  --color-accent-glow: rgba(167, 139, 250, 0.4);
+  --bg-gradient: radial-gradient(circle at 50% -10%, #1c0b38 0%, #0e0520 30%, #070210 60%, #020106 100%);
+  --surface-1: rgba(25, 15, 45, 0.65);
+  --surface-2: rgba(15, 8, 30, 0.8);
+  --surface-border: rgba(167, 139, 250, 0.18);
+}
+
+[data-theme='sunset-gold'] {
+  --color-accent: #F5B942;
+  --color-accent-hover: #FCD34D;
+  --color-accent-muted: rgba(245, 185, 66, 0.15);
+  --color-accent-glow: rgba(245, 185, 66, 0.4);
+  --bg-gradient: radial-gradient(circle at 50% -10%, #261604 0%, #140b02 30%, #080401 60%, #030100 100%);
+  --surface-1: rgba(35, 22, 10, 0.65);
+  --surface-2: rgba(20, 12, 5, 0.8);
+  --surface-border: rgba(245, 185, 66, 0.18);
+}
+
+[data-theme='emerald-matrix'] {
+  --color-accent: #10B981;
+  --color-accent-hover: #34D399;
+  --color-accent-muted: rgba(16, 185, 129, 0.15);
+  --color-accent-glow: rgba(16, 185, 129, 0.4);
+  --bg-gradient: radial-gradient(circle at 50% -10%, #04251b 0%, #021610 30%, #010a07 60%, #000403 100%);
+  --surface-1: rgba(8, 32, 24, 0.65);
+  --surface-2: rgba(4, 20, 15, 0.8);
+  --surface-border: rgba(16, 185, 129, 0.18);
+}
+
+[data-theme='crimson-rose'] {
+  --color-accent: #F43F5E;
+  --color-accent-hover: #FB7185;
+  --color-accent-muted: rgba(244, 63, 94, 0.15);
+  --color-accent-glow: rgba(244, 63, 94, 0.4);
+  --bg-gradient: radial-gradient(circle at 50% -10%, #290712 0%, #180309 30%, #0c0104 60%, #040001 100%);
+  --surface-1: rgba(38, 12, 20, 0.65);
+  --surface-2: rgba(22, 6, 11, 0.8);
+  --surface-border: rgba(244, 63, 94, 0.18);
+}
+
+[data-theme='pencil'] {
+  --color-accent: #232429;
+  --color-accent-hover: #3D3F47;
+  --color-accent-muted: rgba(35, 36, 41, 0.12);
+  --color-accent-glow: rgba(35, 36, 41, 0.25);
+  --bg-gradient: radial-gradient(circle at 50% -10%, #FAF6EE 0%, #F3EFE6 45%, #E9E3D4 100%);
+  --surface-1: rgba(255, 255, 255, 0.85);
+  --surface-2: rgba(248, 245, 237, 0.94);
+  --surface-border: rgba(35, 36, 41, 0.5);
+}
+
+[data-theme='lego'] {
+  --color-accent: #E3000B;
+  --color-accent-hover: #FF1A24;
+  --color-accent-muted: rgba(227, 0, 11, 0.18);
+  --color-accent-glow: rgba(227, 0, 11, 0.45);
+  --bg-gradient: radial-gradient(circle at 50% -10%, #171E2D 0%, #0F1420 40%, #080B12 100%);
+  --surface-1: rgba(23, 31, 46, 0.82);
+  --surface-2: rgba(15, 20, 32, 0.92);
+  --surface-border: rgba(227, 0, 11, 0.35);
+}
+
+[data-theme='pixel'] {
+  --color-accent: #00FF66;
+  --color-accent-hover: #33FF85;
+  --color-accent-muted: rgba(0, 255, 102, 0.15);
+  --color-accent-glow: rgba(0, 255, 102, 0.45);
+  --bg-gradient: radial-gradient(circle at 50% -10%, #06200E 0%, #031107 40%, #010402 100%);
+  --surface-1: rgba(3, 25, 10, 0.82);
+  --surface-2: rgba(2, 17, 7, 0.93);
+  --surface-border: rgba(0, 255, 102, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color: #F5F5F5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  background-color: #020408;
+  color: #F5F5F5;
+  min-height: 100vh;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-accent);
+  color: #020408;
+}
+
+/* Subtle Overlay Grid */
+.bg-grid-pattern {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Dynamic Accent and Glow Utilities */
+.accent-glow {
+  box-shadow: 0 0 40px -10px var(--color-accent-glow);
+}
+
+.accent-glow-sm {
+  box-shadow: 0 0 20px -5px var(--color-accent-glow);
+}
+
+.text-accent-dynamic {
+  color: var(--color-accent);
+}
+
+.bg-accent-dynamic {
+  background-color: var(--color-accent);
+}
+
+.border-accent-dynamic {
+  border-color: var(--color-accent);
+}
+
+/* Desktop custom cursor hiding */
+@media (hover: hover) and (pointer: fine) {
+  .has-custom-cursor,
+  .has-custom-cursor a,
+  .has-custom-cursor button {
+    cursor: none !important;
+  }
+}
+
+/* ==========================================================================
+   THEME: PENCIL SKETCH
+   Transforms the entire website into a hand-drawn sketchbook on parchment
+   ========================================================================== */
+
+[data-theme='pencil'],
+[data-theme='pencil'] body,
+[data-theme='pencil'] h1,
+[data-theme='pencil'] h2,
+[data-theme='pencil'] h3,
+[data-theme='pencil'] h4,
+[data-theme='pencil'] p,
+[data-theme='pencil'] span,
+[data-theme='pencil'] a,
+[data-theme='pencil'] button,
+[data-theme='pencil'] input,
+[data-theme='pencil'] textarea {
+  font-family: 'Architects Daughter', 'Caveat', 'Segoe Print', 'Comic Sans MS', cursive, sans-serif !important;
+}
+
+[data-theme='pencil'] body {
+  color: #1E1F24 !important;
+  background-color: #F3EFE6 !important;
+}
+
+[data-theme='pencil'] .text-foreground {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .text-foreground-muted {
+  color: #4A4D56 !important;
+}
+
+[data-theme='pencil'] .text-foreground-subtle {
+  color: #6E727D !important;
+}
+
+[data-theme='pencil'] .bg-background {
+  background-color: #F3EFE6 !important;
+}
+
+[data-theme='pencil'] .bg-surface-50 {
+  background-color: rgba(40, 42, 50, 0.08) !important;
+}
+
+[data-theme='pencil'] .bg-surface-100 {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .bg-surface-200 {
+  background-color: rgba(248, 245, 237, 0.94) !important;
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .bg-surface-300 {
+  background-color: rgba(239, 234, 224, 0.96) !important;
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .border-border-subtle,
+[data-theme='pencil'] .border-border-strong {
+  border-color: rgba(35, 36, 42, 0.45) !important;
+}
+
+/* Wobbly hand-drawn pencil borders */
+[data-theme='pencil'] .rounded-2xl,
+[data-theme='pencil'] .rounded-3xl {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
+  border-width: 2px !important;
+  border-style: solid !important;
+  border-color: rgba(35, 36, 42, 0.75) !important;
+  box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.35) !important;
+}
+
+[data-theme='pencil'] .rounded-full {
+  border-radius: 255px 20px 225px 20px/20px 225px 20px 255px !important;
+}
+
+[data-theme='pencil'] button,
+[data-theme='pencil'] a.rounded-full {
+  border: 2px solid #232428 !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.4) !important;
+}
+
+[data-theme='pencil'] button:hover,
+[data-theme='pencil'] a.rounded-full:hover {
+  transform: translate(-1px, -1px) scale(1.01) !important;
+  box-shadow: 4px 5px 0px rgba(35, 36, 42, 0.5) !important;
+}
+
+/* Photos & Screenshots rendered as pencil graphite drawings */
+[data-theme='pencil'] img,
+[data-theme='pencil'] Image {
+  filter: grayscale(100%) contrast(150%) brightness(105%) !important;
+  mix-blend-mode: multiply !important;
+}
+
+/* Sketchbook paper cross-hatching grid */
+[data-theme='pencil'] .bg-grid-pattern {
+  background-size: 28px 28px !important;
+  background-image: 
+    repeating-linear-gradient(45deg, rgba(35, 36, 42, 0.04) 0px, rgba(35, 36, 42, 0.04) 1px, transparent 1px, transparent 14px),
+    repeating-linear-gradient(-45deg, rgba(35, 36, 42, 0.03) 0px, rgba(35, 36, 42, 0.03) 1px, transparent 1px, transparent 14px) !important;
+  opacity: 0.8 !important;
+}
+
+[data-theme='pencil'] ::selection {
+  background-color: #232429 !important;
+  color: #F8F5EE !important;
+}
+
+/* ==========================================================================
+   THEME: LEGO STUDIO
+   Vibrant plastic toy universe with 3D studs baseplate and snap brick physics
+   ========================================================================== */
+
+/* 3D Lego Studs Repeating Baseplate */
+[data-theme='lego'] .bg-grid-pattern {
+  background-size: 38px 38px !important;
+  background-image: 
+    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 30%),
+    radial-gradient(circle at 50% 50%, #222c3e 38%, #0d121c 52%, transparent 54%) !important;
+  opacity: 0.88 !important;
+}
+
+/* Lego plastic brick cards with specular highlights and bottom bevel */
+[data-theme='lego'] .rounded-2xl,
+[data-theme='lego'] .rounded-3xl {
+  border-radius: 12px !important;
+  border-top: 3px solid rgba(255, 255, 255, 0.3) !important;
+  border-left: 2px solid rgba(255, 255, 255, 0.15) !important;
+  border-right: 2px solid rgba(0, 0, 0, 0.4) !important;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.45), 0 16px 24px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Lego snap buttons with tactile physical click physics */
+[data-theme='lego'] button,
+[data-theme='lego'] a.rounded-full {
+  border-top: 2.5px solid rgba(255, 255, 255, 0.45) !important;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.5) !important;
+  border-radius: 8px !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease !important;
+}
+
+[data-theme='lego'] button:active,
+[data-theme='lego'] a.rounded-full:active {
+  transform: translateY(3px) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ==========================================================================
+   THEME: 8-BIT PIXELATED
+   Retro arcade universe with CRT scanlines, 0px corners & stepped pixel shadows
+   ========================================================================== */
+
+[data-theme='pixel'],
+[data-theme='pixel'] body,
+[data-theme='pixel'] h1,
+[data-theme='pixel'] h2,
+[data-theme='pixel'] h3,
+[data-theme='pixel'] h4,
+[data-theme='pixel'] p,
+[data-theme='pixel'] span,
+[data-theme='pixel'] a,
+[data-theme='pixel'] button,
+[data-theme='pixel'] input,
+[data-theme='pixel'] textarea {
+  font-family: 'Silkscreen', 'Press Start 2P', monospace !important;
+  -webkit-font-smoothing: none !important;
+  font-smooth: never !important;
+}
+
+/* Zero radius across the whole 8-bit universe */
+[data-theme='pixel'] * {
+  border-radius: 0px !important;
+}
+
+/* 8-bit stepped pixel shadows */
+[data-theme='pixel'] .rounded-2xl,
+[data-theme='pixel'] .rounded-3xl,
+[data-theme='pixel'] .bg-surface-200 {
+  box-shadow: 4px 4px 0px #000000, 4px 4px 0px 2px var(--color-accent) !important;
+  border: 2px solid var(--color-accent) !important;
+}
+
+[data-theme='pixel'] button,
+[data-theme='pixel'] a.rounded-full {
+  box-shadow: 3px 3px 0px #000000, 3px 3px 0px 1.5px var(--color-accent) !important;
+  border: 2px solid var(--color-accent) !important;
+}
+
+[data-theme='pixel'] button:active,
+[data-theme='pixel'] a.rounded-full:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+}
+
+/* CRT Scanlines & Retro Arcade Matrix Grid */
+[data-theme='pixel'] .bg-grid-pattern {
+  background-size: 100% 4px, 20px 20px !important;
+  background-image: 
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.45) 0px, rgba(0, 0, 0, 0.45) 2px, transparent 2px, transparent 4px),
+    linear-gradient(to right, rgba(0, 255, 102, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 102, 0.06) 1px, transparent 1px) !important;
+  opacity: 0.9 !important;
+}
+
+/* Pixelated images & icons */
+[data-theme='pixel'] img,
+[data-theme='pixel'] Image {
+  image-rendering: pixelated !important;
+  filter: contrast(130%) saturate(130%) !important;
+}
+
+/* ==========================================================================
+   Multi-Color Glowing Border & Moving Laser Line Animations
+   ========================================================================== */
+@keyframes border-spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes border-spin-reverse {
+  0% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+.animate-border-spin {
+  animation: border-spin 4s linear infinite;
+}
+
+.animate-border-spin-reverse {
+  animation: border-spin-reverse 4s linear infinite;
+}
+
+.animate-border-spin-slow {
+  animation: border-spin 7s linear infinite;
+}
+
+.animate-laser-flow {
+  animation: marquee 8s linear infinite;
+}
+
+.animate-laser-flow-reverse {
+  animation: marquee-reverse 8s linear infinite;
+}
+
+
