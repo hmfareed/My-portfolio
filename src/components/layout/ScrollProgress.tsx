@@ -23,6 +23,9 @@ export default function ScrollProgress() {
     if (theme === 'pixel') {
       return 'h-[4px] bg-[#00FF66] shadow-[0_0_10px_#00FF66]';
     }
+    if (theme === 'amoled') {
+      return 'h-[3.5px] bg-gradient-to-r from-[#00E5FF] via-[#A78BFA] via-[#F43F5E] via-[#F5B942] to-[#10B981] shadow-[0_0_16px_rgba(0,229,255,0.7)]';
+    }
     return 'h-[3px] bg-gradient-to-r from-accent-dynamic via-cyan-300 to-accent-dynamic shadow-[0_0_12px_var(--color-accent-glow)]';
   };
 

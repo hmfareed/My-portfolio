@@ -102,6 +102,24 @@
   --surface-border: rgba(0, 255, 102, 0.35);
 }
 
+[data-theme='amoled'] {
+  --color-accent: #FFFFFF;
+  --color-accent-hover: #E2E8F0;
+  --color-accent-muted: rgba(255, 255, 255, 0.08);
+  --color-accent-glow: rgba(0, 229, 255, 0.35);
+  --bg-gradient: radial-gradient(circle at 50% -10%, #000000 0%, #000000 50%, #000000 100%);
+  --surface-1: rgba(10, 10, 10, 0.95);
+  --surface-2: rgba(4, 4, 4, 0.98);
+  --surface-border: rgba(255, 255, 255, 0.12);
+  background-color: #000000 !important;
+}
+
+[data-theme='amoled'] body,
+[data-theme='amoled'] main,
+[data-theme='amoled'] section {
+  background-color: #000000 !important;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -459,5 +477,113 @@ body {
 .animate-laser-flow-reverse {
   animation: marquee-reverse 8s linear infinite;
 }
+
+/* ==========================================================================
+   Four Moving Cut Line Beams Chasing Each Other
+   ========================================================================== */
+@keyframes beam-top {
+  0% {
+    left: -40%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes beam-right {
+  0% {
+    top: -40%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes beam-bottom {
+  0% {
+    right: -40%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    right: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes beam-left {
+  0% {
+    bottom: -40%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-beam-top {
+  animation: beam-top 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-beam-right {
+  animation: beam-right 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: 0.75s;
+}
+
+.animate-beam-bottom {
+  animation: beam-bottom 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: 1.5s;
+}
+
+.animate-beam-left {
+  animation: beam-left 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: 2.25s;
+}
+
+/* ==========================================================================
+   AMOLED POLYCHROMATIC ACCENTS
+   Ensures AMOLED theme is not dominated by a single accent color
+   ========================================================================== */
+[data-theme='amoled'] .hero-accent-name {
+  background: linear-gradient(135deg, #00E5FF 0%, #A78BFA 33%, #F43F5E 66%, #F5B942 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+[data-theme='amoled'] .hero-cta-btn {
+  background: linear-gradient(135deg, #00E5FF 0%, #A78BFA 50%, #F5B942 100%) !important;
+  color: #000000 !important;
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.4) !important;
+}
+
+
 
 

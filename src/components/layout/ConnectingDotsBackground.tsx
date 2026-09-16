@@ -80,6 +80,15 @@ export default function ConnectingDotsBackground() {
       return `${r}, ${g}, ${b}`;
     };
 
+    const amoledPalette = [
+      '0, 229, 255',   // Cyan
+      '245, 185, 66',  // Amber
+      '167, 139, 250', // Violet
+      '244, 63, 94',   // Rose
+      '200, 255, 0',   // Lime
+      '56, 189, 248',  // Sky
+    ];
+
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
@@ -95,8 +104,9 @@ export default function ConnectingDotsBackground() {
 
           if (dist < maxLinkDistance) {
             const alpha = (1 - dist / maxLinkDistance) * 0.28;
+            const lineColor = theme === 'amoled' ? amoledPalette[i % amoledPalette.length] : rgb;
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(${rgb}, ${alpha})`;
+            ctx.strokeStyle = `rgba(${lineColor}, ${alpha})`;
             ctx.lineWidth = 0.8;
             ctx.moveTo(dots[i].x, dots[i].y);
             ctx.lineTo(dots[j].x, dots[j].y);
@@ -114,8 +124,9 @@ export default function ConnectingDotsBackground() {
 
           if (dist < mouseRadius) {
             const alpha = (1 - dist / mouseRadius) * 0.4;
+            const cursorLineColor = theme === 'amoled' ? amoledPalette[i % amoledPalette.length] : secondaryRgb;
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(${secondaryRgb}, ${alpha})`;
+            ctx.strokeStyle = `rgba(${cursorLineColor}, ${alpha})`;
             ctx.lineWidth = 1;
             ctx.moveTo(dots[i].x, dots[i].y);
             ctx.lineTo(mouseX, mouseY);
@@ -147,6 +158,7 @@ export default function ConnectingDotsBackground() {
         // Subtle pulsing
         d.pulsePhase += d.pulseSpeed;
         const currentRadius = d.baseRadius + Math.sin(d.pulsePhase) * 0.5;
+        const currentDotColor = theme === 'amoled' ? amoledPalette[i % amoledPalette.length] : rgb;
 
         if (theme === 'pixel') {
           // 8-Bit Retro Square Pixels
@@ -177,12 +189,12 @@ export default function ConnectingDotsBackground() {
           ctx.stroke();
           ctx.shadowBlur = 0;
         } else {
-          // Standard glowing circles
+          // Standard glowing circles (polychromatic in amoled)
           ctx.beginPath();
           ctx.arc(d.x, d.y, Math.max(0.8, currentRadius), 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${rgb}, 0.65)`;
-          ctx.shadowBlur = 8;
-          ctx.shadowColor = `rgba(${rgb}, 0.5)`;
+          ctx.fillStyle = `rgba(${currentDotColor}, 0.75)`;
+          ctx.shadowBlur = 9;
+          ctx.shadowColor = `rgba(${currentDotColor}, 0.6)`;
           ctx.fill();
           ctx.shadowBlur = 0; // reset
         }

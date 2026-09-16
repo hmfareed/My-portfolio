@@ -11,7 +11,8 @@ export type ThemeKey =
   | 'crimson-rose'
   | 'pencil'
   | 'lego'
-  | 'pixel';
+  | 'pixel'
+  | 'amoled';
 
 export interface ThemeOption {
   id: ThemeKey;
@@ -20,7 +21,7 @@ export interface ThemeOption {
   secondaryColor: string;
   description: string;
   category?: 'Special World' | 'Neon & Dark';
-  iconName?: 'pencil' | 'lego' | 'pixel' | 'palette';
+  iconName?: 'pencil' | 'lego' | 'pixel' | 'palette' | 'moon';
 }
 
 export const THEMES: ThemeOption[] = [
@@ -50,6 +51,15 @@ export const THEMES: ThemeOption[] = [
     description: 'Retro arcade universe with 8-bit typography, 0px stepped borders, CRT scanlines, and pixelated graphics',
     category: 'Special World',
     iconName: 'pixel',
+  },
+  {
+    id: 'amoled',
+    name: 'AMOLED Super Dark',
+    accentColor: '#FFFFFF',
+    secondaryColor: '#00E5FF',
+    description: 'True pure black #000000 with multi-color polychromatic accents and glowing KPI cards',
+    category: 'Special World',
+    iconName: 'moon',
   },
   {
     id: 'oceanic-blue',

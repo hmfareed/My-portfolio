@@ -143,7 +143,7 @@ export default function Hero() {
               </p>
               <h1 className="text-[clamp(3.5rem,8vw,6.8rem)] font-black uppercase leading-[0.88] tracking-tight font-sans">
                 <span className="block text-foreground">MOHAMMED</span>
-                <span className="block text-accent-dynamic">FAREED</span>
+                <span className="block text-accent-dynamic hero-accent-name">FAREED</span>
               </h1>
             </motion.div>
 
@@ -172,7 +172,7 @@ export default function Hero() {
               <a
                 href="#projects"
                 data-cursor="EXPLORE"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-accent-dynamic px-7 py-4 text-sm font-bold text-black transition-all hover:-translate-y-1 hover:shadow-[0_0_32px_var(--color-accent-glow)] active:scale-95 shadow-xl"
+                className="group hero-cta-btn inline-flex items-center gap-2.5 rounded-full bg-accent-dynamic px-7 py-4 text-sm font-bold text-black transition-all hover:-translate-y-1 hover:shadow-[0_0_32px_var(--color-accent-glow)] active:scale-95 shadow-xl"
               >
                 <span>Explore my work</span>
                 <ArrowDownRight className="h-4 w-4 transition-transform group-hover:translate-y-0.5 group-hover:translate-x-0.5" />

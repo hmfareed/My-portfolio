@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Palette, Check, Pencil, Boxes, Gamepad2, Sparkles } from 'lucide-react';
+import { Palette, Check, Pencil, Boxes, Gamepad2, Sparkles, Moon } from 'lucide-react';
 import { useTheme, THEMES, ThemeKey } from '@/context/ThemeContext';
 
 export default function ThemeSwitcher() {
@@ -30,6 +30,8 @@ export default function ThemeSwitcher() {
         return <Boxes className="w-3.5 h-3.5 text-foreground-muted" />;
       case 'pixel':
         return <Gamepad2 className="w-3.5 h-3.5 text-foreground-muted" />;
+      case 'amoled':
+        return <Moon className="w-3.5 h-3.5 text-foreground-muted" />;
       default:
         return <Palette className="w-3.5 h-3.5 text-foreground-muted" />;
     }
