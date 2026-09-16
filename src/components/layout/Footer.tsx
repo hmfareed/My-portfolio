@@ -137,16 +137,16 @@ export default function Footer() {
           </div>
 
           {/* The Differentiator: Open Source */}
-          <div className="space-y-3 bg-surface-200/80 backdrop-blur-md p-5 rounded-2xl border border-border-subtle shadow-sm">
-            <div className="flex items-center gap-2 text-foreground font-semibold">
-              <Code2 className="w-4 h-4 text-accent-dynamic" />
-              <span>Built in Public</span>
+          <div className="footer-built-in-public space-y-3 bg-[#1A1B20] text-white p-5 rounded-2xl border-2 border-[#1A1B20] shadow-md">
+            <div className="flex items-center gap-2 text-white font-bold">
+              <Code2 className="w-4 h-4 text-white" />
+              <span className="text-white">Built in Public</span>
             </div>
-            <p className="text-xs text-foreground-muted leading-relaxed font-sans">
+            <p className="text-xs text-white/90 leading-relaxed font-sans">
               This portfolio codebase is modular, accessible, and open source. Designed with Next.js App Router, Tailwind CSS, and Framer Motion.
             </p>
             <div className="pt-1">
-              <span className="inline-flex items-center gap-1.5 text-[11px] text-accent-dynamic font-bold bg-accent-muted px-2.5 py-1 rounded-full">
+              <span className="inline-flex items-center gap-1.5 text-[11px] text-white font-bold bg-white/15 border border-white/20 px-2.5 py-1 rounded-full">
                 Next.js 14 • TS • Tailwind
               </span>
             </div>

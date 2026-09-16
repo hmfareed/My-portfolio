@@ -1029,6 +1029,64 @@ body {
   color: #FFFFFF !important;
 }
 
+/* 1. Stack in Production Box: Total Black with Pure White Text */
+.currently-building-stack-box,
+[data-theme='pencil'] .currently-building-stack-box {
+  background-color: #1A1B20 !important;
+  background: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #1A1B20 !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.45) !important;
+  border-radius: 16px !important;
+}
+
+.currently-building-stack-box *,
+[data-theme='pencil'] .currently-building-stack-box * {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+/* 2. Contact 07 // Let's Connect Pill: Total Black with Pure White Text */
+.contact-tag-pill,
+[data-theme='pencil'] .contact-tag-pill {
+  background-color: #1A1B20 !important;
+  background: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #1A1B20 !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.45) !important;
+  border-radius: 9999px !important;
+}
+
+.contact-tag-pill *,
+[data-theme='pencil'] .contact-tag-pill * {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+/* 3. Footer Built in Public Card: Total Black with Pure White Text */
+.footer-built-in-public,
+[data-theme='pencil'] .footer-built-in-public {
+  background-color: #1A1B20 !important;
+  background: #1A1B20 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #1A1B20 !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.45) !important;
+  border-radius: 18px !important;
+}
+
+.footer-built-in-public *,
+[data-theme='pencil'] .footer-built-in-public * {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+.footer-built-in-public span.inline-flex,
+[data-theme='pencil'] .footer-built-in-public span.inline-flex {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: #FFFFFF !important;
+}
+
 /* Contact Inquiry card */
 [data-theme='pencil'] .contact-inquiry-card {
   background-color: #FAF6EE !important;

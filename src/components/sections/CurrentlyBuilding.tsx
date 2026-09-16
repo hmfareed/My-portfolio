@@ -94,12 +94,12 @@ export default function CurrentlyBuilding({ onOpenCaseStudy }: CurrentlyBuilding
                     <ArrowUpRight className="w-4 h-4" />
                   </button>
 
-                  <div className="p-4 rounded-2xl bg-surface-100/80 border border-border-subtle text-xs text-foreground-subtle space-y-1 font-sans">
-                    <div className="text-foreground font-semibold flex items-center gap-1.5">
-                      <Layers className="w-3.5 h-3.5 text-primary-dynamic" />
-                      <span>Stack in production:</span>
+                  <div className="currently-building-stack-box p-4 rounded-2xl bg-[#1A1B20] text-white border-2 border-[#1A1B20] text-xs space-y-1.5 font-sans shadow-md">
+                    <div className="text-white font-bold flex items-center gap-1.5">
+                      <Layers className="w-3.5 h-3.5 text-white" />
+                      <span className="text-white">Stack in production:</span>
                     </div>
-                    <div>Next.js • TypeScript • MongoDB • Paystack • Cloudinary</div>
+                    <div className="text-white/90 font-medium">Next.js • TypeScript • MongoDB • Paystack • Cloudinary</div>
                   </div>
                 </div>
               </div>

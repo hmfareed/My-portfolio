@@ -54,9 +54,9 @@ export default function Contact() {
           transition={{ type: 'spring', damping: 16, stiffness: 110 }}
           className="space-y-4 text-center max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-3.5 py-1 rounded-full bg-surface-100/80 backdrop-blur-md border border-border-subtle text-foreground-subtle">
-            <span className="text-accent-dynamic font-bold">07 //</span>
-            <span>Let&apos;s Connect</span>
+          <div className="contact-tag-pill inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#1A1B20] text-white border-2 border-[#1A1B20] shadow-md">
+            <span className="text-white font-bold">07 //</span>
+            <span className="text-white">Let&apos;s Connect</span>
           </div>
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black font-sans text-foreground tracking-tight uppercase leading-[0.95]">
