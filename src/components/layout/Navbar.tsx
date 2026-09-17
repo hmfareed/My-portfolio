@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Command, Menu, X, ArrowUpRight, FileText } from 'lucide-react';
-import ThemeSwitcher from './ThemeSwitcher';
 
 interface NavbarProps {
   onOpenCommand: () => void;
@@ -79,9 +78,6 @@ export default function Navbar({ onOpenCommand, onOpenResume }: NavbarProps) {
 
           {/* Right Action Cluster */}
           <div className="flex items-center gap-2">
-            {/* Quick Theme Switcher */}
-            <ThemeSwitcher />
-
             {/* Quick Command Trigger */}
             <button
               onClick={onOpenCommand}

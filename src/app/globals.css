@@ -3,78 +3,6 @@
 @tailwind utilities;
 
 :root,
-[data-theme='oceanic-blue'] {
-  --color-accent: #00E5FF;
-  --color-accent-hover: #38BDF8;
-  --color-accent-muted: rgba(0, 229, 255, 0.12);
-  --color-accent-glow: rgba(0, 229, 255, 0.4);
-  --color-primary: #00E5FF;
-  --color-secondary: #A78BFA;
-  --color-primary-glow: rgba(0, 229, 255, 0.4);
-  --color-secondary-glow: rgba(167, 139, 250, 0.4);
-  --kpi-cut-1: #00E5FF;
-  --kpi-cut-2: #A78BFA;
-  --bg-gradient: radial-gradient(circle at 50% -10%, #092661 0%, #04102e 28%, #020617 55%, #01030a 100%);
-  --surface-1: rgba(9, 23, 56, 0.6);
-  --surface-2: rgba(4, 15, 40, 0.75);
-  --surface-border: rgba(0, 229, 255, 0.15);
-}
-
-[data-theme='cyber-lime'] {
-  --color-accent: #C8FF00;
-  --color-accent-hover: #D7FF4F;
-  --color-accent-muted: rgba(200, 255, 0, 0.12);
-  --color-accent-glow: rgba(200, 255, 0, 0.38);
-  --bg-gradient: radial-gradient(circle at 50% -10%, #151d05 0%, #0a0d02 30%, #050505 60%, #020202 100%);
-  --surface-1: rgba(20, 20, 20, 0.7);
-  --surface-2: rgba(12, 12, 12, 0.85);
-  --surface-border: rgba(200, 255, 0, 0.18);
-}
-
-[data-theme='cosmic-violet'] {
-  --color-accent: #A78BFA;
-  --color-accent-hover: #C4B5FD;
-  --color-accent-muted: rgba(167, 139, 250, 0.15);
-  --color-accent-glow: rgba(167, 139, 250, 0.4);
-  --bg-gradient: radial-gradient(circle at 50% -10%, #1c0b38 0%, #0e0520 30%, #070210 60%, #020106 100%);
-  --surface-1: rgba(25, 15, 45, 0.65);
-  --surface-2: rgba(15, 8, 30, 0.8);
-  --surface-border: rgba(167, 139, 250, 0.18);
-}
-
-[data-theme='sunset-gold'] {
-  --color-accent: #F5B942;
-  --color-accent-hover: #FCD34D;
-  --color-accent-muted: rgba(245, 185, 66, 0.15);
-  --color-accent-glow: rgba(245, 185, 66, 0.4);
-  --bg-gradient: radial-gradient(circle at 50% -10%, #261604 0%, #140b02 30%, #080401 60%, #030100 100%);
-  --surface-1: rgba(35, 22, 10, 0.65);
-  --surface-2: rgba(20, 12, 5, 0.8);
-  --surface-border: rgba(245, 185, 66, 0.18);
-}
-
-[data-theme='emerald-matrix'] {
-  --color-accent: #10B981;
-  --color-accent-hover: #34D399;
-  --color-accent-muted: rgba(16, 185, 129, 0.15);
-  --color-accent-glow: rgba(16, 185, 129, 0.4);
-  --bg-gradient: radial-gradient(circle at 50% -10%, #04251b 0%, #021610 30%, #010a07 60%, #000403 100%);
-  --surface-1: rgba(8, 32, 24, 0.65);
-  --surface-2: rgba(4, 20, 15, 0.8);
-  --surface-border: rgba(16, 185, 129, 0.18);
-}
-
-[data-theme='crimson-rose'] {
-  --color-accent: #F43F5E;
-  --color-accent-hover: #FB7185;
-  --color-accent-muted: rgba(244, 63, 94, 0.15);
-  --color-accent-glow: rgba(244, 63, 94, 0.4);
-  --bg-gradient: radial-gradient(circle at 50% -10%, #290712 0%, #180309 30%, #0c0104 60%, #040001 100%);
-  --surface-1: rgba(38, 12, 20, 0.65);
-  --surface-2: rgba(22, 6, 11, 0.8);
-  --surface-border: rgba(244, 63, 94, 0.18);
-}
-
 [data-theme='pencil'] {
   --color-accent: #1A1B20;
   --color-accent-hover: #33363F;
@@ -92,49 +20,7 @@
   --surface-border: rgba(35, 36, 42, 0.6);
 }
 
-[data-theme='lego'] {
-  --color-accent: #E3000B;
-  --color-accent-hover: #FF1A24;
-  --color-accent-muted: rgba(227, 0, 11, 0.18);
-  --color-accent-glow: rgba(227, 0, 11, 0.45);
-  --bg-gradient: radial-gradient(circle at 50% -10%, #171E2D 0%, #0F1420 40%, #080B12 100%);
-  --surface-1: rgba(23, 31, 46, 0.82);
-  --surface-2: rgba(15, 20, 32, 0.92);
-  --surface-border: rgba(227, 0, 11, 0.35);
-}
 
-[data-theme='pixel'] {
-  --color-accent: #00FF66;
-  --color-accent-hover: #33FF85;
-  --color-accent-muted: rgba(0, 255, 102, 0.15);
-  --color-accent-glow: rgba(0, 255, 102, 0.45);
-  --bg-gradient: radial-gradient(circle at 50% -10%, #06200E 0%, #031107 40%, #010402 100%);
-  --surface-1: rgba(3, 25, 10, 0.82);
-  --surface-2: rgba(2, 17, 7, 0.93);
-  --surface-border: rgba(0, 255, 102, 0.35);
-}
-
-[data-theme='amoled'] {
-  --color-accent: #00E5FF;
-  --color-accent-hover: #38BDF8;
-  --color-accent-muted: rgba(0, 229, 255, 0.12);
-  --color-accent-glow: rgba(0, 229, 255, 0.4);
-  --color-primary: #00E5FF;
-  --color-secondary: #A78BFA;
-  --color-primary-glow: rgba(0, 229, 255, 0.4);
-  --color-secondary-glow: rgba(167, 139, 250, 0.4);
-  --bg-gradient: radial-gradient(circle at 50% -10%, #000000 0%, #000000 50%, #000000 100%);
-  --surface-1: rgba(0, 0, 0, 0.95);
-  --surface-2: rgba(0, 0, 0, 0.98);
-  --surface-border: rgba(255, 255, 255, 0.1);
-  background-color: #000000 !important;
-}
-
-[data-theme='amoled'] body,
-[data-theme='amoled'] main,
-[data-theme='amoled'] section {
-  background-color: #000000 !important;
-}
 
 * {
   box-sizing: border-box;
@@ -1289,111 +1175,267 @@ body {
   box-shadow: none !important;
 }
 
-
 /* ==========================================================================
-   THEME: LEGO STUDIO
-   Vibrant plastic toy universe with 3D studs baseplate and snap brick physics
+   PENCIL THEME: MODALS, OVERLAYS & DROPDOWNS (AUTHENTIC SKETCHBOOK PAPER)
+   Ensures Resume Modal, Command Menu, Theme Switcher & Case Study Modals
+   match the authentic pencil sketch paper aesthetic with graphite contrast.
    ========================================================================== */
 
-/* 3D Lego Studs Repeating Baseplate */
-[data-theme='lego'] .bg-grid-pattern {
-  background-size: 38px 38px !important;
-  background-image: 
-    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 30%),
-    radial-gradient(circle at 50% 50%, #222c3e 38%, #0d121c 52%, transparent 54%) !important;
-  opacity: 0.88 !important;
+/* 1. Modal Backdrops */
+[data-theme='pencil'] .resume-modal-backdrop,
+[data-theme='pencil'] .command-menu-backdrop,
+[data-theme='pencil'] .case-study-modal-backdrop {
+  background-color: rgba(26, 27, 32, 0.5) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
 }
 
-/* Lego plastic brick cards with specular highlights and bottom bevel */
-[data-theme='lego'] .rounded-2xl,
-[data-theme='lego'] .rounded-3xl {
-  border-radius: 12px !important;
-  border-top: 3px solid rgba(255, 255, 255, 0.3) !important;
-  border-left: 2px solid rgba(255, 255, 255, 0.15) !important;
-  border-right: 2px solid rgba(0, 0, 0, 0.4) !important;
-  border-bottom: 5px solid rgba(0, 0, 0, 0.6) !important;
-  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.45), 0 16px 24px rgba(0, 0, 0, 0.5) !important;
+/* 2. Resume Modal Window */
+[data-theme='pencil'] .resume-modal-window {
+  background-color: #FAF6EE !important;
+  background: #FAF6EE !important;
+  border: 2px solid rgba(35, 36, 42, 0.8) !important;
+  box-shadow: 0 25px 60px rgba(35, 36, 42, 0.25), 4px 6px 0px rgba(35, 36, 42, 0.3) !important;
 }
 
-/* Lego snap buttons with tactile physical click physics */
-[data-theme='lego'] button,
-[data-theme='lego'] a.rounded-full {
-  border-top: 2.5px solid rgba(255, 255, 255, 0.45) !important;
-  border-bottom: 4px solid rgba(0, 0, 0, 0.6) !important;
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.5) !important;
-  border-radius: 8px !important;
-  transition: transform 0.1s ease, box-shadow 0.1s ease !important;
+[data-theme='pencil'] .resume-modal-window * {
+  color: #1A1B20 !important;
 }
 
-[data-theme='lego'] button:active,
-[data-theme='lego'] a.rounded-full:active {
-  transform: translateY(3px) !important;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) !important;
+[data-theme='pencil'] .resume-modal-window h1,
+[data-theme='pencil'] .resume-modal-window h2,
+[data-theme='pencil'] .resume-modal-window h3,
+[data-theme='pencil'] .resume-modal-window .font-black,
+[data-theme='pencil'] .resume-modal-window .font-bold {
+  color: #1A1B20 !important;
 }
 
-/* ==========================================================================
-   THEME: 8-BIT PIXELATED
-   Retro arcade universe with CRT scanlines, 0px corners & stepped pixel shadows
-   ========================================================================== */
-
-[data-theme='pixel'],
-[data-theme='pixel'] body,
-[data-theme='pixel'] h1,
-[data-theme='pixel'] h2,
-[data-theme='pixel'] h3,
-[data-theme='pixel'] h4,
-[data-theme='pixel'] p,
-[data-theme='pixel'] span,
-[data-theme='pixel'] a,
-[data-theme='pixel'] button,
-[data-theme='pixel'] input,
-[data-theme='pixel'] textarea {
-  font-family: 'Silkscreen', 'Press Start 2P', monospace !important;
-  -webkit-font-smoothing: none !important;
-  font-smooth: never !important;
+[data-theme='pencil'] .resume-modal-window p,
+[data-theme='pencil'] .resume-modal-window .text-foreground-muted {
+  color: #383B44 !important;
 }
 
-/* Zero radius across the whole 8-bit universe */
-[data-theme='pixel'] * {
-  border-radius: 0px !important;
+[data-theme='pencil'] .resume-modal-window .text-foreground-subtle {
+  color: #555863 !important;
 }
 
-/* 8-bit stepped pixel shadows */
-[data-theme='pixel'] .rounded-2xl,
-[data-theme='pixel'] .rounded-3xl,
-[data-theme='pixel'] .bg-surface-200 {
-  box-shadow: 4px 4px 0px #000000, 4px 4px 0px 2px var(--color-accent) !important;
-  border: 2px solid var(--color-accent) !important;
+[data-theme='pencil'] .resume-modal-window .text-accent-dynamic {
+  color: #1A1B20 !important;
+  font-weight: 700 !important;
 }
 
-[data-theme='pixel'] button,
-[data-theme='pixel'] a.rounded-full {
-  box-shadow: 3px 3px 0px #000000, 3px 3px 0px 1.5px var(--color-accent) !important;
-  border: 2px solid var(--color-accent) !important;
+[data-theme='pencil'] .resume-modal-window .border-border-subtle,
+[data-theme='pencil'] .resume-modal-window .border-b {
+  border-color: rgba(35, 36, 42, 0.25) !important;
 }
 
-[data-theme='pixel'] button:active,
-[data-theme='pixel'] a.rounded-full:active {
-  transform: translate(2px, 2px) !important;
-  box-shadow: 1px 1px 0px #000000 !important;
+/* Sub-cards inside Resume Modal: Education card, Production projects cards */
+[data-theme='pencil'] .resume-modal-window .bg-surface-100 {
+  background-color: #FFFFFF !important;
+  border: 1.5px solid rgba(35, 36, 42, 0.6) !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.15) !important;
 }
 
-/* CRT Scanlines & Retro Arcade Matrix Grid */
-[data-theme='pixel'] .bg-grid-pattern {
-  background-size: 100% 4px, 20px 20px !important;
-  background-image: 
-    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.45) 0px, rgba(0, 0, 0, 0.45) 2px, transparent 2px, transparent 4px),
-    linear-gradient(to right, rgba(0, 255, 102, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 255, 102, 0.06) 1px, transparent 1px) !important;
-  opacity: 0.9 !important;
+/* Print/Save PDF Button & Close Button inside Resume Modal */
+[data-theme='pencil'] .resume-modal-window button:has(svg.lucide-printer) {
+  background-color: #1A1B20 !important;
+  border: 2px solid #1A1B20 !important;
+  box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.45) !important;
 }
 
-/* Pixelated images & icons */
-[data-theme='pixel'] img,
-[data-theme='pixel'] Image {
-  image-rendering: pixelated !important;
-  filter: contrast(130%) saturate(130%) !important;
+[data-theme='pencil'] .resume-modal-window button:has(svg.lucide-printer) * {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
 }
+
+[data-theme='pencil'] .resume-modal-window button:has(svg.lucide-x) {
+  background-color: #FFFFFF !important;
+  border: 1.5px solid rgba(35, 36, 42, 0.6) !important;
+  box-shadow: 1px 2px 0px rgba(35, 36, 42, 0.2) !important;
+}
+
+[data-theme='pencil'] .resume-modal-window button:has(svg.lucide-x) * {
+  color: #1A1B20 !important;
+}
+
+/* 3. Command Menu Window */
+[data-theme='pencil'] .command-menu-window {
+  background-color: #FAF6EE !important;
+  background: #FAF6EE !important;
+  border: 2px solid rgba(35, 36, 42, 0.8) !important;
+  box-shadow: 0 25px 60px rgba(35, 36, 42, 0.25), 4px 6px 0px rgba(35, 36, 42, 0.3) !important;
+}
+
+[data-theme='pencil'] .command-menu-window * {
+  color: #1A1B20 !important;
+}
+
+/* Search Header */
+[data-theme='pencil'] .command-menu-window .border-b {
+  background-color: #F4EFE5 !important;
+  border-color: rgba(35, 36, 42, 0.25) !important;
+}
+
+[data-theme='pencil'] .command-menu-window input {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .command-menu-window input::placeholder {
+  color: #737682 !important;
+}
+
+/* Theme Preset Buttons inside Command Menu */
+[data-theme='pencil'] .command-menu-window .grid button {
+  background-color: #FFFFFF !important;
+  border: 1.5px solid rgba(35, 36, 42, 0.6) !important;
+  color: #1A1B20 !important;
+  box-shadow: 2px 2px 0px rgba(35, 36, 42, 0.15) !important;
+}
+
+[data-theme='pencil'] .command-menu-window .grid button * {
+  color: #1A1B20 !important;
+}
+
+/* Active Theme Preset in Command Menu */
+[data-theme='pencil'] .command-menu-window .grid button.border-accent-dynamic,
+[data-theme='pencil'] .command-menu-window .grid button[class*='bg-accent-muted'] {
+  background-color: #1A1B20 !important;
+  border: 2px solid #1A1B20 !important;
+  box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.4) !important;
+}
+
+[data-theme='pencil'] .command-menu-window .grid button.border-accent-dynamic *,
+[data-theme='pencil'] .command-menu-window .grid button[class*='bg-accent-muted'] * {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+/* Quick Actions, Case Studies & Navigation rows in Command Menu */
+[data-theme='pencil'] .command-menu-window .space-y-1 button,
+[data-theme='pencil'] .command-menu-window .space-y-1 a {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .command-menu-window .space-y-1 button:hover,
+[data-theme='pencil'] .command-menu-window .space-y-1 a:hover {
+  background-color: #F1ECE2 !important;
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .command-menu-window .space-y-1 button .bg-surface-100 {
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(35, 36, 42, 0.4) !important;
+  color: #1A1B20 !important;
+}
+
+/* Footer Bar in Command Menu */
+[data-theme='pencil'] .command-menu-window .border-t {
+  background-color: #F4EFE5 !important;
+  border-color: rgba(35, 36, 42, 0.25) !important;
+}
+
+[data-theme='pencil'] .command-menu-window .border-t .bg-surface-50 {
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(35, 36, 42, 0.4) !important;
+  color: #1A1B20 !important;
+}
+
+/* 4. Theme Switcher Dropdown */
+[data-theme='pencil'] .theme-switcher-dropdown {
+  background-color: #FAF6EE !important;
+  background: #FAF6EE !important;
+  border: 2px solid rgba(35, 36, 42, 0.8) !important;
+  box-shadow: 0 16px 40px rgba(35, 36, 42, 0.2), 3px 4px 0px rgba(35, 36, 42, 0.3) !important;
+}
+
+[data-theme='pencil'] .theme-switcher-dropdown * {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .theme-switcher-dropdown .text-accent-dynamic {
+  color: #1A1B20 !important;
+  font-weight: 700 !important;
+}
+
+[data-theme='pencil'] .theme-switcher-dropdown button {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .theme-switcher-dropdown button:hover {
+  background-color: #F1ECE2 !important;
+}
+
+/* Selected option in Theme Switcher dropdown */
+[data-theme='pencil'] .theme-switcher-dropdown button.bg-surface-50 {
+  background-color: #1A1B20 !important;
+  border: 1.5px solid #1A1B20 !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.3) !important;
+}
+
+[data-theme='pencil'] .theme-switcher-dropdown button.bg-surface-50 * {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+[data-theme='pencil'] .theme-switcher-dropdown button.bg-surface-50 .text-foreground-subtle {
+  color: #D1D5DB !important;
+  -webkit-text-fill-color: #D1D5DB !important;
+}
+
+/* 5. Case Study Modal Window */
+[data-theme='pencil'] .case-study-modal-window {
+  background-color: #FAF6EE !important;
+  background: #FAF6EE !important;
+  border: 2px solid rgba(35, 36, 42, 0.8) !important;
+  box-shadow: 0 25px 60px rgba(35, 36, 42, 0.25), 4px 6px 0px rgba(35, 36, 42, 0.3) !important;
+}
+
+[data-theme='pencil'] .case-study-modal-window * {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .case-study-modal-window h1,
+[data-theme='pencil'] .case-study-modal-window h2,
+[data-theme='pencil'] .case-study-modal-window h3,
+[data-theme='pencil'] .case-study-modal-window h4,
+[data-theme='pencil'] .case-study-modal-window .font-bold {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .case-study-modal-window p,
+[data-theme='pencil'] .case-study-modal-window .text-foreground-muted {
+  color: #383B44 !important;
+}
+
+[data-theme='pencil'] .case-study-modal-window .text-accent-dynamic {
+  color: #1A1B20 !important;
+  font-weight: 700 !important;
+}
+
+[data-theme='pencil'] .case-study-modal-window .border-border-subtle,
+[data-theme='pencil'] .case-study-modal-window .border-b {
+  border-color: rgba(35, 36, 42, 0.25) !important;
+}
+
+/* Sub cards inside Case Study Modal (metrics, architecture steps, challenges, outcomes) */
+[data-theme='pencil'] .case-study-modal-window .bg-surface-100 {
+  background-color: #FFFFFF !important;
+  border: 1.5px solid rgba(35, 36, 42, 0.6) !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.15) !important;
+}
+
+/* Launch & Explore production hub at bottom of Case Study Modal */
+[data-theme='pencil'] .case-study-modal-window a[href^='http'] {
+  background-color: #1A1B20 !important;
+  border: 2px solid #1A1B20 !important;
+  box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.45) !important;
+}
+
+[data-theme='pencil'] .case-study-modal-window a[href^='http'] * {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
 
 /* ==========================================================================
    Multi-Color Glowing Border & Moving Laser Line Animations
@@ -1444,20 +1486,8 @@ body {
   animation: marquee-reverse 16s linear infinite;
 }
 
-/* ==========================================================================
-   AMOLED DUAL-TONE ACCENTS (Primary + Secondary)
-   ========================================================================== */
-[data-theme='amoled'] .hero-accent-name {
-  background: linear-gradient(135deg, #00E5FF 0%, #A78BFA 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-}
 
-[data-theme='amoled'] .hero-cta-btn {
-  background: linear-gradient(135deg, #00E5FF 0%, #A78BFA 100%) !important;
-  color: #000000 !important;
-  box-shadow: 0 0 25px rgba(0, 229, 255, 0.35) !important;
-}
+
 
 
 

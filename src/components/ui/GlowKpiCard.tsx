@@ -202,24 +202,24 @@ export default function GlowKpiCard({
           {/* Subtle top specular glass sheen line */}
           <div className="kpi-glass-sheen absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none z-20" />
 
-          {/* Calm luminous particles in card background (Primary & Secondary only, suppressed in Pencil theme) */}
+          {/* Calm luminous particles in card background (Primary & Secondary dynamically resolved) */}
           {showParticles && (
             <div className="kpi-particles-layer absolute inset-0 overflow-hidden pointer-events-none z-0 select-none">
               <span
                 className="absolute top-[20%] right-[26%] w-1.5 h-1.5 rounded-full opacity-45 animate-pulse"
-                style={{ backgroundColor: '#00E5FF' }}
+                style={{ backgroundColor: 'var(--color-primary, #00E5FF)' }}
               />
               <span
                 className="absolute top-[52%] left-[62%] w-1 h-1 rounded-full opacity-35"
-                style={{ backgroundColor: '#A78BFA' }}
+                style={{ backgroundColor: 'var(--color-secondary, #A78BFA)' }}
               />
               <span
                 className="absolute top-[72%] left-[22%] w-1.5 h-1.5 rounded-full opacity-40 animate-pulse"
-                style={{ backgroundColor: '#00E5FF', animationDelay: '2.5s' }}
+                style={{ backgroundColor: 'var(--color-primary, #00E5FF)', animationDelay: '2.5s' }}
               />
               <span
                 className="absolute top-[34%] left-[36%] w-1 h-1 rounded-full opacity-30"
-                style={{ backgroundColor: '#A78BFA' }}
+                style={{ backgroundColor: 'var(--color-secondary, #A78BFA)' }}
               />
             </div>
           )}

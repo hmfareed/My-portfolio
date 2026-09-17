@@ -2,10 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { useTheme } from '@/context/ThemeContext';
-
 export default function CustomCursor() {
-  const { theme } = useTheme();
   const [isVisible, setIsVisible] = useState(false);
   const [cursorText, setCursorText] = useState('');
   const [cursorVariant, setCursorVariant] = useState<'default' | 'hover' | 'project' | 'text'>('default');
@@ -86,25 +83,23 @@ export default function CustomCursor() {
           animate={{
             width: cursorVariant === 'project' ? 84 : cursorVariant === 'hover' ? 44 : 28,
             height: cursorVariant === 'project' ? 32 : cursorVariant === 'hover' ? 44 : 28,
-            borderRadius: theme === 'pixel' ? 0 : theme === 'pencil' ? 12 : 9999,
+            borderRadius: 12,
             backgroundColor:
               cursorVariant === 'project'
                 ? 'var(--color-accent)'
                 : cursorVariant === 'hover'
-                ? theme === 'pencil' ? 'rgba(35, 36, 42, 0.08)' : 'rgba(255, 255, 255, 0.08)'
+                ? 'rgba(35, 36, 42, 0.08)'
                 : 'transparent',
             borderColor:
               cursorVariant === 'project'
                 ? 'var(--color-accent)'
                 : cursorVariant === 'hover'
                 ? 'var(--color-accent)'
-                : theme === 'pencil' ? 'rgba(35, 36, 42, 0.45)' : 'rgba(255, 255, 255, 0.3)',
-            color: cursorVariant === 'project' ? (theme === 'pencil' ? '#FAF6EE' : '#050505') : (theme === 'pencil' ? '#1E1F24' : '#F5F5F5'),
+                : 'rgba(35, 36, 42, 0.45)',
+            color: cursorVariant === 'project' ? '#FAF6EE' : '#1E1F24',
           }}
           transition={{ type: 'spring', stiffness: 400, damping: 28 }}
-          className={`border backdrop-blur-[1px] flex items-center justify-center shadow-lg ${
-            theme === 'pixel' ? 'rounded-none border-2' : theme === 'pencil' ? 'border-2 border-dashed' : ''
-          }`}
+          className="border-2 border-dashed backdrop-blur-[1px] flex items-center justify-center shadow-lg"
         >
           {cursorText && (
             <motion.span
@@ -119,15 +114,9 @@ export default function CustomCursor() {
         </motion.div>
       </motion.div>
 
-      {/* Center Precise Dot / Pixel / Lead Point */}
+      {/* Center Precise Graphite Lead Point */}
       <motion.div
-        className={`fixed top-0 left-0 pointer-events-none z-[9999] ${
-          theme === 'pixel'
-            ? 'w-2 h-2 rounded-none bg-accent-dynamic'
-            : theme === 'pencil'
-            ? 'w-1.5 h-1.5 rounded-full bg-[#232429]'
-            : 'w-1.5 h-1.5 rounded-full bg-accent-dynamic'
-        }`}
+        className="fixed top-0 left-0 pointer-events-none z-[9999] w-1.5 h-1.5 rounded-full bg-[#232429]"
         style={{
           x: mouseX,
           y: mouseY,

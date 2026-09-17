@@ -7,13 +7,11 @@ import {
   FileText,
   Copy,
   Check,
-  Palette,
   FolderGit2,
   ArrowRight,
   X,
 } from 'lucide-react';
 import { projectsData } from '@/data/projects';
-import { useTheme, THEMES, ThemeKey } from '@/context/ThemeContext';
 
 interface CommandMenuProps {
   isOpen: boolean;
@@ -28,7 +26,6 @@ export default function CommandMenu({
   onOpenResume,
   onOpenCaseStudy,
 }: CommandMenuProps) {
-  const { theme, setTheme } = useTheme();
   const [query, setQuery] = useState('');
   const [copiedEmail, setCopiedEmail] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -97,7 +94,7 @@ export default function CommandMenu({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-black/80 backdrop-blur-md"
+          className="command-menu-backdrop fixed inset-0 bg-black/80 backdrop-blur-md"
         />
 
         {/* Modal Window */}
@@ -106,7 +103,7 @@ export default function CommandMenu({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: -10 }}
           transition={{ duration: 0.2, ease: 'easeOut' }}
-          className="relative w-full max-w-xl bg-surface-200/95 backdrop-blur-2xl border border-border-strong rounded-3xl shadow-2xl overflow-hidden flex flex-col z-10"
+          className="command-menu-window relative w-full max-w-xl bg-surface-200/95 backdrop-blur-2xl border border-border-strong rounded-3xl shadow-2xl overflow-hidden flex flex-col z-10"
         >
           {/* Search Header */}
           <div className="flex items-center gap-3 px-5 py-4 border-b border-border-subtle bg-surface-100/60">
@@ -129,41 +126,6 @@ export default function CommandMenu({
 
           {/* Results Container */}
           <div className="max-h-[60vh] overflow-y-auto p-3 space-y-4 text-xs font-sans">
-            {/* Theme Selector Matrix */}
-            <div>
-              <div className="px-3 py-1.5 text-[11px] font-semibold text-foreground-subtle uppercase tracking-wider flex items-center gap-2">
-                <Palette className="w-3.5 h-3.5" />
-                <span>Color Accent Theme (6 Presets)</span>
-              </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 px-1 py-1">
-                {THEMES.map((t) => {
-                  const isSelected = theme === t.id;
-
-                  return (
-                    <button
-                      key={t.id}
-                      onClick={() => setTheme(t.id)}
-                      className={`flex items-center justify-between gap-2 py-2 px-3 rounded-xl border text-xs transition-all ${
-                        isSelected
-                          ? 'border-accent-dynamic bg-accent-muted text-foreground font-semibold shadow-sm'
-                          : 'border-border-subtle bg-surface-100 text-foreground-muted hover:text-foreground hover:bg-surface-50'
-                      }`}
-                    >
-                      <div className="flex items-center gap-2">
-                        <span
-                          className="w-2.5 h-2.5 rounded-full shadow-sm"
-                          style={{ backgroundColor: t.accentColor }}
-                        />
-                        <span>{t.name}</span>
-                      </div>
-                      {isSelected && (
-                        <Check className="w-3 h-3 text-accent-dynamic" />
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
 
             {/* Quick Actions */}
             <div>

@@ -43,7 +43,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-black/85 backdrop-blur-md"
+          className="resume-modal-backdrop fixed inset-0 bg-black/85 backdrop-blur-md"
         />
 
         {/* Modal Window */}
@@ -52,7 +52,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full max-w-3xl max-h-[92vh] bg-surface-200/95 backdrop-blur-2xl border border-border-strong rounded-3xl shadow-2xl overflow-y-auto z-10 p-6 sm:p-10 flex flex-col gap-6"
+          className="resume-modal-window relative w-full max-w-3xl max-h-[92vh] bg-surface-200/95 backdrop-blur-2xl border border-border-strong rounded-3xl shadow-2xl overflow-y-auto z-10 p-6 sm:p-10 flex flex-col gap-6"
         >
           {/* Header Action Bar: Header-Style Buttons */}
           <div className="flex items-center justify-between border-b border-border-subtle pb-4">
