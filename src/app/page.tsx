@@ -11,7 +11,7 @@ import CommandMenu from '@/components/layout/CommandMenu';
 import Footer from '@/components/layout/Footer';
 import CinematicIntro from '@/components/hero/CinematicIntro';
 import Hero from '@/components/hero/Hero';
-import Marquee from '@/components/hero/Marquee';
+import CapabilitiesGrid from '@/components/hero/CapabilitiesGrid';
 import Statement from '@/components/sections/Statement';
 import ProjectGrid from '@/components/projects/ProjectGrid';
 import CaseStudyModal from '@/components/projects/CaseStudyModal';
@@ -63,8 +63,8 @@ export default function HomePage() {
           {/* 4. Hero Section */}
           <Hero />
 
-          {/* 5. Capabilities Marquee */}
-          <Marquee />
+          {/* 5. Capabilities & Engineering Foundations Grid */}
+          <CapabilitiesGrid />
 
           {/* 6. Statement & Philosophy */}
           <Statement />

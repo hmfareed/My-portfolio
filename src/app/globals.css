@@ -350,13 +350,19 @@ body {
 [data-theme='pencil'] button,
 [data-theme='pencil'] a.rounded-full {
   border: 2px solid #232428 !important;
-  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.4) !important;
+  box-shadow: 4px 5px 0px rgba(35, 36, 42, 0.55) !important;
 }
 
 [data-theme='pencil'] button:hover,
 [data-theme='pencil'] a.rounded-full:hover {
   transform: translate(-1px, -1px) scale(1.01) !important;
-  box-shadow: 4px 5px 0px rgba(35, 36, 42, 0.5) !important;
+  box-shadow: 5px 6px 0px rgba(35, 36, 42, 0.65) !important;
+}
+
+[data-theme='pencil'] button:active,
+[data-theme='pencil'] a.rounded-full:active {
+  transform: translate(2px, 2px) scale(0.99) !important;
+  box-shadow: 2px 2px 0px rgba(35, 36, 42, 0.5) !important;
 }
 
 /* Photos & Screenshots rendered as clean pencil graphite portraits without dark murky multiply */
@@ -665,16 +671,35 @@ body {
 }
 
 /* Project KPI Card Explore Button: Solid black sketch button with pure white text */
-[data-theme='pencil'] .kpi-explore-btn {
+.kpi-explore-btn,
+[data-theme='pencil'] .kpi-explore-btn,
+[data-theme='pencil'] #projects .kpi-explore-btn,
+[data-theme='pencil'] #projects button.kpi-explore-btn,
+[data-theme='pencil'] [data-kpi-card] .kpi-explore-btn {
   background: #1A1B20 !important;
   background-color: #1A1B20 !important;
   color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
   border: 2px solid #1A1B20 !important;
-  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.4) !important;
+  box-shadow: 4px 5px 0px rgba(35, 36, 42, 0.55) !important;
 }
 
-[data-theme='pencil'] .kpi-explore-btn * {
+.kpi-explore-btn *,
+[data-theme='pencil'] .kpi-explore-btn *,
+[data-theme='pencil'] #projects .kpi-explore-btn *,
+[data-theme='pencil'] #projects button.kpi-explore-btn *,
+[data-theme='pencil'] [data-kpi-card] .kpi-explore-btn * {
   color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+.kpi-explore-btn svg,
+[data-theme='pencil'] .kpi-explore-btn svg,
+[data-theme='pencil'] #projects .kpi-explore-btn svg,
+[data-theme='pencil'] #projects button.kpi-explore-btn svg,
+[data-theme='pencil'] [data-kpi-card] .kpi-explore-btn svg {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
 }
 
 /* ==========================================================================
@@ -889,7 +914,7 @@ body {
 }
 
 /* Inactive / Standard Buttons & Toggles: Pure White Pill with Black Graphite Text (Header Button Style) */
-[data-theme='pencil'] #projects button:not(.bg-primary-dynamic),
+[data-theme='pencil'] #projects button:not(.bg-primary-dynamic):not(.kpi-explore-btn),
 [data-theme='pencil'] #skills div.rounded-full button:not(.bg-primary-dynamic):not([class*='bg-accent-dynamic']),
 [data-theme='pencil'] .experience-toggle-btn,
 [data-theme='pencil'] #contact div.grid button:not(.bg-primary-dynamic) {
@@ -900,7 +925,7 @@ body {
   border-radius: 9999px !important;
 }
 
-[data-theme='pencil'] #projects button:not(.bg-primary-dynamic) *,
+[data-theme='pencil'] #projects button:not(.bg-primary-dynamic):not(.kpi-explore-btn) *,
 [data-theme='pencil'] #skills div.rounded-full button:not(.bg-primary-dynamic) *,
 [data-theme='pencil'] .experience-toggle-btn *,
 [data-theme='pencil'] #contact div.grid button:not(.bg-primary-dynamic) * {
@@ -1085,6 +1110,110 @@ body {
   background-color: rgba(255, 255, 255, 0.15) !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
   color: #FFFFFF !important;
+}
+
+/* 4. Experience Section: All Technology Pills across ALL Experience Cards (Total Black with Pure White Text) */
+.experience-tech-pill,
+[data-theme='pencil'] .experience-tech-pill,
+[data-theme='pencil'] #experience .experience-tech-pill,
+[data-theme='pencil'] #experience span[class*='experience-tech-pill'],
+[data-theme='pencil'] #experience span[class*='rounded-full'] {
+  background-color: #1A1B20 !important;
+  background: #1A1B20 !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  border: 1.5px solid #1A1B20 !important;
+  box-shadow: 2px 3px 0px rgba(35, 36, 42, 0.45) !important;
+  font-weight: 700 !important;
+}
+
+.experience-tech-pill *,
+[data-theme='pencil'] .experience-tech-pill *,
+[data-theme='pencil'] #experience .experience-tech-pill *,
+[data-theme='pencil'] #experience span[class*='experience-tech-pill'] * {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+/* 5. Experience Section: Details / Collapse Toggle Button */
+.experience-toggle-btn,
+[data-theme='pencil'] .experience-toggle-btn,
+[data-theme='pencil'] #experience .experience-toggle-btn {
+  background-color: #1A1B20 !important;
+  background: #1A1B20 !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  border: 2px solid #1A1B20 !important;
+  box-shadow: 3px 4px 0px rgba(35, 36, 42, 0.5) !important;
+}
+
+.experience-toggle-btn *,
+[data-theme='pencil'] .experience-toggle-btn * {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+.experience-toggle-btn span.rounded-full,
+[data-theme='pencil'] .experience-toggle-btn span.rounded-full {
+  background-color: #FFFFFF !important;
+}
+
+/* 6. Contact Copy Email Button: Tactile 3D Shadow as its MAIN THEME (Image 1) */
+.contact-copy-email-btn,
+[data-theme='pencil'] .contact-copy-email-btn {
+  background-color: #FFFFFF !important;
+  color: #1A1B20 !important;
+  border: 2px solid #1A1B20 !important;
+  box-shadow: 4px 5px 0px rgba(35, 36, 42, 0.55) !important;
+  font-weight: 700 !important;
+}
+
+[data-theme='pencil'] .contact-copy-email-btn * {
+  color: #1A1B20 !important;
+}
+
+[data-theme='pencil'] .contact-copy-email-btn:hover {
+  transform: translate(-1px, -1px) scale(1.01) !important;
+  box-shadow: 5px 6px 0px rgba(35, 36, 42, 0.65) !important;
+}
+
+[data-theme='pencil'] .contact-copy-email-btn:active {
+  transform: translate(2px, 2px) scale(0.99) !important;
+  box-shadow: 2px 2px 0px rgba(35, 36, 42, 0.5) !important;
+}
+
+/* 7. System-Wide Rule: All Black Buttons & Pills must have pure white text */
+[data-theme='pencil'] .about-resume-btn,
+[data-theme='pencil'] .hero-cta-btn,
+[data-theme='pencil'] .hero-secondary-btn,
+[data-theme='pencil'] .navbar-contact-btn,
+[data-theme='pencil'] .kpi-explore-btn,
+[data-theme='pencil'] #projects .kpi-explore-btn,
+[data-theme='pencil'] #projects button.kpi-explore-btn,
+[data-theme='pencil'] [data-kpi-card] .kpi-explore-btn,
+[data-theme='pencil'] .contact-direct-email-btn,
+[data-theme='pencil'] #contact a[href^='mailto'],
+[data-theme='pencil'] #contact button[type='submit'] {
+  background-color: #1A1B20 !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  border: 2px solid #1A1B20 !important;
+  box-shadow: 4px 5px 0px rgba(35, 36, 42, 0.55) !important;
+}
+
+[data-theme='pencil'] .about-resume-btn *,
+[data-theme='pencil'] .hero-cta-btn *,
+[data-theme='pencil'] .hero-secondary-btn *,
+[data-theme='pencil'] .navbar-contact-btn *,
+[data-theme='pencil'] .kpi-explore-btn *,
+[data-theme='pencil'] #projects .kpi-explore-btn *,
+[data-theme='pencil'] #projects button.kpi-explore-btn *,
+[data-theme='pencil'] [data-kpi-card] .kpi-explore-btn *,
+[data-theme='pencil'] .contact-direct-email-btn *,
+[data-theme='pencil'] #contact a[href^='mailto'] *,
+[data-theme='pencil'] #contact button[type='submit'] * {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
 }
 
 /* Contact Inquiry card */

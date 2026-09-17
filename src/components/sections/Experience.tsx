@@ -92,22 +92,22 @@ export default function Experience() {
                       </div>
 
                       {/* Header-Style Pill Toggle Button */}
+                      {/* Header-Style Pill Toggle Button: Total Black with Pure White Text */}
                       <button
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
                           toggleExpand(idx);
                         }}
-                        className="experience-toggle-btn flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-100 hover:bg-surface-50 border border-border-subtle hover:border-primary-dynamic text-xs font-sans font-medium text-foreground transition-all active:scale-95 shadow-sm"
+                        className="experience-toggle-btn flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1A1B20] text-white border-2 border-[#1A1B20] text-xs font-sans font-bold transition-all active:scale-95 shadow-md"
                       >
                         <span
-                          className="w-2 h-2 rounded-full animate-pulse"
-                          style={{ backgroundColor: config.dotColor }}
+                          className="w-2 h-2 rounded-full animate-pulse bg-white"
                         />
-                        <span>{isExpanded ? 'Collapse' : 'Details'}</span>
+                        <span className="text-white font-bold">{isExpanded ? 'Collapse' : 'Details'}</span>
                         <ChevronDown
-                          className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                            isExpanded ? 'rotate-180 text-primary-dynamic' : 'text-foreground-muted'
+                          className={`w-3.5 h-3.5 transition-transform duration-300 text-white ${
+                            isExpanded ? 'rotate-180' : ''
                           }`}
                         />
                       </button>
@@ -164,12 +164,12 @@ export default function Experience() {
                             </div>
                           </div>
 
-                          {/* Tech Tags */}
-                          <div className="pt-2 flex flex-wrap gap-1.5 text-xs">
+                          {/* Tech Tags: Total black buttons with pure white text (Image 2) */}
+                          <div className="pt-2 flex flex-wrap gap-2 text-xs">
                             {item.technologies.map((tech) => (
                               <span
                                 key={tech}
-                                className="px-3 py-1 rounded-full bg-surface-100/90 border border-border-subtle text-foreground-subtle text-[11px] font-medium"
+                                className="experience-tech-pill px-3.5 py-1 rounded-full bg-[#1A1B20] text-white border border-[#1A1B20] text-[11px] font-bold shadow-sm"
                               >
                                 {tech}
                               </span>

@@ -80,26 +80,26 @@ export default function Contact() {
           <a
             href={`mailto:${emailAddress}`}
             data-cursor="EMAIL ↗"
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-accent-dynamic text-black font-semibold text-sm tracking-wide flex items-center justify-center gap-2 hover:shadow-[0_0_25px_var(--color-accent-glow)] transition-all active:scale-95 shadow-lg"
+            className="contact-direct-email-btn w-full sm:w-auto px-8 py-4 rounded-full bg-[#1A1B20] text-white font-bold text-sm tracking-wide flex items-center justify-center gap-2 border-2 border-[#1A1B20] shadow-[4px_5px_0px_rgba(35,36,42,0.55)] transition-all active:translate-x-[2px] active:translate-y-[2px]"
           >
-            <Mail className="w-4 h-4" />
-            <span>Send Email Directly</span>
-            <ArrowUpRight className="w-4 h-4" />
+            <Mail className="w-4 h-4 text-white" />
+            <span className="text-white">Send Email Directly</span>
+            <ArrowUpRight className="w-4 h-4 text-white" />
           </a>
 
           <button
             onClick={handleCopyEmail}
-            className="w-full sm:w-auto px-6 py-4 rounded-full bg-surface-100/80 hover:bg-surface-50 backdrop-blur-md border border-border-strong text-foreground text-sm flex items-center justify-center gap-2 transition-all hover:border-accent-dynamic active:scale-95 shadow-sm"
+            className="contact-copy-email-btn w-full sm:w-auto px-6 py-4 rounded-full bg-white hover:bg-white/95 border-2 border-[#1A1B20] text-[#1A1B20] text-sm flex items-center justify-center gap-2 transition-all shadow-[4px_5px_0px_rgba(35,36,42,0.55)] font-bold active:translate-x-[2px] active:translate-y-[2px]"
           >
             {copied ? (
               <>
-                <Check className="w-4 h-4 text-accent-dynamic" />
-                <span className="text-accent-dynamic font-bold">Email Copied!</span>
+                <Check className="w-4 h-4 text-[#1A1B20]" />
+                <span className="text-[#1A1B20] font-bold">Email Copied!</span>
               </>
             ) : (
               <>
-                <Copy className="w-4 h-4 text-foreground-muted" />
-                <span>{emailAddress}</span>
+                <Copy className="w-4 h-4 text-[#1A1B20]" />
+                <span className="text-[#1A1B20]">{emailAddress}</span>
               </>
             )}
           </button>

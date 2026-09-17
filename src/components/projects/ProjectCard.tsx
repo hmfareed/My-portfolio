@@ -125,10 +125,10 @@ export default function ProjectCard({ project, onOpenCaseStudy }: ProjectCardPro
             onOpenCaseStudy(project.slug);
           }}
           data-cursor="EXPLORE"
-          className={`kpi-explore-btn inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-bold transition-all hover:scale-105 active:scale-95 shadow-lg ${config.btnBg}`}
+          className="kpi-explore-btn inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-bold transition-all hover:scale-105 active:scale-95 shadow-lg bg-[#1A1B20] text-white border-2 border-[#1A1B20]"
         >
-          <span>Explore</span>
-          <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          <span className="text-white font-bold">Explore</span>
+          <ArrowRight className="w-4 h-4 text-white transition-transform duration-300 group-hover:translate-x-1" />
         </button>
 
         {project.githubUrl && (
