@@ -15,7 +15,7 @@ const springTransition = {
 
 export default function Experience() {
   // All experience milestone cards unfolded by default
-  const [expandedIndices, setExpandedIndices] = useState<number[]>([0, 1, 2, 3]);
+  const [expandedIndices, setExpandedIndices] = useState<number[]>([0, 1, 2, 3, 4]);
 
   const toggleExpand = (idx: number) => {
     setExpandedIndices((prev) =>
